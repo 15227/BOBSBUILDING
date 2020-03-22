@@ -29,8 +29,8 @@ Partial Class frmCollection
         Me.txtNameInput = New System.Windows.Forms.TextBox()
         Me.txtDeliveryAddress = New System.Windows.Forms.TextBox()
         Me.txtCustomerAddress = New System.Windows.Forms.TextBox()
-        Me.ckbRetail = New System.Windows.Forms.CheckBox()
-        Me.ckbTrade = New System.Windows.Forms.CheckBox()
+        Me.chkRetail = New System.Windows.Forms.CheckBox()
+        Me.chkTrade = New System.Windows.Forms.CheckBox()
         Me.lblDiscount = New System.Windows.Forms.Label()
         Me.btnRestart = New System.Windows.Forms.Button()
         Me.lblNameInput = New System.Windows.Forms.Label()
@@ -69,6 +69,7 @@ Partial Class frmCollection
         Me.chk2Rm4 = New System.Windows.Forms.CheckBox()
         Me.chk1Rm4 = New System.Windows.Forms.CheckBox()
         Me.chk0Rm4 = New System.Windows.Forms.CheckBox()
+        Me.lblPrice = New System.Windows.Forms.Label()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -116,44 +117,44 @@ Partial Class frmCollection
         '
         'txtNameInput
         '
-        Me.txtNameInput.Location = New System.Drawing.Point(110, 55)
+        Me.txtNameInput.Location = New System.Drawing.Point(96, 55)
         Me.txtNameInput.Name = "txtNameInput"
         Me.txtNameInput.Size = New System.Drawing.Size(100, 20)
         Me.txtNameInput.TabIndex = 1
         '
         'txtDeliveryAddress
         '
-        Me.txtDeliveryAddress.Location = New System.Drawing.Point(110, 81)
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(96, 89)
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.Size = New System.Drawing.Size(100, 20)
         Me.txtDeliveryAddress.TabIndex = 3
         '
         'txtCustomerAddress
         '
-        Me.txtCustomerAddress.Location = New System.Drawing.Point(110, 107)
+        Me.txtCustomerAddress.Location = New System.Drawing.Point(308, 92)
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
         Me.txtCustomerAddress.Size = New System.Drawing.Size(100, 20)
         Me.txtCustomerAddress.TabIndex = 4
         '
-        'ckbRetail
+        'chkRetail
         '
-        Me.ckbRetail.AutoSize = True
-        Me.ckbRetail.Location = New System.Drawing.Point(16, 168)
-        Me.ckbRetail.Name = "ckbRetail"
-        Me.ckbRetail.Size = New System.Drawing.Size(53, 17)
-        Me.ckbRetail.TabIndex = 5
-        Me.ckbRetail.Text = "Retail"
-        Me.ckbRetail.UseVisualStyleBackColor = True
+        Me.chkRetail.AutoSize = True
+        Me.chkRetail.Location = New System.Drawing.Point(16, 168)
+        Me.chkRetail.Name = "chkRetail"
+        Me.chkRetail.Size = New System.Drawing.Size(53, 17)
+        Me.chkRetail.TabIndex = 5
+        Me.chkRetail.Text = "Retail"
+        Me.chkRetail.UseVisualStyleBackColor = True
         '
-        'ckbTrade
+        'chkTrade
         '
-        Me.ckbTrade.AutoSize = True
-        Me.ckbTrade.Location = New System.Drawing.Point(16, 191)
-        Me.ckbTrade.Name = "ckbTrade"
-        Me.ckbTrade.Size = New System.Drawing.Size(54, 17)
-        Me.ckbTrade.TabIndex = 6
-        Me.ckbTrade.Text = "Trade"
-        Me.ckbTrade.UseVisualStyleBackColor = True
+        Me.chkTrade.AutoSize = True
+        Me.chkTrade.Location = New System.Drawing.Point(16, 191)
+        Me.chkTrade.Name = "chkTrade"
+        Me.chkTrade.Size = New System.Drawing.Size(54, 17)
+        Me.chkTrade.TabIndex = 6
+        Me.chkTrade.Text = "Trade"
+        Me.chkTrade.UseVisualStyleBackColor = True
         '
         'lblDiscount
         '
@@ -176,7 +177,7 @@ Partial Class frmCollection
         'lblNameInput
         '
         Me.lblNameInput.AutoSize = True
-        Me.lblNameInput.Location = New System.Drawing.Point(38, 58)
+        Me.lblNameInput.Location = New System.Drawing.Point(24, 58)
         Me.lblNameInput.Name = "lblNameInput"
         Me.lblNameInput.Size = New System.Drawing.Size(66, 13)
         Me.lblNameInput.TabIndex = 1100
@@ -185,7 +186,7 @@ Partial Class frmCollection
         'lblDeliveryAddress
         '
         Me.lblDeliveryAddress.AutoSize = True
-        Me.lblDeliveryAddress.Location = New System.Drawing.Point(13, 84)
+        Me.lblDeliveryAddress.Location = New System.Drawing.Point(4, 92)
         Me.lblDeliveryAddress.Name = "lblDeliveryAddress"
         Me.lblDeliveryAddress.Size = New System.Drawing.Size(86, 13)
         Me.lblDeliveryAddress.TabIndex = 1200
@@ -194,7 +195,7 @@ Partial Class frmCollection
         'lblCustomerAddress
         '
         Me.lblCustomerAddress.AutoSize = True
-        Me.lblCustomerAddress.Location = New System.Drawing.Point(13, 110)
+        Me.lblCustomerAddress.Location = New System.Drawing.Point(215, 95)
         Me.lblCustomerAddress.Name = "lblCustomerAddress"
         Me.lblCustomerAddress.Size = New System.Drawing.Size(92, 13)
         Me.lblCustomerAddress.TabIndex = 1300
@@ -203,7 +204,7 @@ Partial Class frmCollection
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(233, 58)
+        Me.Label1.Location = New System.Drawing.Point(253, 58)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 1500
@@ -211,7 +212,7 @@ Partial Class frmCollection
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(288, 55)
+        Me.TextBox1.Location = New System.Drawing.Point(308, 56)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 2
@@ -507,12 +508,22 @@ Partial Class frmCollection
         Me.chk0Rm4.Text = " "
         Me.chk0Rm4.UseVisualStyleBackColor = True
         '
+        'lblPrice
+        '
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.Location = New System.Drawing.Point(276, 289)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(31, 13)
+        Me.lblPrice.TabIndex = 10001
+        Me.lblPrice.Text = "Price"
+        '
         'frmCollection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1166, 410)
+        Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.chk0Rm4)
         Me.Controls.Add(Me.cmbRm4Pnt)
         Me.Controls.Add(Me.cmbRm4Sck)
@@ -551,8 +562,8 @@ Partial Class frmCollection
         Me.Controls.Add(Me.lblNameInput)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.lblDiscount)
-        Me.Controls.Add(Me.ckbTrade)
-        Me.Controls.Add(Me.ckbRetail)
+        Me.Controls.Add(Me.chkTrade)
+        Me.Controls.Add(Me.chkRetail)
         Me.Controls.Add(Me.txtCustomerAddress)
         Me.Controls.Add(Me.txtDeliveryAddress)
         Me.Controls.Add(Me.txtNameInput)
@@ -575,8 +586,8 @@ Partial Class frmCollection
     Friend WithEvents txtNameInput As TextBox
     Friend WithEvents txtDeliveryAddress As TextBox
     Friend WithEvents txtCustomerAddress As TextBox
-    Friend WithEvents ckbRetail As CheckBox
-    Friend WithEvents ckbTrade As CheckBox
+    Friend WithEvents chkRetail As CheckBox
+    Friend WithEvents chkTrade As CheckBox
     Friend WithEvents lblDiscount As Label
     Friend WithEvents btnRestart As Button
     Friend WithEvents lblNameInput As Label
@@ -615,4 +626,5 @@ Partial Class frmCollection
     Friend WithEvents chk2Rm4 As CheckBox
     Friend WithEvents chk1Rm4 As CheckBox
     Friend WithEvents chk0Rm4 As CheckBox
+    Friend WithEvents lblPrice As Label
 End Class

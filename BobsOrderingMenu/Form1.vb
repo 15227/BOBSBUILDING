@@ -7,7 +7,6 @@
     Dim SocketCount(5, 1) As Integer
 
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call SubtotalPopultaion()
         Call UniqueIdentification()
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
@@ -15,7 +14,6 @@
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Call ChangeNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
-        Call PriceCaclulation() 'Adds the subtotals of all prices
         MessageBox.Show(Finalprice)
     End Sub
 
@@ -131,10 +129,37 @@
         cmbRm4Pnt.Text = FinalArray(5, 0, 4)
     End Sub
 
+    Public Sub SocketCounter() 'Counts all Sockets and Network Points To be called anytime a Socket Combobox is changed.
+
+        'Assigns Selected Sockets for each room (ß, 0)
+        SocketCount(0, 0) = Val(cmbRm0Sck.Text)
+        SocketCount(1, 0) = Val(cmbRm1Sck.Text)
+        SocketCount(2, 0) = Val(cmbRm2Sck.Text)
+        SocketCount(3, 0) = Val(cmbRm3Sck.Text)
+        SocketCount(4, 0) = Val(cmbRm4Sck.Text)
+        For i = 0 To 4 'Counts total number of Sockets
+            SocketCount(5, 0) += SocketCount(i, 0)
+        Next
+        If SocketCount(5, 0) > 12 Then
+            MessageBox.Show("Too Many Additional Sockets Selected.")
+        End If
+        'Assigns Selected Network Points (ß, 1
+        SocketCount(0, 1) = Val(cmbRm0Pnt.Text)
+        SocketCount(1, 1) = Val(cmbRm1Pnt.Text)
+        SocketCount(2, 1) = Val(cmbRm2Pnt.Text)
+        SocketCount(3, 1) = Val(cmbRm3Pnt.Text)
+        SocketCount(4, 1) = Val(cmbRm4Pnt.Text)
+        For i = 0 To 4 'Counts total number of Network Points
+            SocketCount(5, 1) += SocketCount(i, 1)
+        Next
+        If SocketCount(5, 1) > 12 Then
+            MessageBox.Show("Too Many Additional Network Points Selected.")
+        End If
+    End Sub
 
     Private Sub Checkboxes() 'tests for checkbox's being cicked by providing a true or false
-        If ckbRetail.Checked = True Then MessageBox.Show("Discount not applicible")
-        If ckbTrade.Checked = True Then MessageBox.Show("Congratultaions on 10% Discount")
+        If chkRetail.Checked = True Then MessageBox.Show("Discount not applicible")
+        If chkTrade.Checked = True Then MessageBox.Show("Congratultaions on 10% Discount")
     End Sub
     Private Sub UniqueIdentification()
         Call UpdateNickname()
@@ -147,21 +172,156 @@
     Private Sub UpdateNickname()
         UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
     End Sub
-    Private Sub PriceCaclulation()
-        For i = 0 To 4
-            Finalprice += Subtotals(i) 'Adds each subtotal to the prvious to get the prices.
-        Next
+    Private Sub ChkValidation()
+        'Discount Check
+        If chkRetail.Checked = True Then
+            chkTrade.Checked = False
+        End If
+        If chkTrade.Checked = True Then
+            chkRetail.Checked = False
+        End If
 
-        If ckbTrade.Checked = True Then
-            Finalprice *= 0.9 'Asigns a 10% discount if the trade checkbox is checked.
+        If chkTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
+            OrderType = 1
+        Else
+            OrderType = 0
+        End If
+
+        If OrderType = 1 Then
+            lblDiscount.Show()
+        Else
+            lblDiscount.Hide()
+        End If
+
+
+        If chk0Rm4.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
+            FinalArray(0, 2, 4) += FinalArray(0, 1, 2) And chk0Rm2.Checked = True
+        ElseIf chk1Rm4.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
+            FinalArray(1, 2, 4) += FinalArray(1, 1, 2) And chk1Rm2.Checked = True
+            FinalArray(1, 2, 3) += FinalArray(1, 2, 2) And chk1Rm2.Checked = True
+        End If
+
+        'Netwrk Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
+        'Additional electrical sockets (1G)# #2G sockets are an extra $10 Each.
+        'Room 0 Selection Assignments (ß,2,0)
+        If chk0Rm0.Checked = True Then
+            FinalArray(0, 2, 0) = (FinalArray(0, 1, 0))
+        Else
+            FinalArray(0, 2, 0) = 0
+        End If
+        If chk1Rm0.Checked = True Then
+            FinalArray(1, 2, 0) = FinalArray(1, 1, 0)
+        Else
+            FinalArray(1, 2, 0) = 0
+        End If
+        If chk2Rm0.Checked = True Then
+            FinalArray(2, 2, 0) = FinalArray(2, 1, 0)
+        Else
+            FinalArray(2, 2, 0) = 0
+        End If
+        'Room 1 Selection Assignments (ß,2,1)
+        If chk0Rm1.Checked = True Then
+            FinalArray(0, 2, 1) = FinalArray(0, 1, 1)
+        Else
+            FinalArray(0, 2, 1) = 0
+        End If
+        If chk1Rm1.Checked = True Then
+            FinalArray(1, 2, 1) = FinalArray(1, 1, 1)
+        Else
+            FinalArray(1, 2, 1) = 0
+        End If
+        If chk2Rm1.Checked = True Then
+            FinalArray(2, 2, 1) = FinalArray(2, 1, 1)
+        Else
+            FinalArray(2, 2, 1) = 0
+        End If
+        If chk3Rm1.Checked = True Then
+            FinalArray(3, 2, 1) = FinalArray(3, 1, 1)
+        Else
+            FinalArray(3, 2, 1) = 0
+        End If
+        'Room 2 Selection Assignments (ß,2, 2)
+        If chk0Rm2.Checked = True Then
+            FinalArray(0, 2, 2) = (FinalArray(0, 1, 2))
+        Else
+            FinalArray(0, 2, 2) = 0
+        End If
+        If chk1Rm2.Checked = True Then
+            FinalArray(1, 2, 2) = FinalArray(1, 1, 2)
+        Else
+            FinalArray(1, 2, 2) = 0
+        End If
+        If chk2Rm2.Checked = True Then
+            FinalArray(2, 2, 2) = FinalArray(2, 1, 2)
+        Else
+            FinalArray(2, 2, 2) = 0
+        End If
+        'Room 3 Selection Assignments (ß,2,3)
+        If chk0Rm3.Checked = True Then
+            FinalArray(0, 2, 3) = (FinalArray(0, 1, 3))
+        Else
+            FinalArray(0, 2, 3) = 0
+        End If
+        If chk1Rm3.Checked = True Then
+            FinalArray(1, 2, 3) = FinalArray(1, 1, 3)
+        Else
+            FinalArray(1, 2, 3) = 0
+        End If
+        If chk2Rm3.Checked = True Then
+            FinalArray(2, 2, 3) = FinalArray(2, 1, 3)
+        Else
+            FinalArray(2, 2, 3) = 0
+        End If
+        'Room 4 Selection Assignments (ß,2,4)
+        If chk0Rm4.Checked = True Then
+            FinalArray(0, 2, 4) = (FinalArray(0, 1, 4))
+        Else
+            FinalArray(0, 2, 4) = 0
+        End If
+        If chk1Rm4.Checked = True Then
+            FinalArray(1, 2, 4) = FinalArray(1, 1, 4)
+        Else
+            FinalArray(1, 2, 4) = 0
+        End If
+        If chk2Rm4.Checked = True Then
+            FinalArray(2, 2, 4) = FinalArray(2, 1, 4)
+        Else
+            FinalArray(2, 2, 4) = 0
         End If
     End Sub
 
-    Private Sub SubtotalPopultaion()
-        Subtotals(0) = 10
-        Subtotals(1) = 20
-        Subtotals(2) = 30
-        Subtotals(3) = 40
-        Subtotals(4) = 50
+    Private Sub SubCacl()
+        'Caculation for Checkboxes on Form1 (ß,0)
+        For i = 0 To 4
+            Subtotals(0, 0) += Val(FinalArray(i, 2, 0)) 'Final Price after if Statments.
+            Subtotals(1, 0) += Val(FinalArray(i, 2, 1))
+            Subtotals(2, 0) += Val(FinalArray(i, 2, 2))
+            Subtotals(3, 0) += Val(FinalArray(i, 2, 3))
+            Subtotals(4, 0) += Val(FinalArray(i, 2, 4))
+
+        Next
+        'Additional Socket Caclulation for every Room (ß, 1)
+        For i = 0 To 4
+            Subtotals(i, 1) = SocketCount(i, 0) * Val(FinalArray(4, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
+        Next
+        'Additional Points Caclulation for every Room (ß, 2)
+        For i = 0 To 4
+            Subtotals(i, 2) = SocketCount(i, 1) * Val(FinalArray(5, 1, i))
+        Next
     End Sub
+    Public Sub FinalCaclulation()
+        Dim BasePrice As Integer = 75000
+        Dim SubFinal As Integer
+
+        For i = 0 To 4
+            SubFinal += Subtotals(i, 1) + Subtotals(i, 2) + Subtotals(i, 0)
+        Next
+        If OrderType = 1 Then
+            FinalPrice *= 0.9
+        End If
+        FinalPrice = BasePrice + SubFinal
+        lblPrice.Text = FinalPrice.ToString
+
+    End Sub
+
 End Class
