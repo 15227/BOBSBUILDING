@@ -29,8 +29,6 @@ Partial Class frmCollection
         Me.txtNameInput = New System.Windows.Forms.TextBox()
         Me.txtDeliveryAddress = New System.Windows.Forms.TextBox()
         Me.txtCustomerAddress = New System.Windows.Forms.TextBox()
-        Me.chkRetail = New System.Windows.Forms.CheckBox()
-        Me.chkTrade = New System.Windows.Forms.CheckBox()
         Me.lblDiscount = New System.Windows.Forms.Label()
         Me.btnRestart = New System.Windows.Forms.Button()
         Me.lblNameInput = New System.Windows.Forms.Label()
@@ -70,6 +68,8 @@ Partial Class frmCollection
         Me.chk1Rm4 = New System.Windows.Forms.CheckBox()
         Me.chk0Rm4 = New System.Windows.Forms.CheckBox()
         Me.lblPrice = New System.Windows.Forms.Label()
+        Me.rdoRetail = New System.Windows.Forms.RadioButton()
+        Me.rdoTrade = New System.Windows.Forms.RadioButton()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -89,7 +89,7 @@ Partial Class frmCollection
         Me.lblIdentification.AutoSize = True
         Me.lblIdentification.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.lblIdentification.ForeColor = System.Drawing.Color.Snow
-        Me.lblIdentification.Location = New System.Drawing.Point(411, 10)
+        Me.lblIdentification.Location = New System.Drawing.Point(446, 10)
         Me.lblIdentification.Name = "lblIdentification"
         Me.lblIdentification.Size = New System.Drawing.Size(124, 15)
         Me.lblIdentification.TabIndex = 10000
@@ -99,7 +99,7 @@ Partial Class frmCollection
         '
         Me.pbxLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbxLogo.Image = Global.BobsOrderingMenu.My.Resources.Resources.logo_transparent
-        Me.pbxLogo.Location = New System.Drawing.Point(414, 28)
+        Me.pbxLogo.Location = New System.Drawing.Point(449, 28)
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.Size = New System.Drawing.Size(121, 116)
         Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -135,26 +135,6 @@ Partial Class frmCollection
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
         Me.txtCustomerAddress.Size = New System.Drawing.Size(100, 20)
         Me.txtCustomerAddress.TabIndex = 4
-        '
-        'chkRetail
-        '
-        Me.chkRetail.AutoSize = True
-        Me.chkRetail.Location = New System.Drawing.Point(16, 168)
-        Me.chkRetail.Name = "chkRetail"
-        Me.chkRetail.Size = New System.Drawing.Size(53, 17)
-        Me.chkRetail.TabIndex = 5
-        Me.chkRetail.Text = "Retail"
-        Me.chkRetail.UseVisualStyleBackColor = True
-        '
-        'chkTrade
-        '
-        Me.chkTrade.AutoSize = True
-        Me.chkTrade.Location = New System.Drawing.Point(16, 191)
-        Me.chkTrade.Name = "chkTrade"
-        Me.chkTrade.Size = New System.Drawing.Size(54, 17)
-        Me.chkTrade.TabIndex = 6
-        Me.chkTrade.Text = "Trade"
-        Me.chkTrade.UseVisualStyleBackColor = True
         '
         'lblDiscount
         '
@@ -231,7 +211,7 @@ Partial Class frmCollection
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(819, 8)
+        Me.Label3.Location = New System.Drawing.Point(836, 7)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(74, 18)
         Me.Label3.TabIndex = 1700
@@ -243,9 +223,9 @@ Partial Class frmCollection
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(1033, 16)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(12, 18)
+        Me.Label4.Size = New System.Drawing.Size(95, 18)
         Me.Label4.TabIndex = 1800
-        Me.Label4.Text = " "
+        Me.Label4.Text = " Living Room"
         '
         'Label5
         '
@@ -317,7 +297,7 @@ Partial Class frmCollection
         'cmbRm1Pnt
         '
         Me.cmbRm1Pnt.FormattingEnabled = True
-        Me.cmbRm1Pnt.Location = New System.Drawing.Point(822, 156)
+        Me.cmbRm1Pnt.Location = New System.Drawing.Point(839, 155)
         Me.cmbRm1Pnt.Name = "cmbRm1Pnt"
         Me.cmbRm1Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm1Pnt.TabIndex = 17
@@ -325,7 +305,7 @@ Partial Class frmCollection
         'cmbRm1Sck
         '
         Me.cmbRm1Sck.FormattingEnabled = True
-        Me.cmbRm1Sck.Location = New System.Drawing.Point(822, 129)
+        Me.cmbRm1Sck.Location = New System.Drawing.Point(839, 128)
         Me.cmbRm1Sck.Name = "cmbRm1Sck"
         Me.cmbRm1Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm1Sck.TabIndex = 16
@@ -333,7 +313,7 @@ Partial Class frmCollection
         'chk3Rm1
         '
         Me.chk3Rm1.AutoSize = True
-        Me.chk3Rm1.Location = New System.Drawing.Point(822, 108)
+        Me.chk3Rm1.Location = New System.Drawing.Point(839, 107)
         Me.chk3Rm1.Name = "chk3Rm1"
         Me.chk3Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk3Rm1.TabIndex = 15
@@ -343,7 +323,7 @@ Partial Class frmCollection
         'chk2Rm1
         '
         Me.chk2Rm1.AutoSize = True
-        Me.chk2Rm1.Location = New System.Drawing.Point(822, 83)
+        Me.chk2Rm1.Location = New System.Drawing.Point(839, 82)
         Me.chk2Rm1.Name = "chk2Rm1"
         Me.chk2Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm1.TabIndex = 14
@@ -353,7 +333,7 @@ Partial Class frmCollection
         'chk1Rm1
         '
         Me.chk1Rm1.AutoSize = True
-        Me.chk1Rm1.Location = New System.Drawing.Point(822, 59)
+        Me.chk1Rm1.Location = New System.Drawing.Point(839, 58)
         Me.chk1Rm1.Name = "chk1Rm1"
         Me.chk1Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm1.TabIndex = 13
@@ -366,7 +346,7 @@ Partial Class frmCollection
         Me.cmbRm2Pnt.Location = New System.Drawing.Point(1036, 137)
         Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
         Me.cmbRm2Pnt.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm2Pnt.TabIndex = 3500
+        Me.cmbRm2Pnt.TabIndex = 22
         '
         'cmbRm2Sck
         '
@@ -374,12 +354,12 @@ Partial Class frmCollection
         Me.cmbRm2Sck.Location = New System.Drawing.Point(1036, 110)
         Me.cmbRm2Sck.Name = "cmbRm2Sck"
         Me.cmbRm2Sck.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm2Sck.TabIndex = 3400
+        Me.cmbRm2Sck.TabIndex = 21
         '
         'chk0Rm1
         '
         Me.chk0Rm1.AutoSize = True
-        Me.chk0Rm1.Location = New System.Drawing.Point(822, 38)
+        Me.chk0Rm1.Location = New System.Drawing.Point(839, 37)
         Me.chk0Rm1.Name = "chk0Rm1"
         Me.chk0Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm1.TabIndex = 12
@@ -412,15 +392,16 @@ Partial Class frmCollection
         Me.cmbRm3Pnt.Location = New System.Drawing.Point(718, 308)
         Me.cmbRm3Pnt.Name = "cmbRm3Pnt"
         Me.cmbRm3Pnt.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm3Pnt.TabIndex = 25
+        Me.cmbRm3Pnt.TabIndex = 27
         '
         'cmbRm3Sck
         '
         Me.cmbRm3Sck.FormattingEnabled = True
+        Me.cmbRm3Sck.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cmbRm3Sck.Location = New System.Drawing.Point(718, 281)
         Me.cmbRm3Sck.Name = "cmbRm3Sck"
         Me.cmbRm3Sck.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm3Sck.TabIndex = 24
+        Me.cmbRm3Sck.TabIndex = 26
         '
         'chk0Rm2
         '
@@ -438,7 +419,7 @@ Partial Class frmCollection
         Me.chk2Rm3.Location = New System.Drawing.Point(718, 258)
         Me.chk2Rm3.Name = "chk2Rm3"
         Me.chk2Rm3.Size = New System.Drawing.Size(29, 17)
-        Me.chk2Rm3.TabIndex = 23
+        Me.chk2Rm3.TabIndex = 25
         Me.chk2Rm3.Text = " "
         Me.chk2Rm3.UseVisualStyleBackColor = True
         '
@@ -448,7 +429,7 @@ Partial Class frmCollection
         Me.chk1Rm3.Location = New System.Drawing.Point(718, 234)
         Me.chk1Rm3.Name = "chk1Rm3"
         Me.chk1Rm3.Size = New System.Drawing.Size(29, 17)
-        Me.chk1Rm3.TabIndex = 22
+        Me.chk1Rm3.TabIndex = 24
         Me.chk1Rm3.Text = " "
         Me.chk1Rm3.UseVisualStyleBackColor = True
         '
@@ -458,7 +439,7 @@ Partial Class frmCollection
         Me.cmbRm4Pnt.Location = New System.Drawing.Point(963, 308)
         Me.cmbRm4Pnt.Name = "cmbRm4Pnt"
         Me.cmbRm4Pnt.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm4Pnt.TabIndex = 30
+        Me.cmbRm4Pnt.TabIndex = 32
         '
         'cmbRm4Sck
         '
@@ -466,7 +447,7 @@ Partial Class frmCollection
         Me.cmbRm4Sck.Location = New System.Drawing.Point(963, 281)
         Me.cmbRm4Sck.Name = "cmbRm4Sck"
         Me.cmbRm4Sck.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm4Sck.TabIndex = 29
+        Me.cmbRm4Sck.TabIndex = 31
         '
         'chk0Rm3
         '
@@ -474,7 +455,7 @@ Partial Class frmCollection
         Me.chk0Rm3.Location = New System.Drawing.Point(718, 214)
         Me.chk0Rm3.Name = "chk0Rm3"
         Me.chk0Rm3.Size = New System.Drawing.Size(29, 17)
-        Me.chk0Rm3.TabIndex = 21
+        Me.chk0Rm3.TabIndex = 23
         Me.chk0Rm3.Text = " "
         Me.chk0Rm3.UseVisualStyleBackColor = True
         '
@@ -484,7 +465,7 @@ Partial Class frmCollection
         Me.chk2Rm4.Location = New System.Drawing.Point(972, 258)
         Me.chk2Rm4.Name = "chk2Rm4"
         Me.chk2Rm4.Size = New System.Drawing.Size(29, 17)
-        Me.chk2Rm4.TabIndex = 28
+        Me.chk2Rm4.TabIndex = 30
         Me.chk2Rm4.Text = " "
         Me.chk2Rm4.UseVisualStyleBackColor = True
         '
@@ -494,7 +475,7 @@ Partial Class frmCollection
         Me.chk1Rm4.Location = New System.Drawing.Point(972, 234)
         Me.chk1Rm4.Name = "chk1Rm4"
         Me.chk1Rm4.Size = New System.Drawing.Size(29, 17)
-        Me.chk1Rm4.TabIndex = 27
+        Me.chk1Rm4.TabIndex = 29
         Me.chk1Rm4.Text = " "
         Me.chk1Rm4.UseVisualStyleBackColor = True
         '
@@ -504,18 +485,40 @@ Partial Class frmCollection
         Me.chk0Rm4.Location = New System.Drawing.Point(972, 208)
         Me.chk0Rm4.Name = "chk0Rm4"
         Me.chk0Rm4.Size = New System.Drawing.Size(29, 17)
-        Me.chk0Rm4.TabIndex = 26
+        Me.chk0Rm4.TabIndex = 28
         Me.chk0Rm4.Text = " "
         Me.chk0Rm4.UseVisualStyleBackColor = True
         '
         'lblPrice
         '
         Me.lblPrice.AutoSize = True
-        Me.lblPrice.Location = New System.Drawing.Point(276, 289)
+        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.lblPrice.Location = New System.Drawing.Point(166, 281)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(31, 13)
+        Me.lblPrice.Size = New System.Drawing.Size(77, 29)
         Me.lblPrice.TabIndex = 10001
         Me.lblPrice.Text = "Price"
+        '
+        'rdoRetail
+        '
+        Me.rdoRetail.AutoSize = True
+        Me.rdoRetail.Location = New System.Drawing.Point(16, 167)
+        Me.rdoRetail.Name = "rdoRetail"
+        Me.rdoRetail.Size = New System.Drawing.Size(52, 17)
+        Me.rdoRetail.TabIndex = 10002
+        Me.rdoRetail.Text = "Retail"
+        Me.rdoRetail.UseVisualStyleBackColor = True
+        '
+        'rdoTrade
+        '
+        Me.rdoTrade.AutoSize = True
+        Me.rdoTrade.Location = New System.Drawing.Point(16, 190)
+        Me.rdoTrade.Name = "rdoTrade"
+        Me.rdoTrade.Size = New System.Drawing.Size(53, 17)
+        Me.rdoTrade.TabIndex = 10003
+        Me.rdoTrade.Text = "Trade"
+        Me.rdoTrade.UseVisualStyleBackColor = True
         '
         'frmCollection
         '
@@ -523,6 +526,8 @@ Partial Class frmCollection
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1166, 410)
+        Me.Controls.Add(Me.rdoTrade)
+        Me.Controls.Add(Me.rdoRetail)
         Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.chk0Rm4)
         Me.Controls.Add(Me.cmbRm4Pnt)
@@ -562,8 +567,6 @@ Partial Class frmCollection
         Me.Controls.Add(Me.lblNameInput)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.lblDiscount)
-        Me.Controls.Add(Me.chkTrade)
-        Me.Controls.Add(Me.chkRetail)
         Me.Controls.Add(Me.txtCustomerAddress)
         Me.Controls.Add(Me.txtDeliveryAddress)
         Me.Controls.Add(Me.txtNameInput)
@@ -586,8 +589,6 @@ Partial Class frmCollection
     Friend WithEvents txtNameInput As TextBox
     Friend WithEvents txtDeliveryAddress As TextBox
     Friend WithEvents txtCustomerAddress As TextBox
-    Friend WithEvents chkRetail As CheckBox
-    Friend WithEvents chkTrade As CheckBox
     Friend WithEvents lblDiscount As Label
     Friend WithEvents btnRestart As Button
     Friend WithEvents lblNameInput As Label
@@ -627,4 +628,6 @@ Partial Class frmCollection
     Friend WithEvents chk1Rm4 As CheckBox
     Friend WithEvents chk0Rm4 As CheckBox
     Friend WithEvents lblPrice As Label
+    Friend WithEvents rdoRetail As RadioButton
+    Friend WithEvents rdoTrade As RadioButton
 End Class

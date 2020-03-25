@@ -1,20 +1,23 @@
 ﻿Public Class frmCollection
     Dim UniqueId As String = My.Settings.CustomerId 'Defines variable as stored value in program.
-    Dim OrderType As Boolean = 0
+    Dim BasePrice As Integer = 75000
+    Public FinalPrice As Integer = BasePrice
+    Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer
     Public FinalArray(5, 2, 4) As String
-    Public FinalPrice As Integer
     Dim SocketCount(5, 1) As Integer
 
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call UniqueIdentification()
+        Call FinalArrayAsign()
+        Call NameAssignment()
+        Call ChkValidation()
+
     End Sub
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        Application.Restart()
-    End Sub
+
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        Call ChangeNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
-        MessageBox.Show(Finalprice)
+        Call FinalCaclulation()
+        Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
     End Sub
 
 
@@ -99,7 +102,6 @@
         FinalArray(5, 1, 4) = 50
 
     End Sub
-
     Public Sub NameAssignment() 'Fully Operational
         chk0Rm0.Text = FinalArray(0, 0, 0)
         chk1Rm0.Text = FinalArray(1, 0, 0)
@@ -127,7 +129,9 @@
         chk2Rm4.Text = FinalArray(2, 0, 4)
         cmbRm4Sck.Text = FinalArray(4, 0, 4)
         cmbRm4Pnt.Text = FinalArray(5, 0, 4)
+        lblPrice.Text = BasePrice.ToString
     End Sub
+
 
     Public Sub SocketCounter() 'Counts all Sockets and Network Points To be called anytime a Socket Combobox is changed.
 
@@ -156,38 +160,17 @@
             MessageBox.Show("Too Many Additional Network Points Selected.")
         End If
     End Sub
-
-    Private Sub Checkboxes() 'tests for checkbox's being cicked by providing a true or false
-        If chkRetail.Checked = True Then MessageBox.Show("Discount not applicible")
-        If chkTrade.Checked = True Then MessageBox.Show("Congratultaions on 10% Discount")
-    End Sub
-    Private Sub UniqueIdentification()
-        Call UpdateNickname()
-        UniqueId += 1 'Adds one to the current UniqueId variable.
-        lblIdentification.Text = "Your unique identification number is: " & UniqueId 'Sets the label that shows the customers identification number calculated before.
-    End Sub
-    Public Sub ChangeNickname()
-        My.Settings.CustomerId = UniqueId 'Sets the saved value in the program called CustomerId to the UniqueId Value.
-    End Sub
-    Private Sub UpdateNickname()
-        UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
-    End Sub
     Private Sub ChkValidation()
         'Discount Check
-        If chkRetail.Checked = True Then
-            chkTrade.Checked = False
-        End If
-        If chkTrade.Checked = True Then
-            chkRetail.Checked = False
-        End If
 
-        If chkTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
-            OrderType = 1
+
+        If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
+            TradeOrder = True
         Else
-            OrderType = 0
+            TradeOrder = False
         End If
 
-        If OrderType = 1 Then
+        If TradeOrder = True Then
             lblDiscount.Show()
         Else
             lblDiscount.Hide()
@@ -290,6 +273,19 @@
         End If
     End Sub
 
+    Private Sub UniqueIdentification()
+        Call UpdateNickname()
+        UniqueId += 1 'Adds one to the current UniqueId variable.
+        lblIdentification.Text = "Identification number: " & UniqueId 'Sets the label that shows the customers identification number calculated before.
+    End Sub
+    Public Sub SubmitNickname()
+        My.Settings.CustomerId = UniqueId 'Sets the saved value in the program called CustomerId to the UniqueId Value.
+    End Sub
+    Private Sub UpdateNickname()
+        UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
+    End Sub
+
+
     Private Sub SubCacl()
         'Caculation for Checkboxes on Form1 (ß,0)
         For i = 0 To 4
@@ -310,18 +306,32 @@
         Next
     End Sub
     Public Sub FinalCaclulation()
-        Dim BasePrice As Integer = 75000
         Dim SubFinal As Integer
-
         For i = 0 To 4
             SubFinal += Subtotals(i, 1) + Subtotals(i, 2) + Subtotals(i, 0)
         Next
-        If OrderType = 1 Then
-            FinalPrice *= 0.9
-        End If
-        FinalPrice = BasePrice + SubFinal
-        lblPrice.Text = FinalPrice.ToString
+
+
+        FinalPrice += SubFinal
+        Call TradeDiscount()
 
     End Sub
+    Private Sub TradeDiscount()
+        If TradeOrder = True Then
+            FinalPrice *= 0.9
+        End If
+        lblPrice.Text = FinalPrice.ToString
+    End Sub
 
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
+        Application.Restart()
+    End Sub
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
+        Call ChkValidation()
+        Call TradeDiscount()
+    End Sub
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rdoTrade.CheckedChanged
+        Call ChkValidation()
+        Call TradeDiscount()
+    End Sub
 End Class
