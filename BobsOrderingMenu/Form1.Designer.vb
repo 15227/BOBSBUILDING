@@ -78,7 +78,7 @@ Partial Class frmCollection
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblTitle.Location = New System.Drawing.Point(12, 9)
+        Me.lblTitle.Location = New System.Drawing.Point(338, 13)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(163, 20)
         Me.lblTitle.TabIndex = 0
@@ -87,11 +87,11 @@ Partial Class frmCollection
         'lblIdentification
         '
         Me.lblIdentification.AutoSize = True
-        Me.lblIdentification.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.lblIdentification.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIdentification.ForeColor = System.Drawing.Color.Snow
-        Me.lblIdentification.Location = New System.Drawing.Point(446, 10)
+        Me.lblIdentification.Location = New System.Drawing.Point(9, 15)
         Me.lblIdentification.Name = "lblIdentification"
-        Me.lblIdentification.Size = New System.Drawing.Size(124, 15)
+        Me.lblIdentification.Size = New System.Drawing.Size(146, 18)
         Me.lblIdentification.TabIndex = 10000
         Me.lblIdentification.Text = "Identification Number"
         '
@@ -99,57 +99,63 @@ Partial Class frmCollection
         '
         Me.pbxLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbxLogo.Image = Global.BobsOrderingMenu.My.Resources.Resources.logo_transparent
-        Me.pbxLogo.Location = New System.Drawing.Point(449, 28)
+        Me.pbxLogo.Location = New System.Drawing.Point(12, 57)
         Me.pbxLogo.Name = "pbxLogo"
-        Me.pbxLogo.Size = New System.Drawing.Size(121, 116)
+        Me.pbxLogo.Size = New System.Drawing.Size(312, 168)
         Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxLogo.TabIndex = 2
         Me.pbxLogo.TabStop = False
         '
         'btnNext
         '
-        Me.btnNext.Location = New System.Drawing.Point(232, 162)
+        Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNext.Location = New System.Drawing.Point(140, 472)
         Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(75, 23)
+        Me.btnNext.Size = New System.Drawing.Size(304, 55)
         Me.btnNext.TabIndex = 300
         Me.btnNext.Text = "Next"
         Me.btnNext.UseVisualStyleBackColor = True
         '
         'txtNameInput
         '
-        Me.txtNameInput.Location = New System.Drawing.Point(96, 55)
+        Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNameInput.Location = New System.Drawing.Point(448, 59)
         Me.txtNameInput.Name = "txtNameInput"
-        Me.txtNameInput.Size = New System.Drawing.Size(100, 20)
+        Me.txtNameInput.Size = New System.Drawing.Size(100, 22)
         Me.txtNameInput.TabIndex = 1
         '
         'txtDeliveryAddress
         '
-        Me.txtDeliveryAddress.Location = New System.Drawing.Point(96, 89)
+        Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(448, 93)
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
-        Me.txtDeliveryAddress.Size = New System.Drawing.Size(100, 20)
+        Me.txtDeliveryAddress.Size = New System.Drawing.Size(100, 22)
         Me.txtDeliveryAddress.TabIndex = 3
         '
         'txtCustomerAddress
         '
-        Me.txtCustomerAddress.Location = New System.Drawing.Point(308, 92)
+        Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCustomerAddress.Location = New System.Drawing.Point(727, 93)
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
-        Me.txtCustomerAddress.Size = New System.Drawing.Size(100, 20)
+        Me.txtCustomerAddress.Size = New System.Drawing.Size(100, 22)
         Me.txtCustomerAddress.TabIndex = 4
         '
         'lblDiscount
         '
         Me.lblDiscount.AutoSize = True
-        Me.lblDiscount.Location = New System.Drawing.Point(76, 192)
+        Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiscount.Location = New System.Drawing.Point(633, 171)
         Me.lblDiscount.Name = "lblDiscount"
-        Me.lblDiscount.Size = New System.Drawing.Size(72, 13)
+        Me.lblDiscount.Size = New System.Drawing.Size(108, 20)
         Me.lblDiscount.TabIndex = 900
         Me.lblDiscount.Text = "10% Discount"
         '
         'btnRestart
         '
-        Me.btnRestart.Location = New System.Drawing.Point(313, 162)
+        Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRestart.Location = New System.Drawing.Point(706, 472)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(75, 23)
+        Me.btnRestart.Size = New System.Drawing.Size(321, 55)
         Me.btnRestart.TabIndex = 1000
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = True
@@ -157,51 +163,56 @@ Partial Class frmCollection
         'lblNameInput
         '
         Me.lblNameInput.AutoSize = True
-        Me.lblNameInput.Location = New System.Drawing.Point(24, 58)
+        Me.lblNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNameInput.Location = New System.Drawing.Point(350, 62)
         Me.lblNameInput.Name = "lblNameInput"
-        Me.lblNameInput.Size = New System.Drawing.Size(66, 13)
+        Me.lblNameInput.Size = New System.Drawing.Size(83, 16)
         Me.lblNameInput.TabIndex = 1100
         Me.lblNameInput.Text = "Given Name"
         '
         'lblDeliveryAddress
         '
         Me.lblDeliveryAddress.AutoSize = True
-        Me.lblDeliveryAddress.Location = New System.Drawing.Point(4, 92)
+        Me.lblDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDeliveryAddress.Location = New System.Drawing.Point(330, 96)
         Me.lblDeliveryAddress.Name = "lblDeliveryAddress"
-        Me.lblDeliveryAddress.Size = New System.Drawing.Size(86, 13)
+        Me.lblDeliveryAddress.Size = New System.Drawing.Size(112, 16)
         Me.lblDeliveryAddress.TabIndex = 1200
         Me.lblDeliveryAddress.Text = "Delivery Address"
         '
         'lblCustomerAddress
         '
         Me.lblCustomerAddress.AutoSize = True
-        Me.lblCustomerAddress.Location = New System.Drawing.Point(215, 95)
+        Me.lblCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCustomerAddress.Location = New System.Drawing.Point(602, 96)
         Me.lblCustomerAddress.Name = "lblCustomerAddress"
-        Me.lblCustomerAddress.Size = New System.Drawing.Size(92, 13)
+        Me.lblCustomerAddress.Size = New System.Drawing.Size(119, 16)
         Me.lblCustomerAddress.TabIndex = 1300
         Me.lblCustomerAddress.Text = "Customer Address"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(253, 58)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(640, 59)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 13)
+        Me.Label1.Size = New System.Drawing.Size(62, 16)
         Me.Label1.TabIndex = 1500
         Me.Label1.Text = "Surname"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(308, 56)
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(727, 57)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(624, 12)
+        Me.Label2.Location = New System.Drawing.Point(137, 305)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 18)
         Me.Label2.TabIndex = 1600
@@ -211,7 +222,7 @@ Partial Class frmCollection
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(836, 7)
+        Me.Label3.Location = New System.Drawing.Point(350, 306)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(74, 18)
         Me.Label3.TabIndex = 1700
@@ -221,7 +232,7 @@ Partial Class frmCollection
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(1033, 16)
+        Me.Label4.Location = New System.Drawing.Point(517, 305)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 18)
         Me.Label4.TabIndex = 1800
@@ -231,7 +242,7 @@ Partial Class frmCollection
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(715, 175)
+        Me.Label5.Location = New System.Drawing.Point(703, 305)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(82, 18)
         Me.Label5.TabIndex = 1900
@@ -241,7 +252,7 @@ Partial Class frmCollection
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(960, 175)
+        Me.Label6.Location = New System.Drawing.Point(912, 305)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 18)
         Me.Label6.TabIndex = 2000
@@ -250,7 +261,7 @@ Partial Class frmCollection
         'chk0Rm0
         '
         Me.chk0Rm0.AutoSize = True
-        Me.chk0Rm0.Location = New System.Drawing.Point(627, 33)
+        Me.chk0Rm0.Location = New System.Drawing.Point(140, 344)
         Me.chk0Rm0.Name = "chk0Rm0"
         Me.chk0Rm0.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm0.TabIndex = 7
@@ -260,7 +271,7 @@ Partial Class frmCollection
         'chk1Rm0
         '
         Me.chk1Rm0.AutoSize = True
-        Me.chk1Rm0.Location = New System.Drawing.Point(627, 58)
+        Me.chk1Rm0.Location = New System.Drawing.Point(140, 369)
         Me.chk1Rm0.Name = "chk1Rm0"
         Me.chk1Rm0.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm0.TabIndex = 8
@@ -270,7 +281,7 @@ Partial Class frmCollection
         'chk2Rm0
         '
         Me.chk2Rm0.AutoSize = True
-        Me.chk2Rm0.Location = New System.Drawing.Point(627, 84)
+        Me.chk2Rm0.Location = New System.Drawing.Point(140, 395)
         Me.chk2Rm0.Name = "chk2Rm0"
         Me.chk2Rm0.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm0.TabIndex = 9
@@ -280,7 +291,8 @@ Partial Class frmCollection
         'cmbRm0Sck
         '
         Me.cmbRm0Sck.FormattingEnabled = True
-        Me.cmbRm0Sck.Location = New System.Drawing.Point(627, 106)
+        Me.cmbRm0Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm0Sck.Location = New System.Drawing.Point(140, 418)
         Me.cmbRm0Sck.Name = "cmbRm0Sck"
         Me.cmbRm0Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm0Sck.TabIndex = 10
@@ -289,7 +301,7 @@ Partial Class frmCollection
         'cmbRm0Pnt
         '
         Me.cmbRm0Pnt.FormattingEnabled = True
-        Me.cmbRm0Pnt.Location = New System.Drawing.Point(627, 133)
+        Me.cmbRm0Pnt.Location = New System.Drawing.Point(140, 445)
         Me.cmbRm0Pnt.Name = "cmbRm0Pnt"
         Me.cmbRm0Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm0Pnt.TabIndex = 11
@@ -297,7 +309,7 @@ Partial Class frmCollection
         'cmbRm1Pnt
         '
         Me.cmbRm1Pnt.FormattingEnabled = True
-        Me.cmbRm1Pnt.Location = New System.Drawing.Point(839, 155)
+        Me.cmbRm1Pnt.Location = New System.Drawing.Point(353, 445)
         Me.cmbRm1Pnt.Name = "cmbRm1Pnt"
         Me.cmbRm1Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm1Pnt.TabIndex = 17
@@ -305,7 +317,8 @@ Partial Class frmCollection
         'cmbRm1Sck
         '
         Me.cmbRm1Sck.FormattingEnabled = True
-        Me.cmbRm1Sck.Location = New System.Drawing.Point(839, 128)
+        Me.cmbRm1Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm1Sck.Location = New System.Drawing.Point(353, 418)
         Me.cmbRm1Sck.Name = "cmbRm1Sck"
         Me.cmbRm1Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm1Sck.TabIndex = 16
@@ -313,7 +326,7 @@ Partial Class frmCollection
         'chk3Rm1
         '
         Me.chk3Rm1.AutoSize = True
-        Me.chk3Rm1.Location = New System.Drawing.Point(839, 107)
+        Me.chk3Rm1.Location = New System.Drawing.Point(353, 397)
         Me.chk3Rm1.Name = "chk3Rm1"
         Me.chk3Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk3Rm1.TabIndex = 15
@@ -323,7 +336,7 @@ Partial Class frmCollection
         'chk2Rm1
         '
         Me.chk2Rm1.AutoSize = True
-        Me.chk2Rm1.Location = New System.Drawing.Point(839, 82)
+        Me.chk2Rm1.Location = New System.Drawing.Point(353, 374)
         Me.chk2Rm1.Name = "chk2Rm1"
         Me.chk2Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm1.TabIndex = 14
@@ -333,7 +346,7 @@ Partial Class frmCollection
         'chk1Rm1
         '
         Me.chk1Rm1.AutoSize = True
-        Me.chk1Rm1.Location = New System.Drawing.Point(839, 58)
+        Me.chk1Rm1.Location = New System.Drawing.Point(353, 351)
         Me.chk1Rm1.Name = "chk1Rm1"
         Me.chk1Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm1.TabIndex = 13
@@ -343,7 +356,7 @@ Partial Class frmCollection
         'cmbRm2Pnt
         '
         Me.cmbRm2Pnt.FormattingEnabled = True
-        Me.cmbRm2Pnt.Location = New System.Drawing.Point(1036, 137)
+        Me.cmbRm2Pnt.Location = New System.Drawing.Point(520, 443)
         Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
         Me.cmbRm2Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm2Pnt.TabIndex = 22
@@ -351,7 +364,8 @@ Partial Class frmCollection
         'cmbRm2Sck
         '
         Me.cmbRm2Sck.FormattingEnabled = True
-        Me.cmbRm2Sck.Location = New System.Drawing.Point(1036, 110)
+        Me.cmbRm2Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm2Sck.Location = New System.Drawing.Point(520, 416)
         Me.cmbRm2Sck.Name = "cmbRm2Sck"
         Me.cmbRm2Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm2Sck.TabIndex = 21
@@ -359,7 +373,7 @@ Partial Class frmCollection
         'chk0Rm1
         '
         Me.chk0Rm1.AutoSize = True
-        Me.chk0Rm1.Location = New System.Drawing.Point(839, 37)
+        Me.chk0Rm1.Location = New System.Drawing.Point(353, 327)
         Me.chk0Rm1.Name = "chk0Rm1"
         Me.chk0Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm1.TabIndex = 12
@@ -369,7 +383,7 @@ Partial Class frmCollection
         'chk2Rm2
         '
         Me.chk2Rm2.AutoSize = True
-        Me.chk2Rm2.Location = New System.Drawing.Point(1036, 84)
+        Me.chk2Rm2.Location = New System.Drawing.Point(520, 396)
         Me.chk2Rm2.Name = "chk2Rm2"
         Me.chk2Rm2.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm2.TabIndex = 20
@@ -379,7 +393,7 @@ Partial Class frmCollection
         'chk1Rm2
         '
         Me.chk1Rm2.AutoSize = True
-        Me.chk1Rm2.Location = New System.Drawing.Point(1036, 61)
+        Me.chk1Rm2.Location = New System.Drawing.Point(521, 373)
         Me.chk1Rm2.Name = "chk1Rm2"
         Me.chk1Rm2.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm2.TabIndex = 19
@@ -389,7 +403,7 @@ Partial Class frmCollection
         'cmbRm3Pnt
         '
         Me.cmbRm3Pnt.FormattingEnabled = True
-        Me.cmbRm3Pnt.Location = New System.Drawing.Point(718, 308)
+        Me.cmbRm3Pnt.Location = New System.Drawing.Point(706, 444)
         Me.cmbRm3Pnt.Name = "cmbRm3Pnt"
         Me.cmbRm3Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm3Pnt.TabIndex = 27
@@ -397,8 +411,8 @@ Partial Class frmCollection
         'cmbRm3Sck
         '
         Me.cmbRm3Sck.FormattingEnabled = True
-        Me.cmbRm3Sck.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
-        Me.cmbRm3Sck.Location = New System.Drawing.Point(718, 281)
+        Me.cmbRm3Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm3Sck.Location = New System.Drawing.Point(706, 417)
         Me.cmbRm3Sck.Name = "cmbRm3Sck"
         Me.cmbRm3Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm3Sck.TabIndex = 26
@@ -406,7 +420,7 @@ Partial Class frmCollection
         'chk0Rm2
         '
         Me.chk0Rm2.AutoSize = True
-        Me.chk0Rm2.Location = New System.Drawing.Point(1037, 38)
+        Me.chk0Rm2.Location = New System.Drawing.Point(521, 350)
         Me.chk0Rm2.Name = "chk0Rm2"
         Me.chk0Rm2.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm2.TabIndex = 18
@@ -416,7 +430,7 @@ Partial Class frmCollection
         'chk2Rm3
         '
         Me.chk2Rm3.AutoSize = True
-        Me.chk2Rm3.Location = New System.Drawing.Point(718, 258)
+        Me.chk2Rm3.Location = New System.Drawing.Point(706, 394)
         Me.chk2Rm3.Name = "chk2Rm3"
         Me.chk2Rm3.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm3.TabIndex = 25
@@ -426,7 +440,7 @@ Partial Class frmCollection
         'chk1Rm3
         '
         Me.chk1Rm3.AutoSize = True
-        Me.chk1Rm3.Location = New System.Drawing.Point(718, 234)
+        Me.chk1Rm3.Location = New System.Drawing.Point(706, 373)
         Me.chk1Rm3.Name = "chk1Rm3"
         Me.chk1Rm3.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm3.TabIndex = 24
@@ -436,7 +450,7 @@ Partial Class frmCollection
         'cmbRm4Pnt
         '
         Me.cmbRm4Pnt.FormattingEnabled = True
-        Me.cmbRm4Pnt.Location = New System.Drawing.Point(963, 308)
+        Me.cmbRm4Pnt.Location = New System.Drawing.Point(906, 444)
         Me.cmbRm4Pnt.Name = "cmbRm4Pnt"
         Me.cmbRm4Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm4Pnt.TabIndex = 32
@@ -444,7 +458,8 @@ Partial Class frmCollection
         'cmbRm4Sck
         '
         Me.cmbRm4Sck.FormattingEnabled = True
-        Me.cmbRm4Sck.Location = New System.Drawing.Point(963, 281)
+        Me.cmbRm4Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm4Sck.Location = New System.Drawing.Point(906, 417)
         Me.cmbRm4Sck.Name = "cmbRm4Sck"
         Me.cmbRm4Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm4Sck.TabIndex = 31
@@ -452,7 +467,7 @@ Partial Class frmCollection
         'chk0Rm3
         '
         Me.chk0Rm3.AutoSize = True
-        Me.chk0Rm3.Location = New System.Drawing.Point(718, 214)
+        Me.chk0Rm3.Location = New System.Drawing.Point(706, 350)
         Me.chk0Rm3.Name = "chk0Rm3"
         Me.chk0Rm3.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm3.TabIndex = 23
@@ -462,7 +477,7 @@ Partial Class frmCollection
         'chk2Rm4
         '
         Me.chk2Rm4.AutoSize = True
-        Me.chk2Rm4.Location = New System.Drawing.Point(972, 258)
+        Me.chk2Rm4.Location = New System.Drawing.Point(915, 394)
         Me.chk2Rm4.Name = "chk2Rm4"
         Me.chk2Rm4.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm4.TabIndex = 30
@@ -472,7 +487,7 @@ Partial Class frmCollection
         'chk1Rm4
         '
         Me.chk1Rm4.AutoSize = True
-        Me.chk1Rm4.Location = New System.Drawing.Point(972, 234)
+        Me.chk1Rm4.Location = New System.Drawing.Point(915, 373)
         Me.chk1Rm4.Name = "chk1Rm4"
         Me.chk1Rm4.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm4.TabIndex = 29
@@ -482,7 +497,7 @@ Partial Class frmCollection
         'chk0Rm4
         '
         Me.chk0Rm4.AutoSize = True
-        Me.chk0Rm4.Location = New System.Drawing.Point(972, 208)
+        Me.chk0Rm4.Location = New System.Drawing.Point(915, 350)
         Me.chk0Rm4.Name = "chk0Rm4"
         Me.chk0Rm4.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm4.TabIndex = 28
@@ -492,31 +507,33 @@ Partial Class frmCollection
         'lblPrice
         '
         Me.lblPrice.AutoSize = True
-        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblPrice.Location = New System.Drawing.Point(166, 281)
+        Me.lblPrice.Location = New System.Drawing.Point(534, 480)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(77, 29)
+        Me.lblPrice.Size = New System.Drawing.Size(96, 36)
         Me.lblPrice.TabIndex = 10001
         Me.lblPrice.Text = "Price"
         '
         'rdoRetail
         '
         Me.rdoRetail.AutoSize = True
-        Me.rdoRetail.Location = New System.Drawing.Point(16, 167)
+        Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoRetail.Location = New System.Drawing.Point(559, 146)
         Me.rdoRetail.Name = "rdoRetail"
-        Me.rdoRetail.Size = New System.Drawing.Size(52, 17)
-        Me.rdoRetail.TabIndex = 10002
+        Me.rdoRetail.Size = New System.Drawing.Size(68, 24)
+        Me.rdoRetail.TabIndex = 5
         Me.rdoRetail.Text = "Retail"
         Me.rdoRetail.UseVisualStyleBackColor = True
         '
         'rdoTrade
         '
         Me.rdoTrade.AutoSize = True
-        Me.rdoTrade.Location = New System.Drawing.Point(16, 190)
+        Me.rdoTrade.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoTrade.Location = New System.Drawing.Point(559, 169)
         Me.rdoTrade.Name = "rdoTrade"
-        Me.rdoTrade.Size = New System.Drawing.Size(53, 17)
-        Me.rdoTrade.TabIndex = 10003
+        Me.rdoTrade.Size = New System.Drawing.Size(68, 24)
+        Me.rdoTrade.TabIndex = 6
         Me.rdoTrade.Text = "Trade"
         Me.rdoTrade.UseVisualStyleBackColor = True
         '
@@ -525,7 +542,7 @@ Partial Class frmCollection
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1166, 410)
+        Me.ClientSize = New System.Drawing.Size(1166, 625)
         Me.Controls.Add(Me.rdoTrade)
         Me.Controls.Add(Me.rdoRetail)
         Me.Controls.Add(Me.lblPrice)

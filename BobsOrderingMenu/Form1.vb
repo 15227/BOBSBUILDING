@@ -6,21 +6,29 @@
     Dim Subtotals(4, 2) As Integer
     Public FinalArray(5, 2, 4) As String
     Dim SocketCount(5, 1) As Integer
-
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblDiscount.Hide()
         Call UniqueIdentification()
         Call FinalArrayAsign()
         Call NameAssignment()
-        Call ChkValidation()
-
     End Sub
-
+    'Form adjustments.
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        Call ChkValidation()
+        'Call SocketCounter()
         Call FinalCaclulation()
         Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
     End Sub
-
-
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rdoTrade.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
+        Application.Restart()
+    End Sub
+    'Array and label assignments.
     Private Sub FinalArrayAsign()
         '
         'Room 0 Name Assignments (ß,0,0)
@@ -131,10 +139,8 @@
         cmbRm4Pnt.Text = FinalArray(5, 0, 4)
         lblPrice.Text = BasePrice.ToString
     End Sub
-
-
+    'Socket authentication.
     Public Sub SocketCounter() 'Counts all Sockets and Network Points To be called anytime a Socket Combobox is changed.
-
         'Assigns Selected Sockets for each room (ß, 0)
         SocketCount(0, 0) = Val(cmbRm0Sck.Text)
         SocketCount(1, 0) = Val(cmbRm1Sck.Text)
@@ -160,10 +166,8 @@
             MessageBox.Show("Too Many Additional Network Points Selected.")
         End If
     End Sub
-    Private Sub ChkValidation()
-        'Discount Check
-
-
+    Private Sub ChkValidation() 'Makes all checks nessicary to proceed with order.
+        'Order type Check
         If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
             TradeOrder = True
         Else
@@ -176,12 +180,11 @@
             lblDiscount.Hide()
         End If
 
-
+        'Code checks for if the TV point in the Bedrooms is selected it makes the Accompanying Living Room Option selected also.
         If chk0Rm4.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
-            FinalArray(0, 2, 4) += FinalArray(0, 1, 2) And chk0Rm2.Checked = True
+            chk0Rm2.Checked = True
         ElseIf chk1Rm4.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
-            FinalArray(1, 2, 4) += FinalArray(1, 1, 2) And chk1Rm2.Checked = True
-            FinalArray(1, 2, 3) += FinalArray(1, 2, 2) And chk1Rm2.Checked = True
+            chk1Rm2.Checked = True
         End If
 
         'Netwrk Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
@@ -273,19 +276,7 @@
         End If
     End Sub
 
-    Private Sub UniqueIdentification()
-        Call UpdateNickname()
-        UniqueId += 1 'Adds one to the current UniqueId variable.
-        lblIdentification.Text = "Identification number: " & UniqueId 'Sets the label that shows the customers identification number calculated before.
-    End Sub
-    Public Sub SubmitNickname()
-        My.Settings.CustomerId = UniqueId 'Sets the saved value in the program called CustomerId to the UniqueId Value.
-    End Sub
-    Private Sub UpdateNickname()
-        UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
-    End Sub
-
-
+    'Price caculations.
     Private Sub SubCacl()
         'Caculation for Checkboxes on Form1 (ß,0)
         For i = 0 To 4
@@ -305,10 +296,11 @@
             Subtotals(i, 2) = SocketCount(i, 1) * Val(FinalArray(5, 1, i))
         Next
     End Sub
-    Public Sub FinalCaclulation()
+    Public Sub FinalCaclulation() 'Caclulates the sum of the subtotals and then Applies the potential Trade Discount
+        Call SubCacl()
         Dim SubFinal As Integer
         For i = 0 To 4
-            SubFinal += Subtotals(i, 1) + Subtotals(i, 2) + Subtotals(i, 0)
+            SubFinal += Subtotals(i, 0) + Subtotals(i, 1) + Subtotals(i, 2)
         Next
 
 
@@ -321,17 +313,21 @@
             FinalPrice *= 0.9
         End If
         lblPrice.Text = FinalPrice.ToString
+        If rdoTrade.Checked = True Then
+            rdoRetail.Checked = False
+        End If
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        Application.Restart()
+    'Unique identification.
+    Private Sub UniqueIdentification()
+        Call UpdateNickname()
+        UniqueId += 1 'Adds one to the current UniqueId variable.
+        lblIdentification.Text = "Identification number: " & UniqueId 'Sets the label that shows the customers identification number calculated before.
     End Sub
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
-        Call ChkValidation()
-        Call TradeDiscount()
+    Public Sub SubmitNickname()
+        My.Settings.CustomerId = UniqueId 'Sets the saved value in the program called CustomerId to the UniqueId Value.
     End Sub
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rdoTrade.CheckedChanged
-        Call ChkValidation()
-        Call TradeDiscount()
+    Private Sub UpdateNickname()
+        UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
     End Sub
 End Class
