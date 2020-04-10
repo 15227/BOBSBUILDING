@@ -15,7 +15,8 @@
         Call ChkValidation()
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        Application.Restart()
+        'Application.Restart()
+        Call HexId()
     End Sub
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDiscount.Hide()
@@ -199,11 +200,11 @@
         Next
         'Additional Socket Caclulation for every Room (ß, 1)
         For i = 0 To 4
-            Subtotals(i, 1) = SocketCount(i, 0) * Val(DisplayAssignments(4, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
+            Subtotals(i, 1) = AdditionsCount(i, 0) * Val(DisplayAssignments(4, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
         Next
         'Additional Points Caclulation for every Room (ß, 2)
         For i = 0 To 4
-            Subtotals(i, 2) = SocketCount(i, 1) * Val(DisplayAssignments(5, 1, i))
+            Subtotals(i, 2) = AdditionsCount(i, 1) * Val(DisplayAssignments(5, 1, i))
         Next
     End Sub
     Public Sub FinalCaclulation() 'Caclulates the sum of the subtotals and then Applies the potential Trade Discount
@@ -315,6 +316,9 @@
         chk0Rm0.Text = DisplayAssignments(0, 0, 0)
         chk1Rm0.Text = DisplayAssignments(1, 0, 0)
         chk2Rm0.Text = DisplayAssignments(2, 0, 0)
+        rdo0Rm0.Text = DisplayAssignments(0, 0, 0)
+        rdo1Rm0.Text = DisplayAssignments(1, 0, 0)
+        rdo2Rm0.Text = DisplayAssignments(2, 0, 0)
         cmbRm0Sck.Text = DisplayAssignments(4, 0, 0)
         cmbRm0Pnt.Text = DisplayAssignments(5, 0, 0)
         chk0Rm1.Text = DisplayAssignments(0, 0, 1)
@@ -352,5 +356,12 @@
     End Sub
     Private Sub FormUpdateNickname()
         UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
+    End Sub
+    Private Sub HexId() 'Creates 6 Digit Hexadecimal System generating a number upto 1048576 only showing 6 Charcters.
+        Randomize()
+        Dim testHex As Single
+        testHex = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
+        Dim HexText As String = Hex(testHex)
+        lblIdentification.Text = "Identification number: " & HexText
     End Sub
 End Class
