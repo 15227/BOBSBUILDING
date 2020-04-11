@@ -64,8 +64,9 @@ Partial Class Form2
         Me.lblFullName.AutoSize = True
         Me.lblFullName.Location = New System.Drawing.Point(22, 9)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(0, 13)
+        Me.lblFullName.Size = New System.Drawing.Size(54, 13)
         Me.lblFullName.TabIndex = 10005
+        Me.lblFullName.Text = "Full Name"
         '
         'Form2
         '

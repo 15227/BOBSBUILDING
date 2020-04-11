@@ -1,5 +1,5 @@
 ﻿Public Class Form2
-    Dim FullName As String = frmCollection.txtNameInput.Text & " " & frmCollection.txtSurnameInput.Text
+    Dim FullName As String = frmCollection.FirstName & " " & frmCollection.Surname
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
         Application.Restart()
     End Sub

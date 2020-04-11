@@ -8,6 +8,9 @@
     Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
 
+    Public Firstname As String
+    Public Surname As String
+
     'Form checkbox interations.
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
         Call ChkValidation()
@@ -87,13 +90,27 @@
         Call FormAssignment()
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        Call NameChecking()
         Call ChkValidation()
         Call FinalCaclulation()
         Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
         Form2.Show()
     End Sub
 
-    'Socket authentication.
+    'Final authentications
+    Private Sub NameChecking()
+        If txtNameInput.Text.Length = 0 Then
+            MessageBox.Show("Enter a given name please.")
+        End If
+        If txtSurnameInput.Text.Length = 0 Then
+            MessageBox.Show("Enter a surname please.")
+        End If
+        If txtDeliveryAddress.Text.Length = 0 Then
+            MessageBox.Show("Enter a delivery address please.")
+        End If
+        Surname = Trim(txtSurnameInput.Text)
+        Firstname = Trim(txtNameInput.Text)
+    End Sub
     Private Sub OrderTyping()
         'Order type Check
         If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
@@ -178,7 +195,9 @@
     Private Sub ChkValidation() 'Validates elements nessicary to proceed with order according to Layed out Critera.
         Call OrderTyping()
         Call TVPoints()
-
+        If rdoRetail.Checked = False And rdoTrade.Checked = False Then
+            MessageBox.Show("Please enter order type.")
+        End If
         'Network Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
         If cmbRm0Pnt.Text.Length <> 0 Then
             FinalPrice += 100
@@ -488,4 +507,5 @@
         Dim HexText As String = Hex(RndNum)
         lblIdentification.Text = "Identification number: " & HexText
     End Sub
+
 End Class
