@@ -75,6 +75,16 @@ Partial Class frmCollection
         Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
         Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -285,7 +295,7 @@ Partial Class frmCollection
         Me.cmbRm0Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm0Sck.Location = New System.Drawing.Point(6, 106)
         Me.cmbRm0Sck.Name = "cmbRm0Sck"
-        Me.cmbRm0Sck.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm0Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm0Sck.TabIndex = 10
         '
         'cmbRm0Pnt
@@ -295,7 +305,7 @@ Partial Class frmCollection
         Me.cmbRm0Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm0Pnt.Location = New System.Drawing.Point(6, 133)
         Me.cmbRm0Pnt.Name = "cmbRm0Pnt"
-        Me.cmbRm0Pnt.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm0Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm0Pnt.TabIndex = 11
         '
         'cmbRm3Pnt
@@ -305,7 +315,7 @@ Partial Class frmCollection
         Me.cmbRm3Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm3Pnt.Location = New System.Drawing.Point(6, 122)
         Me.cmbRm3Pnt.Name = "cmbRm3Pnt"
-        Me.cmbRm3Pnt.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm3Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm3Pnt.TabIndex = 27
         '
         'cmbRm3Sck
@@ -315,7 +325,7 @@ Partial Class frmCollection
         Me.cmbRm3Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm3Sck.Location = New System.Drawing.Point(6, 95)
         Me.cmbRm3Sck.Name = "cmbRm3Sck"
-        Me.cmbRm3Sck.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm3Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm3Sck.TabIndex = 26
         '
         'chk2Rm3
@@ -345,7 +355,7 @@ Partial Class frmCollection
         Me.cmbRm4Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm4Pnt.Location = New System.Drawing.Point(6, 123)
         Me.cmbRm4Pnt.Name = "cmbRm4Pnt"
-        Me.cmbRm4Pnt.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm4Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm4Pnt.TabIndex = 32
         '
         'cmbRm4Sck
@@ -355,7 +365,7 @@ Partial Class frmCollection
         Me.cmbRm4Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm4Sck.Location = New System.Drawing.Point(6, 96)
         Me.cmbRm4Sck.Name = "cmbRm4Sck"
-        Me.cmbRm4Sck.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm4Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm4Sck.TabIndex = 31
         '
         'chk0Rm3
@@ -371,7 +381,7 @@ Partial Class frmCollection
         'chk2Rm4
         '
         Me.chk2Rm4.AutoSize = True
-        Me.chk2Rm4.Location = New System.Drawing.Point(15, 73)
+        Me.chk2Rm4.Location = New System.Drawing.Point(15, 68)
         Me.chk2Rm4.Name = "chk2Rm4"
         Me.chk2Rm4.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm4.TabIndex = 30
@@ -381,7 +391,7 @@ Partial Class frmCollection
         'chk1Rm4
         '
         Me.chk1Rm4.AutoSize = True
-        Me.chk1Rm4.Location = New System.Drawing.Point(15, 52)
+        Me.chk1Rm4.Location = New System.Drawing.Point(15, 47)
         Me.chk1Rm4.Name = "chk1Rm4"
         Me.chk1Rm4.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm4.TabIndex = 29
@@ -391,7 +401,7 @@ Partial Class frmCollection
         'chk0Rm4
         '
         Me.chk0Rm4.AutoSize = True
-        Me.chk0Rm4.Location = New System.Drawing.Point(15, 29)
+        Me.chk0Rm4.Location = New System.Drawing.Point(15, 24)
         Me.chk0Rm4.Name = "chk0Rm4"
         Me.chk0Rm4.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm4.TabIndex = 28
@@ -450,7 +460,7 @@ Partial Class frmCollection
         Me.cmbRm1Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm1Pnt.Location = New System.Drawing.Point(6, 117)
         Me.cmbRm1Pnt.Name = "cmbRm1Pnt"
-        Me.cmbRm1Pnt.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm1Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm1Pnt.TabIndex = 17
         '
         'cmbRm1Sck
@@ -460,13 +470,13 @@ Partial Class frmCollection
         Me.cmbRm1Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm1Sck.Location = New System.Drawing.Point(6, 91)
         Me.cmbRm1Sck.Name = "cmbRm1Sck"
-        Me.cmbRm1Sck.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm1Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm1Sck.TabIndex = 16
         '
         'chk1Rm1
         '
         Me.chk1Rm1.AutoSize = True
-        Me.chk1Rm1.Location = New System.Drawing.Point(13, 68)
+        Me.chk1Rm1.Location = New System.Drawing.Point(13, 67)
         Me.chk1Rm1.Name = "chk1Rm1"
         Me.chk1Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm1.TabIndex = 13
@@ -486,7 +496,7 @@ Partial Class frmCollection
         'chk3Rm1
         '
         Me.chk3Rm1.AutoSize = True
-        Me.chk3Rm1.Location = New System.Drawing.Point(127, 68)
+        Me.chk3Rm1.Location = New System.Drawing.Point(127, 67)
         Me.chk3Rm1.Name = "chk3Rm1"
         Me.chk3Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk3Rm1.TabIndex = 15
@@ -505,6 +515,8 @@ Partial Class frmCollection
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.chk0Rm1)
         Me.GroupBox1.Controls.Add(Me.chk3Rm1)
         Me.GroupBox1.Controls.Add(Me.chk2Rm1)
@@ -520,6 +532,8 @@ Partial Class frmCollection
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.cmbRm0Sck)
         Me.GroupBox2.Controls.Add(Me.chk2Rm0)
         Me.GroupBox2.Controls.Add(Me.chk1Rm0)
@@ -534,6 +548,8 @@ Partial Class frmCollection
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.chk0Rm3)
         Me.GroupBox4.Controls.Add(Me.cmbRm3Pnt)
         Me.GroupBox4.Controls.Add(Me.cmbRm3Sck)
@@ -548,6 +564,8 @@ Partial Class frmCollection
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label16)
+        Me.GroupBox5.Controls.Add(Me.Label15)
         Me.GroupBox5.Controls.Add(Me.chk0Rm4)
         Me.GroupBox5.Controls.Add(Me.cmbRm4Pnt)
         Me.GroupBox5.Controls.Add(Me.cmbRm4Sck)
@@ -566,9 +584,9 @@ Partial Class frmCollection
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(6, 16)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 18)
+        Me.Label4.Size = New System.Drawing.Size(89, 18)
         Me.Label4.TabIndex = 1800
-        Me.Label4.Text = " Living Room"
+        Me.Label4.Text = " Living room"
         '
         'chk1Rm2
         '
@@ -583,7 +601,7 @@ Partial Class frmCollection
         'chk2Rm2
         '
         Me.chk2Rm2.AutoSize = True
-        Me.chk2Rm2.Location = New System.Drawing.Point(9, 86)
+        Me.chk2Rm2.Location = New System.Drawing.Point(10, 86)
         Me.chk2Rm2.Name = "chk2Rm2"
         Me.chk2Rm2.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm2.TabIndex = 20
@@ -597,7 +615,7 @@ Partial Class frmCollection
         Me.cmbRm2Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm2Sck.Location = New System.Drawing.Point(9, 106)
         Me.cmbRm2Sck.Name = "cmbRm2Sck"
-        Me.cmbRm2Sck.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm2Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm2Sck.TabIndex = 21
         '
         'cmbRm2Pnt
@@ -607,13 +625,13 @@ Partial Class frmCollection
         Me.cmbRm2Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm2Pnt.Location = New System.Drawing.Point(9, 134)
         Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
-        Me.cmbRm2Pnt.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm2Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm2Pnt.TabIndex = 22
         '
         'chk0Rm2
         '
         Me.chk0Rm2.AutoSize = True
-        Me.chk0Rm2.Location = New System.Drawing.Point(10, 40)
+        Me.chk0Rm2.Location = New System.Drawing.Point(10, 41)
         Me.chk0Rm2.Name = "chk0Rm2"
         Me.chk0Rm2.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm2.TabIndex = 18
@@ -622,6 +640,8 @@ Partial Class frmCollection
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.chk0Rm2)
         Me.GroupBox3.Controls.Add(Me.cmbRm2Pnt)
         Me.GroupBox3.Controls.Add(Me.cmbRm2Sck)
@@ -633,6 +653,96 @@ Partial Class frmCollection
         Me.GroupBox3.Size = New System.Drawing.Size(226, 188)
         Me.GroupBox3.TabIndex = 10005
         Me.GroupBox3.TabStop = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(95, 109)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(39, 13)
+        Me.Label7.TabIndex = 1601
+        Me.Label7.Text = "Label7"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(95, 136)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(39, 13)
+        Me.Label8.TabIndex = 1602
+        Me.Label8.Text = "Label8"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(95, 96)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 13)
+        Me.Label9.TabIndex = 1603
+        Me.Label9.Text = "Label9"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(95, 123)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(45, 13)
+        Me.Label10.TabIndex = 1701
+        Me.Label10.Text = "Label10"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(98, 109)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.TabIndex = 1702
+        Me.Label11.Text = "Label11"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(98, 137)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.TabIndex = 1801
+        Me.Label12.Text = "Label12"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(95, 99)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(45, 13)
+        Me.Label13.TabIndex = 1802
+        Me.Label13.Text = "Label13"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(95, 126)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(45, 13)
+        Me.Label14.TabIndex = 1901
+        Me.Label14.Text = "Label14"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(95, 99)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.TabIndex = 1902
+        Me.Label15.Text = "Label15"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(95, 126)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(45, 13)
+        Me.Label16.TabIndex = 2001
+        Me.Label16.Text = "Label16"
         '
         'frmCollection
         '
@@ -733,4 +843,14 @@ Partial Class frmCollection
     Friend WithEvents cmbRm2Pnt As ComboBox
     Friend WithEvents chk0Rm2 As CheckBox
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
 End Class
