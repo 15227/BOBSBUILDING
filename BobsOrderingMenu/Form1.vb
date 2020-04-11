@@ -466,9 +466,9 @@
     End Sub
     Private Sub HexId() 'Creates 6 Digit Hexadecimal System generating a number upto 1048576 only showing 6 Charcters.
         Randomize()
-        Dim testHex As Single
-        testHex = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
-        Dim HexText As String = Hex(testHex)
+        Dim RndNum As Single
+        RndNum = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
+        Dim HexText As String = Hex(RndNum)
         lblIdentification.Text = "Identification number: " & HexText
     End Sub
 End Class
