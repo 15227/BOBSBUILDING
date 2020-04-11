@@ -1,22 +1,85 @@
 ﻿Public Class frmCollection
-    Dim UniqueId As String = My.Settings.CustomerId 'Defines variable as stored value in program.
-    Dim BasePrice As Integer = 75000
-    Public FinalPrice As Integer = BasePrice
+    'Defines variable as stored value in program.
+    Dim UniqueId As String = My.Settings.CustomerId 'Sets the Unique ID variable to that saved internaly.
+    Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
+    Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
-    Dim Subtotals(4, 2) As Integer
-    Public DisplayAssignments(5, 2, 4) As String
-    Dim AdditionsCount(5, 1) As Integer
+    Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
+    Public DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
+    Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
 
-    'Form Elements.
+
+    'Form checkbox interations.
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
         Call ChkValidation()
     End Sub
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rdoTrade.CheckedChanged
         Call ChkValidation()
     End Sub
+    Private Sub cmbRm0Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Pnt.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm1Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm1Pnt.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm2Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm2Pnt.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm3Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm3Pnt.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm4Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm4Pnt.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm0Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm1Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm2Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm3Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm4Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub cmbRm5Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk0Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm0.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk1Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm0.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk2Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm0.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk0Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm3.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk1Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm3.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk2Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm3.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk0Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm4.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk1Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm4.CheckedChanged
+        Call ChkValidation()
+    End Sub
+    Private Sub chk2Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm4.CheckedChanged
+        Call ChkValidation()
+    End Sub
+
+    'Alternate form module interactions.
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        'Application.Restart()
-        Call HexId()
+        Application.Restart()
     End Sub
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDiscount.Hide()
@@ -31,7 +94,6 @@
         Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
         Form2.Show()
     End Sub
-
 
     'Socket authentication.
     Private Sub OrderTyping()
@@ -50,13 +112,17 @@
     End Sub
     Private Sub TVPoints() 'Checks for if the TV point in the Bedrooms is selected it makes the Accompanying Living Room Option selected also.
         If chk0Rm4.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
+            chk0Rm4.Checked = True
             chk0Rm2.Checked = True
         ElseIf chk1Rm4.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
+            chk1Rm4.Checked = True
             chk1Rm2.Checked = True
         End If
         If chk0Rm3.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
+            chk0Rm3.Checked = True
             chk0Rm2.Checked = True
         ElseIf chk1Rm3.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
+            chk1Rm3.Checked = True
             chk1Rm2.Checked = True
         End If
     End Sub
@@ -92,11 +158,60 @@
             MessageBox.Show("Too Many Additional Network Points Selected.")
         End If
     End Sub
-    Private Sub ChkValidation() 'Validates Check boxes nessicary to proceed with order according to Layed out Critera.
+    Private Sub ChkValidation() 'Validates elements nessicary to proceed with order according to Layed out Critera.
         Call OrderTyping()
         Call TVPoints()
-        'Netwrk Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
+
+        'Network Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
+        If cmbRm0Pnt.Text.Length <> 0 Then
+            FinalPrice += 100
+        End If
+        If cmbRm1Pnt.Text.Length <> 0 Then
+            FinalPrice += 100
+        End If
+        If cmbRm2Pnt.Text.Length <> 0 Then
+            FinalPrice += 100
+        End If
+        If cmbRm3Pnt.Text.Length <> 0 Then
+            FinalPrice += 100
+        End If
+        If cmbRm4Pnt.Text.Length <> 0 Then
+            FinalPrice += 100
+        End If
+
         'Additional electrical sockets (1G)# #2G sockets are an extra $10 Each.
+        If cmbRm0Sck.Text.Contains("2G") Then
+            DisplayAssignments(4, 1, 0) += 10
+        End If
+        If cmbRm1Sck.Text.Contains("2G") Then
+            DisplayAssignments(4, 1, 1) += 10
+        End If
+        If cmbRm2Sck.Text.Contains("2G") Then
+            DisplayAssignments(4, 1, 2) += 10
+        End If
+        If cmbRm3Sck.Text.Contains("2G") Then
+            DisplayAssignments(4, 1, 3) += 10
+        End If
+        If cmbRm4Sck.Text.Contains("2G") Then
+            DisplayAssignments(4, 1, 4) += 10
+        End If
+
+        'Checks for Conflicting Checked Boxes.
+        If chk0Rm0.Checked = True Then
+            chk0Rm0.Checked = True
+            chk1Rm0.Checked = False
+            chk2Rm0.Checked = False
+        End If
+        If chk1Rm0.Checked = True Then
+            chk0Rm0.Checked = False
+            chk1Rm0.Checked = True
+            chk2Rm0.Checked = False
+        End If
+        If chk2Rm0.Checked = True Then
+            chk0Rm0.Checked = False
+            chk1Rm0.Checked = False
+            chk2Rm0.Checked = True
+        End If
 
         'Checkes for if the Checkboxes are Checked; if so then assgins the price to the Array so it may be added to the total price. 
         'Therefore leaving the final price 0 if Not checked so Not altering the final price..
@@ -214,20 +329,15 @@
             SubFinal += Subtotals(i, 0) + Subtotals(i, 1) + Subtotals(i, 2)
         Next
 
-
         FinalPrice += SubFinal
         Call TradeDiscount()
-
     End Sub
     Private Sub TradeDiscount()
         Dim Discount As Integer = 0.9 'This value should be the remainder of the main value.
-        If TradeOrder = True Then
-            FinalPrice *= Discount
+        If TradeOrder = True Then 'Checks Boolean for the Order type
+            FinalPrice *= Discount 'If the order is a TRADE order it assigns the Discount Integer
         End If
-        lblPrice.Text = FinalPrice.ToString
-        If rdoTrade.Checked = True Then
-            rdoRetail.Checked = False
-        End If
+        lblPrice.Text = FinalPrice.ToString 'Sets the Lable on the form to the Final Price.
     End Sub
 
     'Array and label assignments.
@@ -312,13 +422,10 @@
         DisplayAssignments(5, 1, 4) = 50
 
     End Sub
-    Public Sub FormAssignment() 'Fully Operational
+    Public Sub FormAssignment() 'Sets the values and text for the Checkboxes and Dropdowns
         chk0Rm0.Text = DisplayAssignments(0, 0, 0)
         chk1Rm0.Text = DisplayAssignments(1, 0, 0)
         chk2Rm0.Text = DisplayAssignments(2, 0, 0)
-        rdo0Rm0.Text = DisplayAssignments(0, 0, 0)
-        rdo1Rm0.Text = DisplayAssignments(1, 0, 0)
-        rdo2Rm0.Text = DisplayAssignments(2, 0, 0)
         cmbRm0Sck.Text = DisplayAssignments(4, 0, 0)
         cmbRm0Pnt.Text = DisplayAssignments(5, 0, 0)
         chk0Rm1.Text = DisplayAssignments(0, 0, 1)

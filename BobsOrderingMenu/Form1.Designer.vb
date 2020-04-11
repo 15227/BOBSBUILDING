@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCollection
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmCollection
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblIdentification = New System.Windows.Forms.Label()
@@ -72,9 +72,6 @@ Partial Class frmCollection
         Me.chk0Rm1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.rdo2Rm0 = New System.Windows.Forms.RadioButton()
-        Me.rdo1Rm0 = New System.Windows.Forms.RadioButton()
-        Me.rdo0Rm0 = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -303,7 +300,9 @@ Partial Class frmCollection
         '
         'cmbRm0Pnt
         '
+        Me.cmbRm0Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm0Pnt.FormattingEnabled = True
+        Me.cmbRm0Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm0Pnt.Location = New System.Drawing.Point(6, 133)
         Me.cmbRm0Pnt.Name = "cmbRm0Pnt"
         Me.cmbRm0Pnt.Size = New System.Drawing.Size(121, 21)
@@ -311,7 +310,9 @@ Partial Class frmCollection
         '
         'cmbRm2Pnt
         '
+        Me.cmbRm2Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm2Pnt.FormattingEnabled = True
+        Me.cmbRm2Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm2Pnt.Location = New System.Drawing.Point(9, 134)
         Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
         Me.cmbRm2Pnt.Size = New System.Drawing.Size(121, 21)
@@ -349,7 +350,9 @@ Partial Class frmCollection
         '
         'cmbRm3Pnt
         '
+        Me.cmbRm3Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm3Pnt.FormattingEnabled = True
+        Me.cmbRm3Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm3Pnt.Location = New System.Drawing.Point(6, 122)
         Me.cmbRm3Pnt.Name = "cmbRm3Pnt"
         Me.cmbRm3Pnt.Size = New System.Drawing.Size(121, 21)
@@ -397,7 +400,9 @@ Partial Class frmCollection
         '
         'cmbRm4Pnt
         '
+        Me.cmbRm4Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm4Pnt.FormattingEnabled = True
+        Me.cmbRm4Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm4Pnt.Location = New System.Drawing.Point(6, 123)
         Me.cmbRm4Pnt.Name = "cmbRm4Pnt"
         Me.cmbRm4Pnt.Size = New System.Drawing.Size(121, 21)
@@ -500,7 +505,9 @@ Partial Class frmCollection
         '
         'cmbRm1Pnt
         '
+        Me.cmbRm1Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm1Pnt.FormattingEnabled = True
+        Me.cmbRm1Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cmbRm1Pnt.Location = New System.Drawing.Point(6, 117)
         Me.cmbRm1Pnt.Name = "cmbRm1Pnt"
         Me.cmbRm1Pnt.Size = New System.Drawing.Size(121, 21)
@@ -565,7 +572,7 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(347, 81)
+        Me.GroupBox1.Location = New System.Drawing.Point(748, 93)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 156)
         Me.GroupBox1.TabIndex = 10003
@@ -573,53 +580,17 @@ Partial Class frmCollection
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.rdo2Rm0)
-        Me.GroupBox2.Controls.Add(Me.rdo1Rm0)
-        Me.GroupBox2.Controls.Add(Me.rdo0Rm0)
         Me.GroupBox2.Controls.Add(Me.cmbRm0Sck)
         Me.GroupBox2.Controls.Add(Me.chk2Rm0)
         Me.GroupBox2.Controls.Add(Me.chk1Rm0)
         Me.GroupBox2.Controls.Add(Me.chk0Rm0)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.cmbRm0Pnt)
-        Me.GroupBox2.Location = New System.Drawing.Point(614, 81)
+        Me.GroupBox2.Location = New System.Drawing.Point(347, 87)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(360, 166)
+        Me.GroupBox2.Size = New System.Drawing.Size(270, 166)
         Me.GroupBox2.TabIndex = 10004
         Me.GroupBox2.TabStop = False
-        '
-        'rdo2Rm0
-        '
-        Me.rdo2Rm0.AutoSize = True
-        Me.rdo2Rm0.Location = New System.Drawing.Point(136, 82)
-        Me.rdo2Rm0.Name = "rdo2Rm0"
-        Me.rdo2Rm0.Size = New System.Drawing.Size(90, 17)
-        Me.rdo2Rm0.TabIndex = 1603
-        Me.rdo2Rm0.TabStop = True
-        Me.rdo2Rm0.Text = "RadioButton3"
-        Me.rdo2Rm0.UseVisualStyleBackColor = True
-        '
-        'rdo1Rm0
-        '
-        Me.rdo1Rm0.AutoSize = True
-        Me.rdo1Rm0.Location = New System.Drawing.Point(136, 59)
-        Me.rdo1Rm0.Name = "rdo1Rm0"
-        Me.rdo1Rm0.Size = New System.Drawing.Size(90, 17)
-        Me.rdo1Rm0.TabIndex = 1602
-        Me.rdo1Rm0.TabStop = True
-        Me.rdo1Rm0.Text = "RadioButton2"
-        Me.rdo1Rm0.UseVisualStyleBackColor = True
-        '
-        'rdo0Rm0
-        '
-        Me.rdo0Rm0.AutoSize = True
-        Me.rdo0Rm0.Cursor = System.Windows.Forms.Cursors.Default
-        Me.rdo0Rm0.Location = New System.Drawing.Point(136, 35)
-        Me.rdo0Rm0.Name = "rdo0Rm0"
-        Me.rdo0Rm0.Size = New System.Drawing.Size(90, 17)
-        Me.rdo0Rm0.TabIndex = 1601
-        Me.rdo0Rm0.Text = "RadioButton1"
-        Me.rdo0Rm0.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -631,7 +602,7 @@ Partial Class frmCollection
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Location = New System.Drawing.Point(347, 254)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(167, 188)
+        Me.GroupBox3.Size = New System.Drawing.Size(226, 188)
         Me.GroupBox3.TabIndex = 10005
         Me.GroupBox3.TabStop = False
         '
@@ -668,7 +639,7 @@ Partial Class frmCollection
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1272, 625)
+        Me.ClientSize = New System.Drawing.Size(1087, 625)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -762,7 +733,4 @@ Partial Class frmCollection
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents rdo2Rm0 As RadioButton
-    Friend WithEvents rdo1Rm0 As RadioButton
-    Friend WithEvents rdo0Rm0 As RadioButton
 End Class
