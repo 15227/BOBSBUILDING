@@ -2,12 +2,11 @@
     'Defines variable as stored value in program.
     Dim UniqueId As String = My.Settings.CustomerId 'Sets the Unique ID variable to that saved internaly.
     Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
-    Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
-    Public DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
+    Dim DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
-
+    Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
 
     'Form checkbox interations.
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
@@ -89,7 +88,6 @@
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Call ChkValidation()
-        'Call AdditonalsCounter()
         Call FinalCaclulation()
         Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
         Form2.Show()
@@ -126,14 +124,33 @@
             chk1Rm2.Checked = True
         End If
     End Sub
-    Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points To be called anytime a Socket Combobox is changed.
+    Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array
-        AdditionsCount(0, 0) = Val(cmbRm0Sck.Text)
-        AdditionsCount(1, 0) = Val(cmbRm1Sck.Text)
-        AdditionsCount(2, 0) = Val(cmbRm2Sck.Text)
-        AdditionsCount(3, 0) = Val(cmbRm3Sck.Text)
-        AdditionsCount(4, 0) = Val(cmbRm4Sck.Text)
-
+        If cmbRm0Sck.Text.Length > 1 Then
+            AdditionsCount(0, 0) = 1
+        Else
+            AdditionsCount(0, 0) = 0
+        End If
+        If cmbRm1Sck.Text.Length > 1 Then
+            AdditionsCount(1, 0) = 1
+        Else
+            AdditionsCount(1, 0) = 0
+        End If
+        If cmbRm2Sck.Text.Length > 1 Then
+            AdditionsCount(2, 0) = 1
+        Else
+            AdditionsCount(2, 0) = 0
+        End If
+        If cmbRm3Sck.Text.Length > 1 Then
+            AdditionsCount(3, 0) = 1
+        Else
+            AdditionsCount(3, 0) = 0
+        End If
+        If cmbRm4Sck.Text.Length > 1 Then
+            AdditionsCount(4, 0) = 1
+        Else
+            AdditionsCount(4, 0) = 0
+        End If
         'Counts total number of Sockets
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
@@ -213,9 +230,9 @@
             chk2Rm0.Checked = True
         End If
 
-        'Checkes for if the Checkboxes are Checked; if so then assgins the price to the Array so it may be added to the total price. 
-        'Therefore leaving the final price 0 if Not checked so Not altering the final price..
-        'Room 0 Selection Assignments (ß,2,0)
+        'Checkes for if the Checkboxes are Checked; if so then copys the price to the Second Column so it may be added to the total price. 
+        'Therefore leaving the addition to the final price 0 if Not checked so Not altering the final price.
+        'Room 0 Selection Assignments (ß,ß,0)
         If chk0Rm0.Checked = True Then
             DisplayAssignments(0, 2, 0) = (DisplayAssignments(0, 1, 0))
         Else
@@ -231,7 +248,7 @@
         Else
             DisplayAssignments(2, 2, 0) = 0
         End If
-        'Room 1 Selection Assignments (ß,2,1)
+        'Room 1 Selection Assignments (ß,ß,1)
         If chk0Rm1.Checked = True Then
             DisplayAssignments(0, 2, 1) = DisplayAssignments(0, 1, 1)
         Else
@@ -252,7 +269,7 @@
         Else
             DisplayAssignments(3, 2, 1) = 0
         End If
-        'Room 2 Selection Assignments (ß,2, 2)
+        'Room 2 Selection Assignments (ß,ß, 2)
         If chk0Rm2.Checked = True Then
             DisplayAssignments(0, 2, 2) = (DisplayAssignments(0, 1, 2))
         Else
@@ -268,7 +285,7 @@
         Else
             DisplayAssignments(2, 2, 2) = 0
         End If
-        'Room 3 Selection Assignments (ß,2,3)
+        'Room 3 Selection Assignments (ß,ß,3)
         If chk0Rm3.Checked = True Then
             DisplayAssignments(0, 2, 3) = (DisplayAssignments(0, 1, 3))
         Else
@@ -284,7 +301,7 @@
         Else
             DisplayAssignments(2, 2, 3) = 0
         End If
-        'Room 4 Selection Assignments (ß,2,4)
+        'Room 4 Selection Assignments (ß,ß,4)
         If chk0Rm4.Checked = True Then
             DisplayAssignments(0, 2, 4) = (DisplayAssignments(0, 1, 4))
         Else
@@ -304,15 +321,15 @@
 
     'Price caculations.
     Private Sub SubCacl()
-        'Caculation for Checkboxes on Form1 (ß,0)
+        'Caculation for Checkboxes on Rm 0 through 4 (ß,0)
         For i = 0 To 4
-            Subtotals(0, 0) += Val(DisplayAssignments(i, 2, 0)) 'Final Price after if Statments.
+            Subtotals(0, 0) += Val(DisplayAssignments(i, 2, 0))
             Subtotals(1, 0) += Val(DisplayAssignments(i, 2, 1))
             Subtotals(2, 0) += Val(DisplayAssignments(i, 2, 2))
             Subtotals(3, 0) += Val(DisplayAssignments(i, 2, 3))
             Subtotals(4, 0) += Val(DisplayAssignments(i, 2, 4))
-
         Next
+        Call AdditonalsCounter()
         'Additional Socket Caclulation for every Room (ß, 1)
         For i = 0 To 4
             Subtotals(i, 1) = AdditionsCount(i, 0) * Val(DisplayAssignments(4, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.

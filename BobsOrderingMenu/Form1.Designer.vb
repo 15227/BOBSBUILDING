@@ -292,7 +292,7 @@ Partial Class frmCollection
         '
         Me.cmbRm0Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm0Sck.FormattingEnabled = True
-        Me.cmbRm0Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm0Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm0Sck.Location = New System.Drawing.Point(6, 106)
         Me.cmbRm0Sck.Name = "cmbRm0Sck"
         Me.cmbRm0Sck.Size = New System.Drawing.Size(121, 21)
@@ -322,7 +322,7 @@ Partial Class frmCollection
         '
         Me.cmbRm2Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm2Sck.FormattingEnabled = True
-        Me.cmbRm2Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm2Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm2Sck.Location = New System.Drawing.Point(9, 106)
         Me.cmbRm2Sck.Name = "cmbRm2Sck"
         Me.cmbRm2Sck.Size = New System.Drawing.Size(121, 21)
@@ -362,7 +362,7 @@ Partial Class frmCollection
         '
         Me.cmbRm3Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm3Sck.FormattingEnabled = True
-        Me.cmbRm3Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm3Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm3Sck.Location = New System.Drawing.Point(6, 95)
         Me.cmbRm3Sck.Name = "cmbRm3Sck"
         Me.cmbRm3Sck.Size = New System.Drawing.Size(121, 21)
@@ -412,7 +412,7 @@ Partial Class frmCollection
         '
         Me.cmbRm4Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm4Sck.FormattingEnabled = True
-        Me.cmbRm4Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm4Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm4Sck.Location = New System.Drawing.Point(6, 96)
         Me.cmbRm4Sck.Name = "cmbRm4Sck"
         Me.cmbRm4Sck.Size = New System.Drawing.Size(121, 21)
@@ -517,7 +517,7 @@ Partial Class frmCollection
         '
         Me.cmbRm1Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm1Sck.FormattingEnabled = True
-        Me.cmbRm1Sck.Items.AddRange(New Object() {"-", "1(2G)", "2(2G)", "3(2G)", "4(2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm1Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm1Sck.Location = New System.Drawing.Point(6, 91)
         Me.cmbRm1Sck.Name = "cmbRm1Sck"
         Me.cmbRm1Sck.Size = New System.Drawing.Size(121, 21)
@@ -572,7 +572,7 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(748, 93)
+        Me.GroupBox1.Location = New System.Drawing.Point(748, 97)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 156)
         Me.GroupBox1.TabIndex = 10003
