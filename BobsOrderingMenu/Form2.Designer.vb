@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class frmRecipt
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -69,7 +69,7 @@ Partial Class Form2
         Me.lblFullName.TabIndex = 10005
         Me.lblFullName.Text = "Full Name"
         '
-        'Form2
+        'frmRecipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -78,8 +78,7 @@ Partial Class Form2
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.lblPrice)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.Name = "frmRecipt"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

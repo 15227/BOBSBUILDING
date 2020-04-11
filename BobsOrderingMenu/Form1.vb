@@ -81,8 +81,7 @@
 
     'Alternate form module interactions.
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        'Application.Restart()
-        MessageBox.Show(cmbRm0Sck.Text.Chars(0).ToString)
+        Application.Restart()
     End Sub
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDiscount.Hide()
@@ -95,7 +94,7 @@
         Call ChkValidation()
         Call FinalCaclulation()
         Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
-        Form2.Show()
+        frmRecipt.Show()
     End Sub
 
     'Final authentications
@@ -106,6 +105,7 @@
             MessageBox.Show("Enter a VALID given name please.")
         ElseIf IsNumeric(Firstname) Then
             MessageBox.Show("Enter a VALID given name please.")
+        ElseIf Firstname.Contains Then
         End If
         If Surname.Length = 0 Then
             MessageBox.Show("Enter a VALID surname please.")
@@ -491,6 +491,7 @@
         RndNum = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
         Dim HexText As String = Hex(RndNum)
         lblIdentification.Text = "Identification number: " & HexText
-    End Sub
 
+        'PERHAPS USE Pg 212 within VB_NET_BOOK.pdf FOR READING EACH LINE TO CHECK FOR PRIOR INSTANCES WHEN SAVED TO TXT FILE.
+    End Sub
 End Class

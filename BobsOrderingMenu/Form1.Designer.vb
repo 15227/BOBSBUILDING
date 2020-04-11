@@ -98,7 +98,7 @@ Partial Class frmCollection
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblTitle.Location = New System.Drawing.Point(27, 254)
+        Me.lblTitle.Location = New System.Drawing.Point(27, 244)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(163, 20)
         Me.lblTitle.TabIndex = 0
@@ -141,7 +141,7 @@ Partial Class frmCollection
         'txtNameInput
         '
         Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNameInput.Location = New System.Drawing.Point(137, 300)
+        Me.txtNameInput.Location = New System.Drawing.Point(137, 276)
         Me.txtNameInput.Name = "txtNameInput"
         Me.txtNameInput.Size = New System.Drawing.Size(107, 24)
         Me.txtNameInput.TabIndex = 1
@@ -149,19 +149,19 @@ Partial Class frmCollection
         'txtDeliveryAddress
         '
         Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 370)
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 421)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
-        Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 54)
+        Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 71)
         Me.txtDeliveryAddress.TabIndex = 3
         '
         'txtCustomerAddress
         '
         Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 426)
+        Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 342)
         Me.txtCustomerAddress.Multiline = True
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
-        Me.txtCustomerAddress.Size = New System.Drawing.Size(107, 66)
+        Me.txtCustomerAddress.Size = New System.Drawing.Size(107, 73)
         Me.txtCustomerAddress.TabIndex = 4
         '
         'lblDiscount
@@ -192,7 +192,7 @@ Partial Class frmCollection
         Me.lblNameInput.AutoSize = True
         Me.lblNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.lblNameInput.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblNameInput.Location = New System.Drawing.Point(45, 305)
+        Me.lblNameInput.Location = New System.Drawing.Point(45, 281)
         Me.lblNameInput.Name = "lblNameInput"
         Me.lblNameInput.Size = New System.Drawing.Size(86, 17)
         Me.lblNameInput.TabIndex = 1100
@@ -203,7 +203,7 @@ Partial Class frmCollection
         Me.lblDeliveryAddress.AutoSize = True
         Me.lblDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.lblDeliveryAddress.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblDeliveryAddress.Location = New System.Drawing.Point(16, 370)
+        Me.lblDeliveryAddress.Location = New System.Drawing.Point(16, 366)
         Me.lblDeliveryAddress.Name = "lblDeliveryAddress"
         Me.lblDeliveryAddress.Size = New System.Drawing.Size(115, 17)
         Me.lblDeliveryAddress.TabIndex = 1200
@@ -225,7 +225,7 @@ Partial Class frmCollection
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label1.Location = New System.Drawing.Point(66, 338)
+        Me.Label1.Location = New System.Drawing.Point(66, 314)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 17)
         Me.Label1.TabIndex = 1500
@@ -234,7 +234,7 @@ Partial Class frmCollection
         'txtSurnameInput
         '
         Me.txtSurnameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSurnameInput.Location = New System.Drawing.Point(137, 336)
+        Me.txtSurnameInput.Location = New System.Drawing.Point(137, 312)
         Me.txtSurnameInput.Name = "txtSurnameInput"
         Me.txtSurnameInput.Size = New System.Drawing.Size(107, 24)
         Me.txtSurnameInput.TabIndex = 2
@@ -541,7 +541,7 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(652, 99)
+        Me.GroupBox1.Location = New System.Drawing.Point(652, 69)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 156)
         Me.GroupBox1.TabIndex = 10003
@@ -575,7 +575,7 @@ Partial Class frmCollection
         Me.GroupBox0.Controls.Add(Me.chk0Rm0)
         Me.GroupBox0.Controls.Add(Me.Label2)
         Me.GroupBox0.Controls.Add(Me.cmbRm0Pnt)
-        Me.GroupBox0.Location = New System.Drawing.Point(417, 89)
+        Me.GroupBox0.Location = New System.Drawing.Point(417, 59)
         Me.GroupBox0.Name = "GroupBox0"
         Me.GroupBox0.Size = New System.Drawing.Size(226, 166)
         Me.GroupBox0.TabIndex = 10004
@@ -609,7 +609,7 @@ Partial Class frmCollection
         Me.GroupBox3.Controls.Add(Me.chk2Rm3)
         Me.GroupBox3.Controls.Add(Me.chk1Rm3)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(557, 277)
+        Me.GroupBox3.Location = New System.Drawing.Point(557, 276)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(226, 165)
         Me.GroupBox3.TabIndex = 10006
@@ -643,7 +643,7 @@ Partial Class frmCollection
         Me.GroupBox4.Controls.Add(Me.chk2Rm4)
         Me.GroupBox4.Controls.Add(Me.chk1Rm4)
         Me.GroupBox4.Controls.Add(Me.Label6)
-        Me.GroupBox4.Location = New System.Drawing.Point(798, 277)
+        Me.GroupBox4.Location = New System.Drawing.Point(798, 276)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(226, 166)
         Me.GroupBox4.TabIndex = 10007
@@ -738,7 +738,7 @@ Partial Class frmCollection
         Me.GroupBox2.Controls.Add(Me.chk2Rm2)
         Me.GroupBox2.Controls.Add(Me.chk1Rm2)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Location = New System.Drawing.Point(325, 277)
+        Me.GroupBox2.Location = New System.Drawing.Point(325, 276)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(226, 165)
         Me.GroupBox2.TabIndex = 10005
