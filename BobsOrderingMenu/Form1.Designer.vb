@@ -35,9 +35,8 @@ Partial Class frmCollection
         Me.lblDeliveryAddress = New System.Windows.Forms.Label()
         Me.lblCustomerAddress = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSurnameInput = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.chk0Rm0 = New System.Windows.Forms.CheckBox()
@@ -45,13 +44,8 @@ Partial Class frmCollection
         Me.chk2Rm0 = New System.Windows.Forms.CheckBox()
         Me.cmbRm0Sck = New System.Windows.Forms.ComboBox()
         Me.cmbRm0Pnt = New System.Windows.Forms.ComboBox()
-        Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
-        Me.cmbRm2Sck = New System.Windows.Forms.ComboBox()
-        Me.chk2Rm2 = New System.Windows.Forms.CheckBox()
-        Me.chk1Rm2 = New System.Windows.Forms.CheckBox()
         Me.cmbRm3Pnt = New System.Windows.Forms.ComboBox()
         Me.cmbRm3Sck = New System.Windows.Forms.ComboBox()
-        Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
         Me.chk2Rm3 = New System.Windows.Forms.CheckBox()
         Me.chk1Rm3 = New System.Windows.Forms.CheckBox()
         Me.cmbRm4Pnt = New System.Windows.Forms.ComboBox()
@@ -72,15 +66,21 @@ Partial Class frmCollection
         Me.chk0Rm1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.chk1Rm2 = New System.Windows.Forms.CheckBox()
+        Me.chk2Rm2 = New System.Windows.Forms.CheckBox()
+        Me.cmbRm2Sck = New System.Windows.Forms.ComboBox()
+        Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
+        Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -111,7 +111,7 @@ Partial Class frmCollection
         Me.pbxLogo.Image = Global.BobsOrderingMenu.My.Resources.Resources.logo_transparent
         Me.pbxLogo.Location = New System.Drawing.Point(12, 57)
         Me.pbxLogo.Name = "pbxLogo"
-        Me.pbxLogo.Size = New System.Drawing.Size(312, 168)
+        Me.pbxLogo.Size = New System.Drawing.Size(225, 168)
         Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxLogo.TabIndex = 2
         Me.pbxLogo.TabStop = False
@@ -119,7 +119,7 @@ Partial Class frmCollection
         'btnNext
         '
         Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext.Location = New System.Drawing.Point(347, 523)
+        Me.btnNext.Location = New System.Drawing.Point(325, 520)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(98, 55)
         Me.btnNext.TabIndex = 300
@@ -154,7 +154,7 @@ Partial Class frmCollection
         '
         Me.lblDiscount.AutoSize = True
         Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDiscount.Location = New System.Drawing.Point(161, 471)
+        Me.lblDiscount.Location = New System.Drawing.Point(129, 472)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.Size = New System.Drawing.Size(108, 20)
         Me.lblDiscount.TabIndex = 900
@@ -163,7 +163,7 @@ Partial Class frmCollection
         'btnRestart
         '
         Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestart.Location = New System.Drawing.Point(475, 523)
+        Me.btnRestart.Location = New System.Drawing.Point(453, 520)
         Me.btnRestart.Name = "btnRestart"
         Me.btnRestart.Size = New System.Drawing.Size(98, 55)
         Me.btnRestart.TabIndex = 1000
@@ -210,13 +210,13 @@ Partial Class frmCollection
         Me.Label1.TabIndex = 1500
         Me.Label1.Text = "Surname"
         '
-        'TextBox1
+        'txtSurnameInput
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(137, 336)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.txtSurnameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSurnameInput.Location = New System.Drawing.Point(137, 336)
+        Me.txtSurnameInput.Name = "txtSurnameInput"
+        Me.txtSurnameInput.Size = New System.Drawing.Size(100, 22)
+        Me.txtSurnameInput.TabIndex = 2
         '
         'Label2
         '
@@ -227,16 +227,6 @@ Partial Class frmCollection
         Me.Label2.Size = New System.Drawing.Size(57, 18)
         Me.Label2.TabIndex = 1600
         Me.Label2.Text = "Kitchen"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 18)
-        Me.Label4.TabIndex = 1800
-        Me.Label4.Text = " Living Room"
         '
         'Label5
         '
@@ -308,46 +298,6 @@ Partial Class frmCollection
         Me.cmbRm0Pnt.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm0Pnt.TabIndex = 11
         '
-        'cmbRm2Pnt
-        '
-        Me.cmbRm2Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm2Pnt.FormattingEnabled = True
-        Me.cmbRm2Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.cmbRm2Pnt.Location = New System.Drawing.Point(9, 134)
-        Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
-        Me.cmbRm2Pnt.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm2Pnt.TabIndex = 22
-        '
-        'cmbRm2Sck
-        '
-        Me.cmbRm2Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm2Sck.FormattingEnabled = True
-        Me.cmbRm2Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm2Sck.Location = New System.Drawing.Point(9, 106)
-        Me.cmbRm2Sck.Name = "cmbRm2Sck"
-        Me.cmbRm2Sck.Size = New System.Drawing.Size(121, 21)
-        Me.cmbRm2Sck.TabIndex = 21
-        '
-        'chk2Rm2
-        '
-        Me.chk2Rm2.AutoSize = True
-        Me.chk2Rm2.Location = New System.Drawing.Point(9, 86)
-        Me.chk2Rm2.Name = "chk2Rm2"
-        Me.chk2Rm2.Size = New System.Drawing.Size(29, 17)
-        Me.chk2Rm2.TabIndex = 20
-        Me.chk2Rm2.Text = " "
-        Me.chk2Rm2.UseVisualStyleBackColor = True
-        '
-        'chk1Rm2
-        '
-        Me.chk1Rm2.AutoSize = True
-        Me.chk1Rm2.Location = New System.Drawing.Point(10, 63)
-        Me.chk1Rm2.Name = "chk1Rm2"
-        Me.chk1Rm2.Size = New System.Drawing.Size(29, 17)
-        Me.chk1Rm2.TabIndex = 19
-        Me.chk1Rm2.Text = " "
-        Me.chk1Rm2.UseVisualStyleBackColor = True
-        '
         'cmbRm3Pnt
         '
         Me.cmbRm3Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -367,16 +317,6 @@ Partial Class frmCollection
         Me.cmbRm3Sck.Name = "cmbRm3Sck"
         Me.cmbRm3Sck.Size = New System.Drawing.Size(121, 21)
         Me.cmbRm3Sck.TabIndex = 26
-        '
-        'chk0Rm2
-        '
-        Me.chk0Rm2.AutoSize = True
-        Me.chk0Rm2.Location = New System.Drawing.Point(10, 40)
-        Me.chk0Rm2.Name = "chk0Rm2"
-        Me.chk0Rm2.Size = New System.Drawing.Size(29, 17)
-        Me.chk0Rm2.TabIndex = 18
-        Me.chk0Rm2.Text = " "
-        Me.chk0Rm2.UseVisualStyleBackColor = True
         '
         'chk2Rm3
         '
@@ -463,7 +403,7 @@ Partial Class frmCollection
         Me.lblPrice.AutoSize = True
         Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblPrice.Location = New System.Drawing.Point(141, 558)
+        Me.lblPrice.Location = New System.Drawing.Point(112, 558)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(125, 36)
         Me.lblPrice.TabIndex = 10001
@@ -473,7 +413,7 @@ Partial Class frmCollection
         '
         Me.rdoRetail.AutoSize = True
         Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoRetail.Location = New System.Drawing.Point(87, 446)
+        Me.rdoRetail.Location = New System.Drawing.Point(55, 447)
         Me.rdoRetail.Name = "rdoRetail"
         Me.rdoRetail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoRetail.Size = New System.Drawing.Size(68, 24)
@@ -485,7 +425,7 @@ Partial Class frmCollection
         '
         Me.rdoTrade.AutoSize = True
         Me.rdoTrade.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoTrade.Location = New System.Drawing.Point(87, 469)
+        Me.rdoTrade.Location = New System.Drawing.Point(55, 470)
         Me.rdoTrade.Name = "rdoTrade"
         Me.rdoTrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoTrade.Size = New System.Drawing.Size(68, 24)
@@ -572,7 +512,7 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(748, 97)
+        Me.GroupBox1.Location = New System.Drawing.Point(614, 93)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 156)
         Me.GroupBox1.TabIndex = 10003
@@ -586,25 +526,11 @@ Partial Class frmCollection
         Me.GroupBox2.Controls.Add(Me.chk0Rm0)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.cmbRm0Pnt)
-        Me.GroupBox2.Location = New System.Drawing.Point(347, 87)
+        Me.GroupBox2.Location = New System.Drawing.Point(325, 83)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(270, 166)
         Me.GroupBox2.TabIndex = 10004
         Me.GroupBox2.TabStop = False
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.chk0Rm2)
-        Me.GroupBox3.Controls.Add(Me.cmbRm2Pnt)
-        Me.GroupBox3.Controls.Add(Me.cmbRm2Sck)
-        Me.GroupBox3.Controls.Add(Me.chk2Rm2)
-        Me.GroupBox3.Controls.Add(Me.chk1Rm2)
-        Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Location = New System.Drawing.Point(347, 254)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(226, 188)
-        Me.GroupBox3.TabIndex = 10005
-        Me.GroupBox3.TabStop = False
         '
         'GroupBox4
         '
@@ -614,7 +540,7 @@ Partial Class frmCollection
         Me.GroupBox4.Controls.Add(Me.chk2Rm3)
         Me.GroupBox4.Controls.Add(Me.chk1Rm3)
         Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Location = New System.Drawing.Point(614, 255)
+        Me.GroupBox4.Location = New System.Drawing.Point(614, 259)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(156, 154)
         Me.GroupBox4.TabIndex = 10006
@@ -628,11 +554,85 @@ Partial Class frmCollection
         Me.GroupBox5.Controls.Add(Me.chk2Rm4)
         Me.GroupBox5.Controls.Add(Me.chk1Rm4)
         Me.GroupBox5.Controls.Add(Me.Label6)
-        Me.GroupBox5.Location = New System.Drawing.Point(796, 254)
+        Me.GroupBox5.Location = New System.Drawing.Point(776, 259)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(178, 155)
         Me.GroupBox5.TabIndex = 10007
         Me.GroupBox5.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(95, 18)
+        Me.Label4.TabIndex = 1800
+        Me.Label4.Text = " Living Room"
+        '
+        'chk1Rm2
+        '
+        Me.chk1Rm2.AutoSize = True
+        Me.chk1Rm2.Location = New System.Drawing.Point(10, 63)
+        Me.chk1Rm2.Name = "chk1Rm2"
+        Me.chk1Rm2.Size = New System.Drawing.Size(29, 17)
+        Me.chk1Rm2.TabIndex = 19
+        Me.chk1Rm2.Text = " "
+        Me.chk1Rm2.UseVisualStyleBackColor = True
+        '
+        'chk2Rm2
+        '
+        Me.chk2Rm2.AutoSize = True
+        Me.chk2Rm2.Location = New System.Drawing.Point(9, 86)
+        Me.chk2Rm2.Name = "chk2Rm2"
+        Me.chk2Rm2.Size = New System.Drawing.Size(29, 17)
+        Me.chk2Rm2.TabIndex = 20
+        Me.chk2Rm2.Text = " "
+        Me.chk2Rm2.UseVisualStyleBackColor = True
+        '
+        'cmbRm2Sck
+        '
+        Me.cmbRm2Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm2Sck.FormattingEnabled = True
+        Me.cmbRm2Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm2Sck.Location = New System.Drawing.Point(9, 106)
+        Me.cmbRm2Sck.Name = "cmbRm2Sck"
+        Me.cmbRm2Sck.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm2Sck.TabIndex = 21
+        '
+        'cmbRm2Pnt
+        '
+        Me.cmbRm2Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm2Pnt.FormattingEnabled = True
+        Me.cmbRm2Pnt.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.cmbRm2Pnt.Location = New System.Drawing.Point(9, 134)
+        Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
+        Me.cmbRm2Pnt.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRm2Pnt.TabIndex = 22
+        '
+        'chk0Rm2
+        '
+        Me.chk0Rm2.AutoSize = True
+        Me.chk0Rm2.Location = New System.Drawing.Point(10, 40)
+        Me.chk0Rm2.Name = "chk0Rm2"
+        Me.chk0Rm2.Size = New System.Drawing.Size(29, 17)
+        Me.chk0Rm2.TabIndex = 18
+        Me.chk0Rm2.Text = " "
+        Me.chk0Rm2.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.chk0Rm2)
+        Me.GroupBox3.Controls.Add(Me.cmbRm2Pnt)
+        Me.GroupBox3.Controls.Add(Me.cmbRm2Sck)
+        Me.GroupBox3.Controls.Add(Me.chk2Rm2)
+        Me.GroupBox3.Controls.Add(Me.chk1Rm2)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Location = New System.Drawing.Point(325, 259)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(226, 188)
+        Me.GroupBox3.TabIndex = 10005
+        Me.GroupBox3.TabStop = False
         '
         'frmCollection
         '
@@ -647,7 +647,7 @@ Partial Class frmCollection
         Me.Controls.Add(Me.rdoRetail)
         Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtSurnameInput)
         Me.Controls.Add(Me.lblCustomerAddress)
         Me.Controls.Add(Me.lblDeliveryAddress)
         Me.Controls.Add(Me.lblNameInput)
@@ -669,12 +669,12 @@ Partial Class frmCollection
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -693,9 +693,8 @@ Partial Class frmCollection
     Friend WithEvents lblDeliveryAddress As Label
     Friend WithEvents lblCustomerAddress As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSurnameInput As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents chk0Rm0 As CheckBox
@@ -703,13 +702,8 @@ Partial Class frmCollection
     Friend WithEvents chk2Rm0 As CheckBox
     Friend WithEvents cmbRm0Sck As ComboBox
     Friend WithEvents cmbRm0Pnt As ComboBox
-    Friend WithEvents cmbRm2Pnt As ComboBox
-    Friend WithEvents cmbRm2Sck As ComboBox
-    Friend WithEvents chk2Rm2 As CheckBox
-    Friend WithEvents chk1Rm2 As CheckBox
     Friend WithEvents cmbRm3Pnt As ComboBox
     Friend WithEvents cmbRm3Sck As ComboBox
-    Friend WithEvents chk0Rm2 As CheckBox
     Friend WithEvents chk2Rm3 As CheckBox
     Friend WithEvents chk1Rm3 As CheckBox
     Friend WithEvents cmbRm4Pnt As ComboBox
@@ -730,7 +724,13 @@ Partial Class frmCollection
     Friend WithEvents chk0Rm1 As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents chk1Rm2 As CheckBox
+    Friend WithEvents chk2Rm2 As CheckBox
+    Friend WithEvents cmbRm2Sck As ComboBox
+    Friend WithEvents cmbRm2Pnt As ComboBox
+    Friend WithEvents chk0Rm2 As CheckBox
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

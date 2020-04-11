@@ -25,6 +25,7 @@ Partial Class Form2
         Me.lblPrice = New System.Windows.Forms.Label()
         Me.btnRestart = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblFullName = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblPrice
@@ -32,7 +33,7 @@ Partial Class Form2
         Me.lblPrice.AutoSize = True
         Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblPrice.Location = New System.Drawing.Point(240, 105)
+        Me.lblPrice.Location = New System.Drawing.Point(342, 344)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(96, 36)
         Me.lblPrice.TabIndex = 10002
@@ -41,7 +42,7 @@ Partial Class Form2
         'btnRestart
         '
         Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestart.Location = New System.Drawing.Point(435, 193)
+        Me.btnRestart.Location = New System.Drawing.Point(433, 383)
         Me.btnRestart.Name = "btnRestart"
         Me.btnRestart.Size = New System.Drawing.Size(321, 55)
         Me.btnRestart.TabIndex = 10003
@@ -51,18 +52,27 @@ Partial Class Form2
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(27, 193)
+        Me.Button1.Location = New System.Drawing.Point(25, 383)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(321, 55)
         Me.Button1.TabIndex = 10004
         Me.Button1.Text = "Done"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'lblFullName
+        '
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.Location = New System.Drawing.Point(22, 9)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(0, 13)
+        Me.lblFullName.TabIndex = 10005
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.lblPrice)
@@ -76,4 +86,5 @@ Partial Class Form2
     Friend WithEvents lblPrice As Label
     Friend WithEvents btnRestart As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents lblFullName As Label
 End Class

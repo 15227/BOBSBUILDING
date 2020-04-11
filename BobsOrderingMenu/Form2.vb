@@ -1,4 +1,5 @@
 ﻿Public Class Form2
+    Dim FullName As String = frmCollection.txtNameInput.Text & " " & frmCollection.txtSurnameInput.Text
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
         Application.Restart()
     End Sub
@@ -10,5 +11,6 @@
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmCollection.Hide()
         lblPrice.Text = Val(frmCollection.FinalPrice).ToString()
+        lblFullName.Text = FullName
     End Sub
 End Class
