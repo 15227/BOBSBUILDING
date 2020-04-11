@@ -81,7 +81,8 @@
 
     'Alternate form module interactions.
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        Application.Restart()
+        'Application.Restart()
+        MessageBox.Show(cmbRm0Sck.Text.Chars(0).ToString)
     End Sub
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDiscount.Hide()
@@ -99,17 +100,22 @@
 
     'Final authentications
     Private Sub NameChecking()
-        If txtNameInput.Text.Length = 0 Then
-            MessageBox.Show("Enter a given name please.")
-        End If
-        If txtSurnameInput.Text.Length = 0 Then
-            MessageBox.Show("Enter a surname please.")
-        End If
-        If txtDeliveryAddress.Text.Length = 0 Then
-            MessageBox.Show("Enter a delivery address please.")
-        End If
         Surname = Trim(txtSurnameInput.Text)
         Firstname = Trim(txtNameInput.Text)
+        If Firstname.Length = 0 Then
+            MessageBox.Show("Enter a VALID given name please.")
+        ElseIf IsNumeric(Firstname) Then
+            MessageBox.Show("Enter a VALID given name please.")
+        End If
+        If Surname.Length = 0 Then
+            MessageBox.Show("Enter a VALID surname please.")
+        ElseIf IsNumeric(Surname) Then
+            MessageBox.Show("Enter a VALID surname please.")
+        End If
+        If txtDeliveryAddress.Text.Length = 0 Then
+            MessageBox.Show("Enter a VALID delivery address please.")
+        End If
+
     End Sub
     Private Sub OrderTyping()
         'Order type Check
@@ -143,31 +149,11 @@
     End Sub
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array
-        If cmbRm0Sck.Text.Length > 1 Then
-            AdditionsCount(0, 0) = 1
-        Else
-            AdditionsCount(0, 0) = 0
-        End If
-        If cmbRm1Sck.Text.Length > 1 Then
-            AdditionsCount(1, 0) = 1
-        Else
-            AdditionsCount(1, 0) = 0
-        End If
-        If cmbRm2Sck.Text.Length > 1 Then
-            AdditionsCount(2, 0) = 1
-        Else
-            AdditionsCount(2, 0) = 0
-        End If
-        If cmbRm3Sck.Text.Length > 1 Then
-            AdditionsCount(3, 0) = 1
-        Else
-            AdditionsCount(3, 0) = 0
-        End If
-        If cmbRm4Sck.Text.Length > 1 Then
-            AdditionsCount(4, 0) = 1
-        Else
-            AdditionsCount(4, 0) = 0
-        End If
+        AdditionsCount(0, 0) = Val(cmbRm0Sck.Text.Chars(0))
+        AdditionsCount(1, 0) = Val(cmbRm0Sck.Text.Chars(1))
+        AdditionsCount(2, 0) = Val(cmbRm0Sck.Text.Chars(2))
+        AdditionsCount(3, 0) = Val(cmbRm0Sck.Text.Chars(3))
+        AdditionsCount(4, 0) = Val(cmbRm0Sck.Text.Chars(4))
         'Counts total number of Sockets
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
@@ -183,7 +169,6 @@
         AdditionsCount(2, 1) = Val(cmbRm2Pnt.Text)
         AdditionsCount(3, 1) = Val(cmbRm3Pnt.Text)
         AdditionsCount(4, 1) = Val(cmbRm4Pnt.Text)
-
         'Counts total number of Network Points
         For i = 0 To 4
             AdditionsCount(5, 1) += AdditionsCount(i, 1)

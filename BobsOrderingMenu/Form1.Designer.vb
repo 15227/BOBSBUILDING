@@ -65,9 +65,17 @@ Partial Class frmCollection
         Me.chk3Rm1 = New System.Windows.Forms.CheckBox()
         Me.chk0Rm1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblRm1Pnt = New System.Windows.Forms.Label()
+        Me.lblRm1Sck = New System.Windows.Forms.Label()
         Me.GroupBox0 = New System.Windows.Forms.GroupBox()
+        Me.lblRm0Pnt = New System.Windows.Forms.Label()
+        Me.lblRm0Sck = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lblRm3Pnt = New System.Windows.Forms.Label()
+        Me.lblRm3Sck = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.lblRm4Pnt = New System.Windows.Forms.Label()
+        Me.lblRm4Sck = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.chk1Rm2 = New System.Windows.Forms.CheckBox()
         Me.chk2Rm2 = New System.Windows.Forms.CheckBox()
@@ -75,16 +83,8 @@ Partial Class frmCollection
         Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
         Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.lblRm0Sck = New System.Windows.Forms.Label()
-        Me.lblRm0Pnt = New System.Windows.Forms.Label()
-        Me.lblRm1Sck = New System.Windows.Forms.Label()
-        Me.lblRm1Pnt = New System.Windows.Forms.Label()
-        Me.lblRm2Sck = New System.Windows.Forms.Label()
         Me.lblRm2Pnt = New System.Windows.Forms.Label()
-        Me.lblRm3Sck = New System.Windows.Forms.Label()
-        Me.lblRm3Pnt = New System.Windows.Forms.Label()
-        Me.lblRm4Sck = New System.Windows.Forms.Label()
-        Me.lblRm4Pnt = New System.Windows.Forms.Label()
+        Me.lblRm2Sck = New System.Windows.Forms.Label()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox0.SuspendLayout()
@@ -149,7 +149,7 @@ Partial Class frmCollection
         'txtDeliveryAddress
         '
         Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 366)
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 370)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 54)
@@ -158,7 +158,7 @@ Partial Class frmCollection
         'txtCustomerAddress
         '
         Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCustomerAddress.Location = New System.Drawing.Point(135, 426)
+        Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 426)
         Me.txtCustomerAddress.Multiline = True
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
         Me.txtCustomerAddress.Size = New System.Drawing.Size(107, 66)
@@ -169,7 +169,7 @@ Partial Class frmCollection
         Me.lblDiscount.AutoSize = True
         Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
         Me.lblDiscount.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblDiscount.Location = New System.Drawing.Point(137, 495)
+        Me.lblDiscount.Location = New System.Drawing.Point(137, 497)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.Size = New System.Drawing.Size(107, 17)
         Me.lblDiscount.TabIndex = 900
@@ -547,6 +547,24 @@ Partial Class frmCollection
         Me.GroupBox1.TabIndex = 10003
         Me.GroupBox1.TabStop = False
         '
+        'lblRm1Pnt
+        '
+        Me.lblRm1Pnt.AutoSize = True
+        Me.lblRm1Pnt.Location = New System.Drawing.Point(95, 123)
+        Me.lblRm1Pnt.Name = "lblRm1Pnt"
+        Me.lblRm1Pnt.Size = New System.Drawing.Size(128, 13)
+        Me.lblRm1Pnt.TabIndex = 1701
+        Me.lblRm1Pnt.Text = "Additional Network Points"
+        '
+        'lblRm1Sck
+        '
+        Me.lblRm1Sck.AutoSize = True
+        Me.lblRm1Sck.Location = New System.Drawing.Point(95, 96)
+        Me.lblRm1Sck.Name = "lblRm1Sck"
+        Me.lblRm1Sck.Size = New System.Drawing.Size(95, 13)
+        Me.lblRm1Sck.TabIndex = 1603
+        Me.lblRm1Sck.Text = "Additional Sockets"
+        '
         'GroupBox0
         '
         Me.GroupBox0.Controls.Add(Me.lblRm0Pnt)
@@ -562,6 +580,24 @@ Partial Class frmCollection
         Me.GroupBox0.Size = New System.Drawing.Size(226, 166)
         Me.GroupBox0.TabIndex = 10004
         Me.GroupBox0.TabStop = False
+        '
+        'lblRm0Pnt
+        '
+        Me.lblRm0Pnt.AutoSize = True
+        Me.lblRm0Pnt.Location = New System.Drawing.Point(95, 136)
+        Me.lblRm0Pnt.Name = "lblRm0Pnt"
+        Me.lblRm0Pnt.Size = New System.Drawing.Size(128, 13)
+        Me.lblRm0Pnt.TabIndex = 1602
+        Me.lblRm0Pnt.Text = "Additional Network Points"
+        '
+        'lblRm0Sck
+        '
+        Me.lblRm0Sck.AutoSize = True
+        Me.lblRm0Sck.Location = New System.Drawing.Point(95, 109)
+        Me.lblRm0Sck.Name = "lblRm0Sck"
+        Me.lblRm0Sck.Size = New System.Drawing.Size(95, 13)
+        Me.lblRm0Sck.TabIndex = 1601
+        Me.lblRm0Sck.Text = "Additional Sockets"
         '
         'GroupBox3
         '
@@ -579,6 +615,24 @@ Partial Class frmCollection
         Me.GroupBox3.TabIndex = 10006
         Me.GroupBox3.TabStop = False
         '
+        'lblRm3Pnt
+        '
+        Me.lblRm3Pnt.AutoSize = True
+        Me.lblRm3Pnt.Location = New System.Drawing.Point(92, 137)
+        Me.lblRm3Pnt.Name = "lblRm3Pnt"
+        Me.lblRm3Pnt.Size = New System.Drawing.Size(128, 13)
+        Me.lblRm3Pnt.TabIndex = 1901
+        Me.lblRm3Pnt.Text = "Additional Network Points"
+        '
+        'lblRm3Sck
+        '
+        Me.lblRm3Sck.AutoSize = True
+        Me.lblRm3Sck.Location = New System.Drawing.Point(92, 110)
+        Me.lblRm3Sck.Name = "lblRm3Sck"
+        Me.lblRm3Sck.Size = New System.Drawing.Size(95, 13)
+        Me.lblRm3Sck.TabIndex = 1802
+        Me.lblRm3Sck.Text = "Additional Sockets"
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.lblRm4Pnt)
@@ -594,6 +648,24 @@ Partial Class frmCollection
         Me.GroupBox4.Size = New System.Drawing.Size(226, 166)
         Me.GroupBox4.TabIndex = 10007
         Me.GroupBox4.TabStop = False
+        '
+        'lblRm4Pnt
+        '
+        Me.lblRm4Pnt.AutoSize = True
+        Me.lblRm4Pnt.Location = New System.Drawing.Point(95, 137)
+        Me.lblRm4Pnt.Name = "lblRm4Pnt"
+        Me.lblRm4Pnt.Size = New System.Drawing.Size(128, 13)
+        Me.lblRm4Pnt.TabIndex = 2001
+        Me.lblRm4Pnt.Text = "Additional Network Points"
+        '
+        'lblRm4Sck
+        '
+        Me.lblRm4Sck.AutoSize = True
+        Me.lblRm4Sck.Location = New System.Drawing.Point(95, 110)
+        Me.lblRm4Sck.Name = "lblRm4Sck"
+        Me.lblRm4Sck.Size = New System.Drawing.Size(95, 13)
+        Me.lblRm4Sck.TabIndex = 1902
+        Me.lblRm4Sck.Text = "Additional Sockets"
         '
         'Label4
         '
@@ -672,51 +744,6 @@ Partial Class frmCollection
         Me.GroupBox2.TabIndex = 10005
         Me.GroupBox2.TabStop = False
         '
-        'lblRm0Sck
-        '
-        Me.lblRm0Sck.AutoSize = True
-        Me.lblRm0Sck.Location = New System.Drawing.Point(95, 109)
-        Me.lblRm0Sck.Name = "lblRm0Sck"
-        Me.lblRm0Sck.Size = New System.Drawing.Size(95, 13)
-        Me.lblRm0Sck.TabIndex = 1601
-        Me.lblRm0Sck.Text = "Additional Sockets"
-        '
-        'lblRm0Pnt
-        '
-        Me.lblRm0Pnt.AutoSize = True
-        Me.lblRm0Pnt.Location = New System.Drawing.Point(95, 136)
-        Me.lblRm0Pnt.Name = "lblRm0Pnt"
-        Me.lblRm0Pnt.Size = New System.Drawing.Size(128, 13)
-        Me.lblRm0Pnt.TabIndex = 1602
-        Me.lblRm0Pnt.Text = "Additional Network Points"
-        '
-        'lblRm1Sck
-        '
-        Me.lblRm1Sck.AutoSize = True
-        Me.lblRm1Sck.Location = New System.Drawing.Point(95, 96)
-        Me.lblRm1Sck.Name = "lblRm1Sck"
-        Me.lblRm1Sck.Size = New System.Drawing.Size(95, 13)
-        Me.lblRm1Sck.TabIndex = 1603
-        Me.lblRm1Sck.Text = "Additional Sockets"
-        '
-        'lblRm1Pnt
-        '
-        Me.lblRm1Pnt.AutoSize = True
-        Me.lblRm1Pnt.Location = New System.Drawing.Point(95, 123)
-        Me.lblRm1Pnt.Name = "lblRm1Pnt"
-        Me.lblRm1Pnt.Size = New System.Drawing.Size(128, 13)
-        Me.lblRm1Pnt.TabIndex = 1701
-        Me.lblRm1Pnt.Text = "Additional Network Points"
-        '
-        'lblRm2Sck
-        '
-        Me.lblRm2Sck.AutoSize = True
-        Me.lblRm2Sck.Location = New System.Drawing.Point(95, 110)
-        Me.lblRm2Sck.Name = "lblRm2Sck"
-        Me.lblRm2Sck.Size = New System.Drawing.Size(95, 13)
-        Me.lblRm2Sck.TabIndex = 1702
-        Me.lblRm2Sck.Text = "Additional Sockets"
-        '
         'lblRm2Pnt
         '
         Me.lblRm2Pnt.AutoSize = True
@@ -726,41 +753,14 @@ Partial Class frmCollection
         Me.lblRm2Pnt.TabIndex = 1801
         Me.lblRm2Pnt.Text = "Additional Network Points"
         '
-        'lblRm3Sck
+        'lblRm2Sck
         '
-        Me.lblRm3Sck.AutoSize = True
-        Me.lblRm3Sck.Location = New System.Drawing.Point(92, 110)
-        Me.lblRm3Sck.Name = "lblRm3Sck"
-        Me.lblRm3Sck.Size = New System.Drawing.Size(95, 13)
-        Me.lblRm3Sck.TabIndex = 1802
-        Me.lblRm3Sck.Text = "Additional Sockets"
-        '
-        'lblRm3Pnt
-        '
-        Me.lblRm3Pnt.AutoSize = True
-        Me.lblRm3Pnt.Location = New System.Drawing.Point(92, 137)
-        Me.lblRm3Pnt.Name = "lblRm3Pnt"
-        Me.lblRm3Pnt.Size = New System.Drawing.Size(128, 13)
-        Me.lblRm3Pnt.TabIndex = 1901
-        Me.lblRm3Pnt.Text = "Additional Network Points"
-        '
-        'lblRm4Sck
-        '
-        Me.lblRm4Sck.AutoSize = True
-        Me.lblRm4Sck.Location = New System.Drawing.Point(95, 110)
-        Me.lblRm4Sck.Name = "lblRm4Sck"
-        Me.lblRm4Sck.Size = New System.Drawing.Size(95, 13)
-        Me.lblRm4Sck.TabIndex = 1902
-        Me.lblRm4Sck.Text = "Additional Sockets"
-        '
-        'lblRm4Pnt
-        '
-        Me.lblRm4Pnt.AutoSize = True
-        Me.lblRm4Pnt.Location = New System.Drawing.Point(95, 137)
-        Me.lblRm4Pnt.Name = "lblRm4Pnt"
-        Me.lblRm4Pnt.Size = New System.Drawing.Size(128, 13)
-        Me.lblRm4Pnt.TabIndex = 2001
-        Me.lblRm4Pnt.Text = "Additional Network Points"
+        Me.lblRm2Sck.AutoSize = True
+        Me.lblRm2Sck.Location = New System.Drawing.Point(95, 110)
+        Me.lblRm2Sck.Name = "lblRm2Sck"
+        Me.lblRm2Sck.Size = New System.Drawing.Size(95, 13)
+        Me.lblRm2Sck.TabIndex = 1702
+        Me.lblRm2Sck.Text = "Additional Sockets"
         '
         'frmCollection
         '

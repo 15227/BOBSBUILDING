@@ -62,9 +62,10 @@ Partial Class Form2
         'lblFullName
         '
         Me.lblFullName.AutoSize = True
+        Me.lblFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblFullName.Location = New System.Drawing.Point(22, 9)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(54, 13)
+        Me.lblFullName.Size = New System.Drawing.Size(56, 15)
         Me.lblFullName.TabIndex = 10005
         Me.lblFullName.Text = "Full Name"
         '
