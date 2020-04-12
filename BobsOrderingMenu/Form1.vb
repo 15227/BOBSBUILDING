@@ -7,8 +7,8 @@
     Dim DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
-    Dim FoundErrors As Boolean = False
-    Dim Loft As Boolean = False
+    Dim FoundErrors As Boolean
+    Dim Loft As Boolean
     Public Firstname As String
     Public Surname As String
 
@@ -93,12 +93,12 @@
         Call FormAssignment()
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        Call NameChecking()
-        Call AdditonalsCounter()
+        Call TextChecking()
         Call ChkValidation()
+        Call AdditonalsCounter()
         If FoundErrors = True Then
             lblPrice.Text = FinalPrice.ToString
-        Else
+        ElseIf FoundErrors = False Then
             Call FinalCaclulation()
             Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
             frmRecipt.Show()
@@ -107,7 +107,7 @@
     End Sub
 
     'Final authentications
-    Private Sub NameChecking()
+    Private Sub TextChecking()
         Surname = Trim(txtSurnameInput.Text)
         Firstname = Trim(txtNameInput.Text)
         If Firstname.Length = 0 Then
@@ -133,39 +133,10 @@
         End If
 
     End Sub
-    Private Sub OrderTyping()
-        'Order type Check
-        If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
-            TradeOrder = True
-        Else
-            TradeOrder = False
-        End If
-        'Shows or hides the label that states about a discount.
-        If TradeOrder = True Then
-            lblDiscount.Show()
-        Else
-            lblDiscount.Hide()
-        End If
-    End Sub
-    Private Sub TVPoints() 'Checks for if the TV point in the Bedrooms is selected it makes the Accompanying Living Room Option selected also.
-        If chk0Rm4.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
-            chk0Rm4.Checked = True
-            chk0Rm2.Checked = True
-        ElseIf chk1Rm4.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
-            chk1Rm4.Checked = True
-            chk1Rm2.Checked = True
-        End If
-        If chk0Rm3.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
-            chk0Rm3.Checked = True
-            chk0Rm2.Checked = True
-        ElseIf chk1Rm3.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
-            chk1Rm3.Checked = True
-            chk1Rm2.Checked = True
-        End If
-    End Sub
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array
-        If cmbRm0Sck.Text = "-" Then 'Checks for blank or selected null assigns quanity to Zero if blank or Null else first number so to exclude the Gang counter.
+        'Checks for blank or selected null assigns quanity to Zero if blank or Null else first number so to exclude the Gang counter.
+        If cmbRm0Sck.Text = "-" Then
             AdditionsCount(0, 0) = 0
         ElseIf cmbRm0Sck.Text = "" Then
             AdditionsCount(0, 0) = 0
@@ -174,58 +145,56 @@
         End If
         If cmbRm1Sck.Text = "-" Then
             AdditionsCount(1, 0) = 0
-        ElseIf cmbRm0Sck.Text = "" Then
+        ElseIf cmbRm1Sck.Text = "" Then
             AdditionsCount(1, 0) = 0
         Else
-            AdditionsCount(1, 0) = Val(cmbRm0Sck.Text.Chars(0))
+            AdditionsCount(1, 0) = Val(cmbRm1Sck.Text.Chars(0))
         End If
         If cmbRm2Sck.Text = "-" Then
             AdditionsCount(2, 0) = 0
-        ElseIf cmbRm0Sck.Text = "" Then
+        ElseIf cmbRm2Sck.Text = "" Then
             AdditionsCount(2, 0) = 0
         Else
-            AdditionsCount(2, 0) = Val(cmbRm0Sck.Text.Chars(0))
+            AdditionsCount(2, 0) = Val(cmbRm2Sck.Text.Chars(0))
         End If
         If cmbRm3Sck.Text = "-" Then
             AdditionsCount(3, 0) = 0
-        ElseIf cmbRm0Sck.Text = "" Then
+        ElseIf cmbRm3Sck.Text = "" Then
             AdditionsCount(3, 0) = 0
         Else
-            AdditionsCount(3, 0) = Val(cmbRm0Sck.Text.Chars(0))
+            AdditionsCount(3, 0) = Val(cmbRm3Sck.Text.Chars(0))
         End If
         If cmbRm4Sck.Text = "-" Then
             AdditionsCount(4, 0) = 0
-        ElseIf cmbRm0Sck.Text = "" Then
+        ElseIf cmbRm4Sck.Text = "" Then
             AdditionsCount(4, 0) = 0
         Else
-            AdditionsCount(4, 0) = Val(cmbRm0Sck.Text.Chars(0))
+            AdditionsCount(4, 0) = Val(cmbRm4Sck.Text.Chars(0))
         End If
-
-
         'Counts total number of Sockets
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
         Next
+        'MessageBox.Show(AdditionsCount(5, 0))
         If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox and flags to the program an issue.
-            MessageBox.Show("Too Many Additional Sockets Selected.")
+            MessageBox.Show("Too Many Additional Sockets Selected. ")
             FoundErrors = True
             AdditionsCount(5, 0) = 0
         Else
             FoundErrors = False
         End If
 
-
         'Assigns Selected Network Points (ß, 1) to array
         If cmbRm0Pnt.Text = "-" Then
             AdditionsCount(0, 1) = 0
-        ElseIf cmbRm2Pnt.Text = "" Then
+        ElseIf cmbRm0Pnt.Text = "" Then
             AdditionsCount(0, 1) = 0
         Else
             AdditionsCount(0, 1) = Val(cmbRm0Pnt.Text)
         End If
         If cmbRm1Pnt.Text = "-" Then
             AdditionsCount(1, 1) = 0
-        ElseIf cmbRm2Pnt.Text = "" Then
+        ElseIf cmbRm1Pnt.Text = "" Then
             AdditionsCount(1, 1) = 0
         Else
             AdditionsCount(1, 1) = Val(cmbRm1Pnt.Text)
@@ -255,10 +224,11 @@
         For i = 0 To 4
             AdditionsCount(5, 1) += AdditionsCount(i, 1)
         Next
+        'MessageBox.Show(AdditionsCount(5, 1))
         If AdditionsCount(5, 1) > 12 Then
             MessageBox.Show("Too Many Additional Network Points Selected.")
             FoundErrors = True
-            AdditionsCount(5, 0) = 0
+            AdditionsCount(5, 1) = 0
         Else
             FoundErrors = False
         End If
@@ -266,9 +236,10 @@
     Private Sub ChkValidation() 'Validates elements nessicary to proceed with order according to Layed out Critera.
         Call OrderTyping()
         Call TVPoints()
-        'Call AdditonalsCounter()
+
         If rdoRetail.Checked = False And rdoTrade.Checked = False Then
             FoundErrors = True
+            MessageBox.Show("Falied to find Order Type.")
         End If
 
         'Network Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
@@ -407,6 +378,36 @@
             DisplayAssignments(2, 2, 4) = DisplayAssignments(2, 1, 4)
         Else
             DisplayAssignments(2, 2, 4) = 0
+        End If
+    End Sub
+    Private Sub OrderTyping()
+        'Order type Check
+        If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
+            TradeOrder = True
+        Else
+            TradeOrder = False
+        End If
+        'Shows or hides the label that states about a discount.
+        If TradeOrder = True Then
+            lblDiscount.Show()
+        Else
+            lblDiscount.Hide()
+        End If
+    End Sub
+    Private Sub TVPoints() 'Checks for if the TV point in the Bedrooms is selected it makes the Accompanying Living Room Option selected also.
+        If chk0Rm4.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
+            chk0Rm4.Checked = True
+            chk0Rm2.Checked = True
+        ElseIf chk1Rm4.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
+            chk1Rm4.Checked = True
+            chk1Rm2.Checked = True
+        End If
+        If chk0Rm3.Checked = True Then 'TV point* *only available if the TV point and aerial option is selected
+            chk0Rm3.Checked = True
+            chk0Rm2.Checked = True
+        ElseIf chk1Rm3.Checked = True Then 'Satellite TV point** **only available if the TV point and satellite dish is selected. 
+            chk1Rm3.Checked = True
+            chk1Rm2.Checked = True
         End If
     End Sub
 

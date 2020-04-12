@@ -145,6 +145,7 @@ Partial Class frmCollection
         Me.txtNameInput.Name = "txtNameInput"
         Me.txtNameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtNameInput.TabIndex = 1
+        Me.txtNameInput.Text = "Mona "
         '
         'txtDeliveryAddress
         '
@@ -154,6 +155,7 @@ Partial Class frmCollection
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 71)
         Me.txtDeliveryAddress.TabIndex = 3
+        Me.txtDeliveryAddress.Text = "210 Bromley Place, St Johns, Auckland 1072"
         '
         'txtCustomerAddress
         '
@@ -238,6 +240,7 @@ Partial Class frmCollection
         Me.txtSurnameInput.Name = "txtSurnameInput"
         Me.txtSurnameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtSurnameInput.TabIndex = 2
+        Me.txtSurnameInput.Text = "Patton"
         '
         'Label2
         '
@@ -477,7 +480,7 @@ Partial Class frmCollection
         Me.cmbRm1Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm1Pnt.FormattingEnabled = True
         Me.cmbRm1Pnt.Items.AddRange(New Object() {"-", "1", "2", "3", "4"})
-        Me.cmbRm1Pnt.Location = New System.Drawing.Point(6, 117)
+        Me.cmbRm1Pnt.Location = New System.Drawing.Point(6, 132)
         Me.cmbRm1Pnt.Name = "cmbRm1Pnt"
         Me.cmbRm1Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm1Pnt.TabIndex = 17
@@ -487,7 +490,7 @@ Partial Class frmCollection
         Me.cmbRm1Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm1Sck.FormattingEnabled = True
         Me.cmbRm1Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm1Sck.Location = New System.Drawing.Point(6, 91)
+        Me.cmbRm1Sck.Location = New System.Drawing.Point(6, 106)
         Me.cmbRm1Sck.Name = "cmbRm1Sck"
         Me.cmbRm1Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm1Sck.TabIndex = 16
@@ -552,7 +555,7 @@ Partial Class frmCollection
         'lblRm1Pnt
         '
         Me.lblRm1Pnt.AutoSize = True
-        Me.lblRm1Pnt.Location = New System.Drawing.Point(95, 123)
+        Me.lblRm1Pnt.Location = New System.Drawing.Point(95, 138)
         Me.lblRm1Pnt.Name = "lblRm1Pnt"
         Me.lblRm1Pnt.Size = New System.Drawing.Size(128, 13)
         Me.lblRm1Pnt.TabIndex = 1701
@@ -561,7 +564,7 @@ Partial Class frmCollection
         'lblRm1Sck
         '
         Me.lblRm1Sck.AutoSize = True
-        Me.lblRm1Sck.Location = New System.Drawing.Point(95, 96)
+        Me.lblRm1Sck.Location = New System.Drawing.Point(95, 111)
         Me.lblRm1Sck.Name = "lblRm1Sck"
         Me.lblRm1Sck.Size = New System.Drawing.Size(95, 13)
         Me.lblRm1Sck.TabIndex = 1603
