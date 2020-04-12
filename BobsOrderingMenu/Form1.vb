@@ -7,9 +7,12 @@
     Dim DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
-
+    Dim FoundErrors As Boolean = False
+    Dim Loft As Boolean = False
     Public Firstname As String
     Public Surname As String
+
+
 
     'Form checkbox interations.
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
@@ -91,10 +94,16 @@
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Call NameChecking()
+        Call AdditonalsCounter()
         Call ChkValidation()
-        Call FinalCaclulation()
-        Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
-        frmRecipt.Show()
+        If FoundErrors = True Then
+            lblPrice.Text = FinalPrice.ToString
+        Else
+            Call FinalCaclulation()
+            Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
+            frmRecipt.Show()
+        End If
+
     End Sub
 
     'Final authentications
@@ -103,18 +112,24 @@
         Firstname = Trim(txtNameInput.Text)
         If Firstname.Length = 0 Then
             MessageBox.Show("Enter a VALID given name please.")
+            FoundErrors = True
         ElseIf IsNumeric(Firstname) Then
             MessageBox.Show("Enter a VALID given name please.")
+            FoundErrors = True
         ElseIf Firstname.Contains(" ") Then
             MessageBox.Show("Enter a VALID given name please.")
+            FoundErrors = True
         End If
         If Surname.Length = 0 Then
             MessageBox.Show("Enter a VALID surname please.")
+            FoundErrors = True
         ElseIf IsNumeric(Surname) Then
             MessageBox.Show("Enter a VALID surname please.")
+            FoundErrors = True
         End If
         If txtDeliveryAddress.Text.Length = 0 Then
             MessageBox.Show("Enter a VALID delivery address please.")
+            FoundErrors = True
         End If
 
     End Sub
@@ -186,52 +201,92 @@
             AdditionsCount(4, 0) = Val(cmbRm0Sck.Text.Chars(0))
         End If
 
+
         'Counts total number of Sockets
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
         Next
-        If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox.
+        If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox and flags to the program an issue.
             MessageBox.Show("Too Many Additional Sockets Selected.")
+            FoundErrors = True
+            AdditionsCount(5, 0) = 0
+        Else
+            FoundErrors = False
         End If
 
 
         'Assigns Selected Network Points (ß, 1) to array
-        AdditionsCount(0, 1) = Val(cmbRm0Pnt.Text)
-        AdditionsCount(1, 1) = Val(cmbRm1Pnt.Text)
-        AdditionsCount(2, 1) = Val(cmbRm2Pnt.Text)
-        AdditionsCount(3, 1) = Val(cmbRm3Pnt.Text)
-        AdditionsCount(4, 1) = Val(cmbRm4Pnt.Text)
+        If cmbRm0Pnt.Text = "-" Then
+            AdditionsCount(0, 1) = 0
+        ElseIf cmbRm2Pnt.Text = "" Then
+            AdditionsCount(0, 1) = 0
+        Else
+            AdditionsCount(0, 1) = Val(cmbRm0Pnt.Text)
+        End If
+        If cmbRm1Pnt.Text = "-" Then
+            AdditionsCount(1, 1) = 0
+        ElseIf cmbRm2Pnt.Text = "" Then
+            AdditionsCount(1, 1) = 0
+        Else
+            AdditionsCount(1, 1) = Val(cmbRm1Pnt.Text)
+        End If
+        If cmbRm2Pnt.Text = "-" Then
+            AdditionsCount(2, 1) = 0
+        ElseIf cmbRm2Pnt.Text = "" Then
+            AdditionsCount(2, 1) = 0
+        Else
+            AdditionsCount(2, 1) = Val(cmbRm2Pnt.Text)
+        End If
+        If cmbRm3Pnt.Text = "-" Then
+            AdditionsCount(3, 1) = 0
+        ElseIf cmbRm3Pnt.Text = "" Then
+            AdditionsCount(3, 1) = 0
+        Else
+            AdditionsCount(3, 1) = Val(cmbRm3Pnt.Text)
+        End If
+        If cmbRm4Pnt.Text = "-" Then
+            AdditionsCount(4, 1) = 0
+        ElseIf cmbRm4Pnt.Text = "" Then
+            AdditionsCount(4, 1) = 0
+        Else
+            AdditionsCount(4, 1) = Val(cmbRm4Pnt.Text)
+        End If
         'Counts total number of Network Points
         For i = 0 To 4
             AdditionsCount(5, 1) += AdditionsCount(i, 1)
         Next
         If AdditionsCount(5, 1) > 12 Then
             MessageBox.Show("Too Many Additional Network Points Selected.")
+            FoundErrors = True
+            AdditionsCount(5, 0) = 0
+        Else
+            FoundErrors = False
         End If
     End Sub
     Private Sub ChkValidation() 'Validates elements nessicary to proceed with order according to Layed out Critera.
         Call OrderTyping()
         Call TVPoints()
+        'Call AdditonalsCounter()
         If rdoRetail.Checked = False And rdoTrade.Checked = False Then
-            MessageBox.Show("Please enter order type.")
-        End If
-        'Network Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
-        If cmbRm0Pnt.Text.Length <> 0 Then
-            FinalPrice += 100
-        End If
-        If cmbRm1Pnt.Text.Length <> 0 Then
-            FinalPrice += 100
-        End If
-        If cmbRm2Pnt.Text.Length <> 0 Then
-            FinalPrice += 100
-        End If
-        If cmbRm3Pnt.Text.Length <> 0 Then
-            FinalPrice += 100
-        End If
-        If cmbRm4Pnt.Text.Length <> 0 Then
-            FinalPrice += 100
+            FoundErrors = True
         End If
 
+        'Network Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
+        If cmbRm0Pnt.Text.Length <> 0 Then
+            Loft = True
+        End If
+        If cmbRm1Pnt.Text.Length <> 0 Then
+            Loft = True
+        End If
+        If cmbRm2Pnt.Text.Length <> 0 Then
+            Loft = True
+        End If
+        If cmbRm3Pnt.Text.Length <> 0 Then
+            Loft = True
+        End If
+        If cmbRm4Pnt.Text.Length <> 0 Then
+            Loft = True
+        End If
         'Additional electrical sockets (1G)# #2G sockets are an extra $10 Each.
         If cmbRm0Sck.Text.Contains("2G") Then
             DisplayAssignments(4, 1, 0) += 10
@@ -381,7 +436,9 @@
         For i = 0 To 4
             SubFinal += Subtotals(i, 0) + Subtotals(i, 1) + Subtotals(i, 2)
         Next
-
+        If Loft = True Then
+            FinalPrice += 100
+        End If
         FinalPrice += SubFinal
         Call TradeDiscount()
     End Sub

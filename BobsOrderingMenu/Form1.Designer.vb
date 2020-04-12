@@ -140,15 +140,15 @@ Partial Class frmCollection
         '
         'txtNameInput
         '
-        Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.txtNameInput.Location = New System.Drawing.Point(137, 276)
         Me.txtNameInput.Name = "txtNameInput"
-        Me.txtNameInput.Size = New System.Drawing.Size(107, 24)
+        Me.txtNameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtNameInput.TabIndex = 1
         '
         'txtDeliveryAddress
         '
-        Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 336)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
@@ -157,7 +157,7 @@ Partial Class frmCollection
         '
         'txtCustomerAddress
         '
-        Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 413)
         Me.txtCustomerAddress.Multiline = True
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
@@ -233,10 +233,10 @@ Partial Class frmCollection
         '
         'txtSurnameInput
         '
-        Me.txtSurnameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSurnameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.txtSurnameInput.Location = New System.Drawing.Point(137, 306)
         Me.txtSurnameInput.Name = "txtSurnameInput"
-        Me.txtSurnameInput.Size = New System.Drawing.Size(107, 24)
+        Me.txtSurnameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtSurnameInput.TabIndex = 2
         '
         'Label2
