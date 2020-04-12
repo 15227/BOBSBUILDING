@@ -6,6 +6,7 @@
     End Sub
     Private Sub btnProceed_Click(sender As Object, e As EventArgs) Handles btnProceed.Click
         MessageBox.Show("Well Done, You've pressed many buttons.")
+        Application.Exit()
     End Sub
     Public Sub ReceptAssignment()
         For i = 0 To 3

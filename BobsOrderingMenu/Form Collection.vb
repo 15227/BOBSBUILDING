@@ -1,6 +1,10 @@
 ﻿Public Class frmCollection
     'Defines variable as stored value in program.
-    Dim UniqueId As String = My.Settings.CustomerId 'Sets the Unique ID variable to that saved internaly.
+    Dim FILE_NAME As String = "C:\UniqueIdentifications.txt"
+    Dim objReader As New IO.StreamReader(FILE_NAME)
+    Dim objWriter As New IO.StreamWriter(FILE_NAME)
+    Dim UniqueId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
+    Dim HexText As String = Hex(UniqueId) 'Makes UniqueID into a Hex for displaying.
     Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
@@ -85,7 +89,13 @@
     End Sub
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDiscount.Hide()
-        Call UniqueIdentification()
+        Dim Placeholder As String = objReader.ReadToEnd
+        objReader.Close()
+        Call HexId()
+        If Placeholder.Contains(HexText) Then
+            Call HexId()
+        End If
+
         Call FormAssignment()
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
@@ -98,7 +108,7 @@
             lblPrice.Text = FinalPrice.ToString
         Else
             Call FinalCaclulation()
-            Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
+            Call SubmitIDNum() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
             frmRecipt.Show()
         End If
 
@@ -456,14 +466,14 @@
         DisplayAssignments(0, 0, 0) = "Option A: Upgrades units and worktop"
         DisplayAssignments(1, 0, 0) = "Option B: As A plus induction hob "
         DisplayAssignments(2, 0, 0) = "Option C: A plus Deluxe appliance pack"
-        DisplayAssignments(3, 0, 0) = "Unspeicifed Kitchen Addon"
+        ' DisplayAssignments(3, 0, 0) = ""
         DisplayAssignments(4, 0, 0) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 0) = "Network points"
         '   Room 0 Price Assignments (ß,1,0)
         DisplayAssignments(0, 1, 0) = 2000.0
         DisplayAssignments(1, 1, 0) = 3500.0
         DisplayAssignments(2, 1, 0) = 6000.0
-        DisplayAssignments(3, 1, 0) = 0
+        'DisplayAssignments(3, 1, 0) = 0
         DisplayAssignments(4, 1, 0) = 40
         DisplayAssignments(5, 1, 0) = 50
 
@@ -488,7 +498,7 @@
         DisplayAssignments(0, 0, 2) = "TV point plus roof mounted aerial"
         DisplayAssignments(1, 0, 2) = "TV point plus satellite dish"
         DisplayAssignments(2, 0, 2) = "4.5 KW Heat pump   "
-        DisplayAssignments(3, 0, 2) = "Unspecified Living Room addon"
+        DisplayAssignments(3, 0, 2) = ""
         DisplayAssignments(4, 0, 2) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 2) = "Network points"
         'Room 2 Price Assignments
@@ -503,7 +513,7 @@
         DisplayAssignments(0, 0, 3) = "TV point"
         DisplayAssignments(1, 0, 3) = "Satellite TV point"
         DisplayAssignments(2, 0, 3) = "2.5 KW Heat pump"
-        DisplayAssignments(3, 0, 3) = "Unspecified Bedroom addon"
+        DisplayAssignments(3, 0, 3) = ""
         DisplayAssignments(4, 0, 3) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 3) = "Network points"
         'Room 3 Price Assignments
@@ -519,7 +529,7 @@
         DisplayAssignments(0, 0, 4) = "TV point"
         DisplayAssignments(1, 0, 4) = "Satellite TV point"
         DisplayAssignments(2, 0, 4) = "2.5 KW Heat pump"
-        DisplayAssignments(3, 0, 4) = "Unspecified Bedroom addon"
+        DisplayAssignments(3, 0, 4) = ""
         DisplayAssignments(4, 0, 4) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 4) = "Network points"
         'Room 4 Price Assignments
@@ -563,24 +573,27 @@
     End Sub
 
     'Unique identification.
-    Private Sub UniqueIdentification()
-        Call FormUpdateNickname()
-        UniqueId += 1 'Adds one to the current UniqueId variable.
-        lblIdentification.Text = "Identification number: " & UniqueId 'Sets the label that shows the customers identification number calculated before.
-    End Sub
-    Public Sub SubmitNickname()
-        My.Settings.CustomerId = UniqueId 'Sets the saved value in the program called CustomerId to the UniqueId Value.
-    End Sub
-    Private Sub FormUpdateNickname()
-        UniqueId = My.Settings.CustomerId 'Sets the UniqueId Value to the saved value in the program called CustomerId.
+
+    Public Sub SubmitIDNum()
+        Dim Placeholder As String = objReader.ReadToEnd
+        objReader.Close()
+
+        If System.IO.File.Exists(FILE_NAME) = True Then
+            MessageBox.Show("Text written to file")
+            objWriter.Write(HexText, True)
+            objWriter.Close()
+        Else
+            MessageBox.Show("File Does Not Exist")
+        End If
+
+
+
     End Sub
     Private Sub HexId() 'Creates 6 Digit Hexadecimal System generating a number upto 1048576 only showing 6 Charcters.
         Randomize()
-        Dim RndNum As Single
-        RndNum = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
-        Dim HexText As String = Hex(RndNum)
+        UniqueId = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
         lblIdentification.Text = "Identification number: " & HexText
-
         'PERHAPS USE Pg 212 within VB_NET_BOOK.pdf FOR READING EACH LINE TO CHECK FOR PRIOR INSTANCES WHEN SAVED TO TXT FILE.
+        'Alternately use Pg 305 linkning with DATABASE.
     End Sub
 End Class

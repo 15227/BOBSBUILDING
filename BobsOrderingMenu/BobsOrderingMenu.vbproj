@@ -66,6 +66,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Testing Config|AnyCPU'">
     <OutputPath>bin\Testing Config\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'New|AnyCPU'">
+    <OutputPath>bin\New\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
