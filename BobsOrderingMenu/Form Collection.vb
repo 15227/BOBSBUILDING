@@ -457,7 +457,7 @@
         DisplayAssignments(1, 0, 0) = "Option B: As A plus induction hob "
         DisplayAssignments(2, 0, 0) = "Option C: A plus Deluxe appliance pack"
         DisplayAssignments(3, 0, 0) = "Unspeicifed Kitchen Addon"
-        DisplayAssignments(4, 0, 0) = "Additional electrical sockets (1G)"
+        DisplayAssignments(4, 0, 0) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 0) = "Network points"
         '   Room 0 Price Assignments (ß,1,0)
         DisplayAssignments(0, 1, 0) = 2000.0
@@ -473,7 +473,7 @@
         DisplayAssignments(1, 0, 1) = "Shower "
         DisplayAssignments(2, 0, 1) = "Tapware "
         DisplayAssignments(3, 0, 1) = "Tiles"
-        DisplayAssignments(4, 0, 1) = "Additional electrical sockets (1G)"
+        DisplayAssignments(4, 0, 1) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 1) = "Network points"
         'Room 1 Price Assignments (ß,1,1)
         DisplayAssignments(0, 1, 1) = 2500
@@ -489,7 +489,7 @@
         DisplayAssignments(1, 0, 2) = "TV point plus satellite dish"
         DisplayAssignments(2, 0, 2) = "4.5 KW Heat pump   "
         DisplayAssignments(3, 0, 2) = "Unspecified Living Room addon"
-        DisplayAssignments(4, 0, 2) = "Additional electrical sockets (1G)"
+        DisplayAssignments(4, 0, 2) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 2) = "Network points"
         'Room 2 Price Assignments
         DisplayAssignments(0, 1, 2) = 250
@@ -504,7 +504,7 @@
         DisplayAssignments(1, 0, 3) = "Satellite TV point"
         DisplayAssignments(2, 0, 3) = "2.5 KW Heat pump"
         DisplayAssignments(3, 0, 3) = "Unspecified Bedroom addon"
-        DisplayAssignments(4, 0, 3) = "Additional electrical sockets (1G)"
+        DisplayAssignments(4, 0, 3) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 3) = "Network points"
         'Room 3 Price Assignments
         DisplayAssignments(0, 1, 3) = 50
@@ -520,7 +520,7 @@
         DisplayAssignments(1, 0, 4) = "Satellite TV point"
         DisplayAssignments(2, 0, 4) = "2.5 KW Heat pump"
         DisplayAssignments(3, 0, 4) = "Unspecified Bedroom addon"
-        DisplayAssignments(4, 0, 4) = "Additional electrical sockets (1G)"
+        DisplayAssignments(4, 0, 4) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 4) = "Network points"
         'Room 4 Price Assignments
         DisplayAssignments(0, 1, 4) = 50
