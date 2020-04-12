@@ -4,16 +4,13 @@
     Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
-    Dim DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
+    Public DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
-    Dim FoundErrors As Boolean
-    Dim Loft As Boolean
+    Dim FoundErrors As Boolean 'Sets up for the end of the form to stop it proceeding with errors   
+    Dim Loft As Boolean 'Prepars for the introduction of additional ntwrk pnts
     Public Firstname As String
     Public Surname As String
-
-
-
     'Form checkbox interations.
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
         Call ChkValidation()
@@ -89,16 +86,17 @@
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDiscount.Hide()
         Call UniqueIdentification()
-        Call DisplayArrayAssignments()
         Call FormAssignment()
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Call TextChecking()
-        Call ChkValidation()
         Call AdditonalsCounter()
+        Call ChkValidation()
+
+
         If FoundErrors = True Then
             lblPrice.Text = FinalPrice.ToString
-        ElseIf FoundErrors = False Then
+        Else
             Call FinalCaclulation()
             Call SubmitNickname() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
             frmRecipt.Show()
@@ -106,7 +104,7 @@
 
     End Sub
 
-    'Final authentications
+    'Authentications
     Private Sub TextChecking()
         Surname = Trim(txtSurnameInput.Text)
         Firstname = Trim(txtNameInput.Text)
@@ -175,14 +173,16 @@
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
         Next
-        'MessageBox.Show(AdditionsCount(5, 0))
+
         If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox and flags to the program an issue.
-            MessageBox.Show("Too Many Additional Sockets Selected. ")
+            'MessageBox.Show("Too Many Additional Sockets Selected." & AdditionsCount(5, 0).ToString)
             FoundErrors = True
             AdditionsCount(5, 0) = 0
         Else
             FoundErrors = False
         End If
+
+
 
         'Assigns Selected Network Points (ß, 1) to array
         If cmbRm0Pnt.Text = "-" Then
@@ -224,13 +224,10 @@
         For i = 0 To 4
             AdditionsCount(5, 1) += AdditionsCount(i, 1)
         Next
-        'MessageBox.Show(AdditionsCount(5, 1))
         If AdditionsCount(5, 1) > 12 Then
-            MessageBox.Show("Too Many Additional Network Points Selected.")
+            'MessageBox.Show("Too Many Additional Network Points Selected.")
             FoundErrors = True
             AdditionsCount(5, 1) = 0
-        Else
-            FoundErrors = False
         End If
     End Sub
     Private Sub ChkValidation() 'Validates elements nessicary to proceed with order according to Layed out Critera.
@@ -258,6 +255,7 @@
         If cmbRm4Pnt.Text.Length <> 0 Then
             Loft = True
         End If
+
         'Additional electrical sockets (1G)# #2G sockets are an extra $10 Each.
         If cmbRm0Sck.Text.Contains("2G") Then
             DisplayAssignments(4, 1, 0) += 10
@@ -384,7 +382,7 @@
         'Order type Check
         If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
             TradeOrder = True
-        Else
+        ElseIf rdoTrade.Checked = False Then
             TradeOrder = False
         End If
         'Shows or hides the label that states about a discount.
@@ -534,6 +532,7 @@
 
     End Sub
     Public Sub FormAssignment() 'Sets the values and text for the Checkboxes and Dropdowns
+        Call DisplayArrayAssignments()
         chk0Rm0.Text = DisplayAssignments(0, 0, 0)
         chk1Rm0.Text = DisplayAssignments(1, 0, 0)
         chk2Rm0.Text = DisplayAssignments(2, 0, 0)
@@ -560,7 +559,7 @@
         chk2Rm4.Text = DisplayAssignments(2, 0, 4)
         cmbRm4Sck.Text = DisplayAssignments(4, 0, 4)
         cmbRm4Pnt.Text = DisplayAssignments(5, 0, 4)
-        lblPrice.Text = BasePrice.ToString
+        lblPrice.Text = FinalPrice.ToString
     End Sub
 
     'Unique identification.

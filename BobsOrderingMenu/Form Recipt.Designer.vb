@@ -24,7 +24,7 @@ Partial Class frmRecipt
     Private Sub InitializeComponent()
         Me.lblPrice = New System.Windows.Forms.Label()
         Me.btnRestart = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnProceed = New System.Windows.Forms.Button()
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -49,15 +49,15 @@ Partial Class frmRecipt
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnProceed
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(25, 383)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(321, 55)
-        Me.Button1.TabIndex = 10004
-        Me.Button1.Text = "Done"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnProceed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProceed.Location = New System.Drawing.Point(25, 383)
+        Me.btnProceed.Name = "btnProceed"
+        Me.btnProceed.Size = New System.Drawing.Size(321, 55)
+        Me.btnProceed.TabIndex = 10004
+        Me.btnProceed.Text = "Done"
+        Me.btnProceed.UseVisualStyleBackColor = True
         '
         'lblFullName
         '
@@ -75,7 +75,7 @@ Partial Class frmRecipt
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblFullName)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.lblPrice)
         Me.Name = "frmRecipt"
@@ -86,6 +86,6 @@ Partial Class frmRecipt
 
     Friend WithEvents lblPrice As Label
     Friend WithEvents btnRestart As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnProceed As Button
     Friend WithEvents lblFullName As Label
 End Class

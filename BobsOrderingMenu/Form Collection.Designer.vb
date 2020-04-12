@@ -96,11 +96,11 @@ Partial Class frmCollection
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblTitle.Location = New System.Drawing.Point(27, 244)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(163, 20)
+        Me.lblTitle.Size = New System.Drawing.Size(152, 18)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Information Collection"
         '
@@ -119,7 +119,7 @@ Partial Class frmCollection
         '
         Me.pbxLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbxLogo.Image = Global.BobsOrderingMenu.My.Resources.Resources.logo_transparent
-        Me.pbxLogo.Location = New System.Drawing.Point(12, 57)
+        Me.pbxLogo.Location = New System.Drawing.Point(19, 57)
         Me.pbxLogo.Name = "pbxLogo"
         Me.pbxLogo.Size = New System.Drawing.Size(225, 168)
         Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -140,16 +140,16 @@ Partial Class frmCollection
         '
         'txtNameInput
         '
-        Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtNameInput.Location = New System.Drawing.Point(137, 276)
         Me.txtNameInput.Name = "txtNameInput"
         Me.txtNameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtNameInput.TabIndex = 1
-        Me.txtNameInput.Text = "Mona "
+        Me.txtNameInput.Text = "Moana "
         '
         'txtDeliveryAddress
         '
-        Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 336)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
@@ -159,7 +159,7 @@ Partial Class frmCollection
         '
         'txtCustomerAddress
         '
-        Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 413)
         Me.txtCustomerAddress.Multiline = True
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
@@ -439,6 +439,7 @@ Partial Class frmCollection
         'rdoRetail
         '
         Me.rdoRetail.AutoSize = True
+        Me.rdoRetail.Checked = True
         Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.rdoRetail.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.rdoRetail.Location = New System.Drawing.Point(69, 471)
@@ -460,7 +461,6 @@ Partial Class frmCollection
         Me.rdoTrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoTrade.Size = New System.Drawing.Size(64, 21)
         Me.rdoTrade.TabIndex = 6
-        Me.rdoTrade.TabStop = True
         Me.rdoTrade.Text = "Trade"
         Me.rdoTrade.UseVisualStyleBackColor = True
         '
@@ -498,7 +498,7 @@ Partial Class frmCollection
         'chk1Rm1
         '
         Me.chk1Rm1.AutoSize = True
-        Me.chk1Rm1.Location = New System.Drawing.Point(127, 44)
+        Me.chk1Rm1.Location = New System.Drawing.Point(127, 49)
         Me.chk1Rm1.Name = "chk1Rm1"
         Me.chk1Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm1.TabIndex = 13
@@ -508,7 +508,7 @@ Partial Class frmCollection
         'chk2Rm1
         '
         Me.chk2Rm1.AutoSize = True
-        Me.chk2Rm1.Location = New System.Drawing.Point(13, 68)
+        Me.chk2Rm1.Location = New System.Drawing.Point(13, 73)
         Me.chk2Rm1.Name = "chk2Rm1"
         Me.chk2Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm1.TabIndex = 14
@@ -518,7 +518,7 @@ Partial Class frmCollection
         'chk3Rm1
         '
         Me.chk3Rm1.AutoSize = True
-        Me.chk3Rm1.Location = New System.Drawing.Point(127, 67)
+        Me.chk3Rm1.Location = New System.Drawing.Point(127, 72)
         Me.chk3Rm1.Name = "chk3Rm1"
         Me.chk3Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk3Rm1.TabIndex = 15
@@ -528,7 +528,7 @@ Partial Class frmCollection
         'chk0Rm1
         '
         Me.chk0Rm1.AutoSize = True
-        Me.chk0Rm1.Location = New System.Drawing.Point(13, 44)
+        Me.chk0Rm1.Location = New System.Drawing.Point(13, 49)
         Me.chk0Rm1.Name = "chk0Rm1"
         Me.chk0Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm1.TabIndex = 12
