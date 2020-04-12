@@ -105,7 +105,8 @@
             MessageBox.Show("Enter a VALID given name please.")
         ElseIf IsNumeric(Firstname) Then
             MessageBox.Show("Enter a VALID given name please.")
-        ElseIf Firstname.Contains Then
+        ElseIf Firstname.Contains(" ") Then
+            MessageBox.Show("Enter a VALID given name please.")
         End If
         If Surname.Length = 0 Then
             MessageBox.Show("Enter a VALID surname please.")
@@ -149,16 +150,47 @@
     End Sub
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array
-        AdditionsCount(0, 0) = Val(cmbRm0Sck.Text.Chars(0))
-        AdditionsCount(1, 0) = Val(cmbRm0Sck.Text.Chars(1))
-        AdditionsCount(2, 0) = Val(cmbRm0Sck.Text.Chars(2))
-        AdditionsCount(3, 0) = Val(cmbRm0Sck.Text.Chars(3))
-        AdditionsCount(4, 0) = Val(cmbRm0Sck.Text.Chars(4))
+        If cmbRm0Sck.Text = "-" Then 'Checks for blank or selected null assigns quanity to Zero if blank or Null else first number so to exclude the Gang counter.
+            AdditionsCount(0, 0) = 0
+        ElseIf cmbRm0Sck.Text = "" Then
+            AdditionsCount(0, 0) = 0
+        Else
+            AdditionsCount(0, 0) = Val(cmbRm0Sck.Text.Chars(0))
+        End If
+        If cmbRm1Sck.Text = "-" Then
+            AdditionsCount(1, 0) = 0
+        ElseIf cmbRm0Sck.Text = "" Then
+            AdditionsCount(1, 0) = 0
+        Else
+            AdditionsCount(1, 0) = Val(cmbRm0Sck.Text.Chars(0))
+        End If
+        If cmbRm2Sck.Text = "-" Then
+            AdditionsCount(2, 0) = 0
+        ElseIf cmbRm0Sck.Text = "" Then
+            AdditionsCount(2, 0) = 0
+        Else
+            AdditionsCount(2, 0) = Val(cmbRm0Sck.Text.Chars(0))
+        End If
+        If cmbRm3Sck.Text = "-" Then
+            AdditionsCount(3, 0) = 0
+        ElseIf cmbRm0Sck.Text = "" Then
+            AdditionsCount(3, 0) = 0
+        Else
+            AdditionsCount(3, 0) = Val(cmbRm0Sck.Text.Chars(0))
+        End If
+        If cmbRm4Sck.Text = "-" Then
+            AdditionsCount(4, 0) = 0
+        ElseIf cmbRm0Sck.Text = "" Then
+            AdditionsCount(4, 0) = 0
+        Else
+            AdditionsCount(4, 0) = Val(cmbRm0Sck.Text.Chars(0))
+        End If
+
         'Counts total number of Sockets
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
         Next
-        If AdditionsCount(5, 0) > 12 Then
+        If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox.
             MessageBox.Show("Too Many Additional Sockets Selected.")
         End If
 

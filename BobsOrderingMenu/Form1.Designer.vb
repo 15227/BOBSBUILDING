@@ -134,7 +134,7 @@ Partial Class frmCollection
         Me.btnNext.Location = New System.Drawing.Point(325, 520)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(98, 55)
-        Me.btnNext.TabIndex = 300
+        Me.btnNext.TabIndex = 500
         Me.btnNext.Text = "Next"
         Me.btnNext.UseVisualStyleBackColor = False
         '
@@ -149,7 +149,7 @@ Partial Class frmCollection
         'txtDeliveryAddress
         '
         Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 421)
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 336)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 71)
@@ -158,7 +158,7 @@ Partial Class frmCollection
         'txtCustomerAddress
         '
         Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 342)
+        Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 413)
         Me.txtCustomerAddress.Multiline = True
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
         Me.txtCustomerAddress.Size = New System.Drawing.Size(107, 73)
@@ -183,7 +183,7 @@ Partial Class frmCollection
         Me.btnRestart.Location = New System.Drawing.Point(453, 520)
         Me.btnRestart.Name = "btnRestart"
         Me.btnRestart.Size = New System.Drawing.Size(98, 55)
-        Me.btnRestart.TabIndex = 1000
+        Me.btnRestart.TabIndex = 501
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = False
         '
@@ -203,7 +203,7 @@ Partial Class frmCollection
         Me.lblDeliveryAddress.AutoSize = True
         Me.lblDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.lblDeliveryAddress.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblDeliveryAddress.Location = New System.Drawing.Point(16, 366)
+        Me.lblDeliveryAddress.Location = New System.Drawing.Point(16, 358)
         Me.lblDeliveryAddress.Name = "lblDeliveryAddress"
         Me.lblDeliveryAddress.Size = New System.Drawing.Size(115, 17)
         Me.lblDeliveryAddress.TabIndex = 1200
@@ -214,7 +214,7 @@ Partial Class frmCollection
         Me.lblCustomerAddress.AutoSize = True
         Me.lblCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.lblCustomerAddress.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblCustomerAddress.Location = New System.Drawing.Point(7, 426)
+        Me.lblCustomerAddress.Location = New System.Drawing.Point(7, 418)
         Me.lblCustomerAddress.Name = "lblCustomerAddress"
         Me.lblCustomerAddress.Size = New System.Drawing.Size(124, 17)
         Me.lblCustomerAddress.TabIndex = 1300
@@ -225,7 +225,7 @@ Partial Class frmCollection
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label1.Location = New System.Drawing.Point(66, 314)
+        Me.Label1.Location = New System.Drawing.Point(66, 311)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 17)
         Me.Label1.TabIndex = 1500
@@ -234,7 +234,7 @@ Partial Class frmCollection
         'txtSurnameInput
         '
         Me.txtSurnameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSurnameInput.Location = New System.Drawing.Point(137, 312)
+        Me.txtSurnameInput.Location = New System.Drawing.Point(137, 306)
         Me.txtSurnameInput.Name = "txtSurnameInput"
         Me.txtSurnameInput.Size = New System.Drawing.Size(107, 24)
         Me.txtSurnameInput.TabIndex = 2
@@ -443,6 +443,7 @@ Partial Class frmCollection
         Me.rdoRetail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoRetail.Size = New System.Drawing.Size(62, 21)
         Me.rdoRetail.TabIndex = 5
+        Me.rdoRetail.TabStop = True
         Me.rdoRetail.Text = "Retail"
         Me.rdoRetail.UseVisualStyleBackColor = True
         '
@@ -456,6 +457,7 @@ Partial Class frmCollection
         Me.rdoTrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoTrade.Size = New System.Drawing.Size(64, 21)
         Me.rdoTrade.TabIndex = 6
+        Me.rdoTrade.TabStop = True
         Me.rdoTrade.Text = "Trade"
         Me.rdoTrade.UseVisualStyleBackColor = True
         '
@@ -493,7 +495,7 @@ Partial Class frmCollection
         'chk1Rm1
         '
         Me.chk1Rm1.AutoSize = True
-        Me.chk1Rm1.Location = New System.Drawing.Point(13, 67)
+        Me.chk1Rm1.Location = New System.Drawing.Point(127, 44)
         Me.chk1Rm1.Name = "chk1Rm1"
         Me.chk1Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk1Rm1.TabIndex = 13
@@ -503,7 +505,7 @@ Partial Class frmCollection
         'chk2Rm1
         '
         Me.chk2Rm1.AutoSize = True
-        Me.chk2Rm1.Location = New System.Drawing.Point(127, 45)
+        Me.chk2Rm1.Location = New System.Drawing.Point(13, 68)
         Me.chk2Rm1.Name = "chk2Rm1"
         Me.chk2Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk2Rm1.TabIndex = 14
@@ -541,9 +543,9 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(652, 69)
+        Me.GroupBox1.Location = New System.Drawing.Point(652, 59)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(226, 156)
+        Me.GroupBox1.Size = New System.Drawing.Size(226, 166)
         Me.GroupBox1.TabIndex = 10003
         Me.GroupBox1.TabStop = False
         '
@@ -767,7 +769,7 @@ Partial Class frmCollection
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1045, 625)
+        Me.ClientSize = New System.Drawing.Size(1045, 589)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox0)
         Me.Controls.Add(Me.GroupBox1)
@@ -781,7 +783,6 @@ Partial Class frmCollection
         Me.Controls.Add(Me.lblNameInput)
         Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.lblDiscount)
-        Me.Controls.Add(Me.txtCustomerAddress)
         Me.Controls.Add(Me.txtDeliveryAddress)
         Me.Controls.Add(Me.txtNameInput)
         Me.Controls.Add(Me.btnNext)
@@ -790,6 +791,7 @@ Partial Class frmCollection
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.txtCustomerAddress)
         Me.Name = "frmCollection"
         Me.Text = " "
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
