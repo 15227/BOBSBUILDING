@@ -4,14 +4,13 @@ Public Class frmCollection
     'Defines variable as stored value in program.
     Dim UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
     Dim CurrentNumber As Integer
-
     Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
     Public DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
-    Dim FoundErrors As Boolean 'Sets up for the end of the form to stop it proceeding with errors   
+    Dim FoundErrors As Integer = 0 'Sets up for the end of the form to stop it proceeding with errors   
     Dim Loft As Boolean 'Prepars for the introduction of additional ntwrk pnts
     Public Firstname As String
     Public Surname As String
@@ -97,10 +96,18 @@ Public Class frmCollection
         Call TextChecking()
         Call AdditonalsCounter()
         Call ChkValidation()
-
-
-        If FoundErrors = True Then
+        If FoundErrors <> 0 Then
             lblPrice.Text = FinalPrice.ToString
+        ElseIf FoundErrors = 1 Then
+            MessageBox.Show("Enter a VALID given name please.")
+        ElseIf FoundErrors = 2 Then
+            MessageBox.Show("Enter a VALID surname please.")
+        ElseIf FoundErrors = 3 Then
+            MessageBox.Show("Enter a VALID delivery address please.")
+        ElseIf FoundErrors = 4 Then
+            MessageBox.Show("Too Many Additional Sockets Selected." & AdditionsCount(5, 0).ToString)
+        ElseIf FoundErrors = 5 Then
+            MessageBox.Show("Too Many Additional Network Points Selected.")
         Else
             Call FinalCaclulation()
             Call SubmitIDNum() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
@@ -111,28 +118,23 @@ Public Class frmCollection
 
     'Authentications
     Private Sub TextChecking()
-        Surname = Trim(txtSurnameInput.Text)
+        Surname = Trim(txtSurnameInput.Text) 'Takes the leading or following spaces away.
         Firstname = Trim(txtNameInput.Text)
-        If Firstname.Length = 0 Then
-            MessageBox.Show("Enter a VALID given name please.")
-            FoundErrors = True
-        ElseIf IsNumeric(Firstname) Then
-            MessageBox.Show("Enter a VALID given name please.")
-            FoundErrors = True
-        ElseIf Firstname.Contains(" ") Then
-            MessageBox.Show("Enter a VALID given name please.")
-            FoundErrors = True
+        If Firstname.Length = 0 Then 'If there's nothing in the box.
+            FoundErrors = 1
+        ElseIf IsNumeric(Firstname) Then 'Checks to see if numbers are involved.
+            FoundErrors = 1
+        ElseIf Firstname.Contains(" ") Then 'Checks to see if spaces are entered if so due to trimming two names might be entered.
+            FoundErrors = 1
         End If
         If Surname.Length = 0 Then
-            MessageBox.Show("Enter a VALID surname please.")
-            FoundErrors = True
+            FoundErrors = 2
         ElseIf IsNumeric(Surname) Then
-            MessageBox.Show("Enter a VALID surname please.")
-            FoundErrors = True
+            FoundErrors = 2
         End If
         If txtDeliveryAddress.Text.Length = 0 Then
-            MessageBox.Show("Enter a VALID delivery address please.")
-            FoundErrors = True
+            FoundErrors = 3
+
         End If
 
     End Sub
@@ -179,12 +181,11 @@ Public Class frmCollection
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
         Next
 
-        If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox and flags to the program an issue.
-            'MessageBox.Show("Too Many Additional Sockets Selected." & AdditionsCount(5, 0).ToString)
-            FoundErrors = True
+        If AdditionsCount(5, 0) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox and flags to the program an issue
+            FoundErrors = 4
             AdditionsCount(5, 0) = 0
         Else
-            FoundErrors = False
+            FoundErrors = 0
         End If
 
 
@@ -230,8 +231,7 @@ Public Class frmCollection
             AdditionsCount(5, 1) += AdditionsCount(i, 1)
         Next
         If AdditionsCount(5, 1) > 12 Then
-            'MessageBox.Show("Too Many Additional Network Points Selected.")
-            FoundErrors = True
+            FoundErrors = 5
             AdditionsCount(5, 1) = 0
         End If
     End Sub
