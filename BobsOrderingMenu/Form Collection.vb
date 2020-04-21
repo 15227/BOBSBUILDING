@@ -56,12 +56,15 @@ Public Class frmCollection
     End Sub
     Private Sub chk0Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm0.CheckedChanged
         Call ChkValidation()
+        Call FullPriceCaclulation()
     End Sub
     Private Sub chk1Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm0.CheckedChanged
         Call ChkValidation()
+        Call FullPriceCaclulation()
     End Sub
     Private Sub chk2Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm0.CheckedChanged
         Call ChkValidation()
+        Call FullPriceCaclulation()
     End Sub
     Private Sub chk0Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm3.CheckedChanged
         Call ChkValidation()
@@ -96,26 +99,27 @@ Public Class frmCollection
         Call TextChecking()
         Call AdditonalsCounter()
         Call ChkValidation()
-        If FoundErrors <> 0 Then
-            lblPrice.Text = FinalPrice.ToString
-        ElseIf FoundErrors = 1 Then
+        Call ErrorMessageShowing()
+    End Sub
+    Public Sub ErrorMessageShowing()
+        If FoundErrors = 1 Then
             MessageBox.Show("Enter a VALID given name please.")
         ElseIf FoundErrors = 2 Then
             MessageBox.Show("Enter a VALID surname please.")
         ElseIf FoundErrors = 3 Then
             MessageBox.Show("Enter a VALID delivery address please.")
         ElseIf FoundErrors = 4 Then
-            MessageBox.Show("Too Many Additional Sockets Selected." & AdditionsCount(5, 0).ToString)
+            MessageBox.Show("Too Many Additional Sockets Selected.")
         ElseIf FoundErrors = 5 Then
             MessageBox.Show("Too Many Additional Network Points Selected.")
+        ElseIf FoundErrors = 6 Then
+            MessageBox.Show("Falied to find Order Type.")
         Else
-            Call FinalCaclulation()
+            Call FullPriceCaclulation()
             Call SubmitIDNum() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
             frmRecipt.Show()
         End If
-
     End Sub
-
     'Authentications
     Private Sub TextChecking()
         Surname = Trim(txtSurnameInput.Text) 'Takes the leading or following spaces away.
@@ -240,8 +244,7 @@ Public Class frmCollection
         Call TVPoints()
 
         If rdoRetail.Checked = False And rdoTrade.Checked = False Then
-            FoundErrors = True
-            MessageBox.Show("Falied to find Order Type.")
+            FoundErrors = 6
         End If
 
         'Network Points*** ***Requires the addition of a loft mounted 8 port 10/100/1000 network switch. $100 
@@ -300,18 +303,21 @@ Public Class frmCollection
         'Room 0 Selection Assignments (ß,ß,0)
         If chk0Rm0.Checked = True Then
             DisplayAssignments(0, 2, 0) = (DisplayAssignments(0, 1, 0))
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(0, 2, 0) = 0
+            DisplayAssignments(0, 2, 0) = 0.ToString
         End If
         If chk1Rm0.Checked = True Then
             DisplayAssignments(1, 2, 0) = DisplayAssignments(1, 1, 0)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(1, 2, 0) = 0
+            DisplayAssignments(1, 2, 0) = 0.ToString
         End If
         If chk2Rm0.Checked = True Then
             DisplayAssignments(2, 2, 0) = DisplayAssignments(2, 1, 0)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(2, 2, 0) = 0
+            DisplayAssignments(2, 2, 0) = 0.ToString
         End If
         'Room 1 Selection Assignments (ß,ß,1)
         If chk0Rm1.Checked = True Then
@@ -319,61 +325,73 @@ Public Class frmCollection
             DisplayAssignments(1, 2, 1) = DisplayAssignments(1, 1, 1)
             DisplayAssignments(2, 2, 1) = DisplayAssignments(2, 1, 1)
             DisplayAssignments(3, 2, 1) = DisplayAssignments(3, 1, 1)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(0, 2, 1) = 0
-            DisplayAssignments(1, 2, 1) = 0
-            DisplayAssignments(2, 2, 1) = 0
-            DisplayAssignments(3, 2, 1) = 0
+            DisplayAssignments(0, 2, 1) = 0.ToString
+            DisplayAssignments(1, 2, 1) = 0.ToString
+            DisplayAssignments(2, 2, 1) = 0.ToString
+            DisplayAssignments(3, 2, 1) = 0.ToString
         End If
         'Room 2 Selection Assignments (ß,ß, 2)
         If chk0Rm2.Checked = True Then
             DisplayAssignments(0, 2, 2) = (DisplayAssignments(0, 1, 2))
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(0, 2, 2) = 0
+            DisplayAssignments(0, 2, 2) = 0.ToString
         End If
         If chk1Rm2.Checked = True Then
             DisplayAssignments(1, 2, 2) = DisplayAssignments(1, 1, 2)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(1, 2, 2) = 0
+            DisplayAssignments(1, 2, 2) = 0.ToString
         End If
         If chk2Rm2.Checked = True Then
             DisplayAssignments(2, 2, 2) = DisplayAssignments(2, 1, 2)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(2, 2, 2) = 0
+            DisplayAssignments(2, 2, 2) = 0.ToString
         End If
         'Room 3 Selection Assignments (ß,ß,3)
         If chk0Rm3.Checked = True Then
             DisplayAssignments(0, 2, 3) = (DisplayAssignments(0, 1, 3))
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(0, 2, 3) = 0
+            DisplayAssignments(0, 2, 3) = 0.ToString
         End If
         If chk1Rm3.Checked = True Then
             DisplayAssignments(1, 2, 3) = DisplayAssignments(1, 1, 3)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(1, 2, 3) = 0
+            DisplayAssignments(1, 2, 3) = 0.ToString
         End If
         If chk2Rm3.Checked = True Then
             DisplayAssignments(2, 2, 3) = DisplayAssignments(2, 1, 3)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(2, 2, 3) = 0
+            DisplayAssignments(2, 2, 3) = 0.ToString
         End If
         'Room 4 Selection Assignments (ß,ß,4)
         If chk0Rm4.Checked = True Then
             DisplayAssignments(0, 2, 4) = (DisplayAssignments(0, 1, 4))
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(0, 2, 4) = 0
+            DisplayAssignments(0, 2, 4) = 0.ToString
         End If
         If chk1Rm4.Checked = True Then
             DisplayAssignments(1, 2, 4) = DisplayAssignments(1, 1, 4)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(1, 2, 4) = 0
+            DisplayAssignments(1, 2, 4) = 0.ToString
         End If
         If chk2Rm4.Checked = True Then
             DisplayAssignments(2, 2, 4) = DisplayAssignments(2, 1, 4)
+            Call FullPriceCaclulation()
         Else
-            DisplayAssignments(2, 2, 4) = 0
+            DisplayAssignments(2, 2, 4) = 0.ToString
         End If
     End Sub
+
+    'Price caculations.
     Private Sub OrderTyping()
         'Order type Check
         If rdoTrade.Checked = True Then 'Checks if Retail is checked then change varible to show retail else show it as Trade
@@ -404,8 +422,6 @@ Public Class frmCollection
             chk1Rm2.Checked = True
         End If
     End Sub
-
-    'Price caculations.
     Private Sub SubCacl()
         'Caculation for Checkboxes on Rm 0 through 4 (ß,0)
         For i = 0 To 4
@@ -425,7 +441,7 @@ Public Class frmCollection
             Subtotals(i, 2) = AdditionsCount(i, 1) * Val(DisplayAssignments(5, 1, i))
         Next
     End Sub
-    Public Sub FinalCaclulation() 'Caclulates the sum of the subtotals and then Applies the potential Trade Discount
+    Public Sub FullPriceCaclulation() 'Caclulates the sum of the subtotals and then Applies the potential Trade Discount
         Call SubCacl()
         Dim SubFinal As Integer
         For i = 0 To 4
@@ -442,7 +458,7 @@ Public Class frmCollection
         If TradeOrder = True Then 'Checks Boolean for the Order type
             FinalPrice *= Discount 'If the order is a TRADE order it assigns the Discount Integer
         End If
-        lblPrice.Text = FinalPrice.ToString 'Sets the Lable on the form to the Final Price.
+        lblPrice.Text = FinalPrice.ToString("C") 'Sets the Lable on the form to the Final Price.
     End Sub
 
     'Array and label assignments.
@@ -552,7 +568,7 @@ Public Class frmCollection
         chk2Rm4.Text = DisplayAssignments(2, 0, 4)
         cmbRm4Sck.Text = DisplayAssignments(4, 0, 4)
         cmbRm4Pnt.Text = DisplayAssignments(5, 0, 4)
-        lblPrice.Text = FinalPrice.ToString
+        lblPrice.Text = FinalPrice.ToString("C")
     End Sub
 
     'Unique identification.
@@ -568,4 +584,17 @@ Public Class frmCollection
 
         lblIdentification.Text = "Identification number: " & Hex(UniqueRndId) & "-" & Hex(CurrentNumber) 'Shows the randomised UniqueID as a Hex for displaying and a following number that counts up also in Hex.
     End Sub
+
+    Private Sub txtNameInput_TextChanged(sender As Object, e As EventArgs) Handles txtNameInput.TextChanged
+        txtNameInput.Text = ""
+    End Sub
+
+    Private Sub txtSurnameInput_TextChanged(sender As Object, e As EventArgs) Handles txtSurnameInput.TextChanged
+        txtSurnameInput.Text = ""
+    End Sub
+
+    Private Sub txtDeliveryAddress_TextChanged(sender As Object, e As EventArgs) Handles txtDeliveryAddress.TextChanged
+        txtDeliveryAddress.Text = ""
+    End Sub
+
 End Class

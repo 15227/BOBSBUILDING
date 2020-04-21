@@ -33,7 +33,7 @@ Partial Class frmRecipt
         Me.lblPrice.AutoSize = True
         Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblPrice.Location = New System.Drawing.Point(342, 344)
+        Me.lblPrice.Location = New System.Drawing.Point(3, 269)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(96, 36)
         Me.lblPrice.TabIndex = 10002
@@ -42,9 +42,9 @@ Partial Class frmRecipt
         'btnRestart
         '
         Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestart.Location = New System.Drawing.Point(433, 383)
+        Me.btnRestart.Location = New System.Drawing.Point(177, 351)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(321, 55)
+        Me.btnRestart.Size = New System.Drawing.Size(141, 55)
         Me.btnRestart.TabIndex = 10003
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = True
@@ -52,9 +52,9 @@ Partial Class frmRecipt
         'btnProceed
         '
         Me.btnProceed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProceed.Location = New System.Drawing.Point(25, 383)
+        Me.btnProceed.Location = New System.Drawing.Point(9, 351)
         Me.btnProceed.Name = "btnProceed"
-        Me.btnProceed.Size = New System.Drawing.Size(321, 55)
+        Me.btnProceed.Size = New System.Drawing.Size(141, 55)
         Me.btnProceed.TabIndex = 10004
         Me.btnProceed.Text = "Done"
         Me.btnProceed.UseVisualStyleBackColor = True
@@ -73,7 +73,7 @@ Partial Class frmRecipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(371, 450)
         Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnRestart)

@@ -54,7 +54,6 @@ Partial Class frmCollection
         Me.chk2Rm4 = New System.Windows.Forms.CheckBox()
         Me.chk1Rm4 = New System.Windows.Forms.CheckBox()
         Me.chk0Rm4 = New System.Windows.Forms.CheckBox()
-        Me.lblPrice = New System.Windows.Forms.Label()
         Me.rdoRetail = New System.Windows.Forms.RadioButton()
         Me.rdoTrade = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -82,6 +81,7 @@ Partial Class frmCollection
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblRm2Pnt = New System.Windows.Forms.Label()
         Me.lblRm2Sck = New System.Windows.Forms.Label()
+        Me.lblPrice = New System.Windows.Forms.Label()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox0.SuspendLayout()
@@ -422,21 +422,9 @@ Partial Class frmCollection
         Me.chk0Rm4.Text = " "
         Me.chk0Rm4.UseVisualStyleBackColor = True
         '
-        'lblPrice
-        '
-        Me.lblPrice.AutoSize = True
-        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrice.ForeColor = System.Drawing.SystemColors.Menu
-        Me.lblPrice.Location = New System.Drawing.Point(112, 539)
-        Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(125, 36)
-        Me.lblPrice.TabIndex = 10001
-        Me.lblPrice.Text = "PRICE"
-        '
         'rdoRetail
         '
         Me.rdoRetail.AutoSize = True
-        Me.rdoRetail.Checked = True
         Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.rdoRetail.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.rdoRetail.Location = New System.Drawing.Point(69, 471)
@@ -444,7 +432,6 @@ Partial Class frmCollection
         Me.rdoRetail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoRetail.Size = New System.Drawing.Size(62, 21)
         Me.rdoRetail.TabIndex = 5
-        Me.rdoRetail.TabStop = True
         Me.rdoRetail.Text = "Retail"
         Me.rdoRetail.UseVisualStyleBackColor = True
         '
@@ -731,6 +718,17 @@ Partial Class frmCollection
         Me.lblRm2Sck.TabIndex = 1702
         Me.lblRm2Sck.Text = "Additional Sockets"
         '
+        'lblPrice
+        '
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrice.ForeColor = System.Drawing.SystemColors.Menu
+        Me.lblPrice.Location = New System.Drawing.Point(112, 539)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(125, 36)
+        Me.lblPrice.TabIndex = 10001
+        Me.lblPrice.Text = "PRICE"
+        '
         'frmCollection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -809,7 +807,6 @@ Partial Class frmCollection
     Friend WithEvents chk2Rm4 As CheckBox
     Friend WithEvents chk1Rm4 As CheckBox
     Friend WithEvents chk0Rm4 As CheckBox
-    Friend WithEvents lblPrice As Label
     Friend WithEvents rdoRetail As RadioButton
     Friend WithEvents rdoTrade As RadioButton
     Friend WithEvents Label3 As Label
@@ -837,4 +834,5 @@ Partial Class frmCollection
     Friend WithEvents lblRm4Sck As Label
     Friend WithEvents lblRm2Pnt As Label
     Friend WithEvents lblRm2Sck As Label
+    Friend WithEvents lblPrice As Label
 End Class

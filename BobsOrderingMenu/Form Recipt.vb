@@ -19,7 +19,7 @@
     End Sub
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmCollection.Hide()
-        lblPrice.Text = Val(frmCollection.FinalPrice).ToString()
+        lblPrice.Text = Val(frmCollection.FinalPrice).ToString("C")
         Call ReceptAssignment()
 
 
