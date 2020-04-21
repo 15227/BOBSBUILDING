@@ -60,9 +60,6 @@ Partial Class frmCollection
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbRm1Pnt = New System.Windows.Forms.ComboBox()
         Me.cmbRm1Sck = New System.Windows.Forms.ComboBox()
-        Me.chk1Rm1 = New System.Windows.Forms.CheckBox()
-        Me.chk2Rm1 = New System.Windows.Forms.CheckBox()
-        Me.chk3Rm1 = New System.Windows.Forms.CheckBox()
         Me.chk0Rm1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblRm1Pnt = New System.Windows.Forms.Label()
@@ -495,36 +492,6 @@ Partial Class frmCollection
         Me.cmbRm1Sck.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm1Sck.TabIndex = 16
         '
-        'chk1Rm1
-        '
-        Me.chk1Rm1.AutoSize = True
-        Me.chk1Rm1.Location = New System.Drawing.Point(127, 49)
-        Me.chk1Rm1.Name = "chk1Rm1"
-        Me.chk1Rm1.Size = New System.Drawing.Size(29, 17)
-        Me.chk1Rm1.TabIndex = 13
-        Me.chk1Rm1.Text = " "
-        Me.chk1Rm1.UseVisualStyleBackColor = True
-        '
-        'chk2Rm1
-        '
-        Me.chk2Rm1.AutoSize = True
-        Me.chk2Rm1.Location = New System.Drawing.Point(13, 73)
-        Me.chk2Rm1.Name = "chk2Rm1"
-        Me.chk2Rm1.Size = New System.Drawing.Size(29, 17)
-        Me.chk2Rm1.TabIndex = 14
-        Me.chk2Rm1.Text = " "
-        Me.chk2Rm1.UseVisualStyleBackColor = True
-        '
-        'chk3Rm1
-        '
-        Me.chk3Rm1.AutoSize = True
-        Me.chk3Rm1.Location = New System.Drawing.Point(127, 72)
-        Me.chk3Rm1.Name = "chk3Rm1"
-        Me.chk3Rm1.Size = New System.Drawing.Size(29, 17)
-        Me.chk3Rm1.TabIndex = 15
-        Me.chk3Rm1.Text = " "
-        Me.chk3Rm1.UseVisualStyleBackColor = True
-        '
         'chk0Rm1
         '
         Me.chk0Rm1.AutoSize = True
@@ -540,9 +507,6 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.lblRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.lblRm1Sck)
         Me.GroupBox1.Controls.Add(Me.chk0Rm1)
-        Me.GroupBox1.Controls.Add(Me.chk3Rm1)
-        Me.GroupBox1.Controls.Add(Me.chk2Rm1)
-        Me.GroupBox1.Controls.Add(Me.chk1Rm1)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -851,9 +815,6 @@ Partial Class frmCollection
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbRm1Pnt As ComboBox
     Friend WithEvents cmbRm1Sck As ComboBox
-    Friend WithEvents chk1Rm1 As CheckBox
-    Friend WithEvents chk2Rm1 As CheckBox
-    Friend WithEvents chk3Rm1 As CheckBox
     Friend WithEvents chk0Rm1 As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox0 As GroupBox

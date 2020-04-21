@@ -8,7 +8,7 @@
         MessageBox.Show("Well Done, You've pressed many buttons.")
         Application.Exit()
     End Sub
-    Public Sub ReceptAssignment()
+    Public Sub ReceptAssignment() 'Currently WIP
         For i = 0 To 3
             Recept += frmCollection.DisplayAssignments(i, 0, 0) & " " & "$" & frmCollection.DisplayAssignments(i, 2, 0) & vbCrLf
             Recept += frmCollection.DisplayAssignments(i, 0, 1) & " " & "$" & frmCollection.DisplayAssignments(i, 2, 1) & vbCrLf

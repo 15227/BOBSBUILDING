@@ -1,10 +1,10 @@
-﻿Public Class frmCollection
+﻿Imports BobsOrderingMenu.My
+
+Public Class frmCollection
     'Defines variable as stored value in program.
-    Dim FILE_NAME As String = "C:\UniqueIdentifications.txt"
-    Dim objReader As New IO.StreamReader(FILE_NAME)
-    Dim objWriter As New IO.StreamWriter(FILE_NAME)
-    Dim UniqueId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
-    Dim HexText As String = Hex(UniqueId) 'Makes UniqueID into a Hex for displaying.
+    Dim UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
+    Dim CurrentNumber As Integer
+
     Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
@@ -85,17 +85,12 @@
 
     'Alternate form module interactions.
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
-        Application.Restart()
+        Me.Close()
     End Sub
     Private Sub frmCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call GetId()
         lblDiscount.Hide()
-        Dim Placeholder As String = objReader.ReadToEnd
-        objReader.Close()
         Call HexId()
-        If Placeholder.Contains(HexText) Then
-            Call HexId()
-        End If
-
         Call FormAssignment()
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
@@ -321,22 +316,13 @@
         'Room 1 Selection Assignments (ß,ß,1)
         If chk0Rm1.Checked = True Then
             DisplayAssignments(0, 2, 1) = DisplayAssignments(0, 1, 1)
-        Else
-            DisplayAssignments(0, 2, 1) = 0
-        End If
-        If chk1Rm1.Checked = True Then
             DisplayAssignments(1, 2, 1) = DisplayAssignments(1, 1, 1)
-        Else
-            DisplayAssignments(1, 2, 1) = 0
-        End If
-        If chk2Rm1.Checked = True Then
             DisplayAssignments(2, 2, 1) = DisplayAssignments(2, 1, 1)
-        Else
-            DisplayAssignments(2, 2, 1) = 0
-        End If
-        If chk3Rm1.Checked = True Then
             DisplayAssignments(3, 2, 1) = DisplayAssignments(3, 1, 1)
         Else
+            DisplayAssignments(0, 2, 1) = 0
+            DisplayAssignments(1, 2, 1) = 0
+            DisplayAssignments(2, 2, 1) = 0
             DisplayAssignments(3, 2, 1) = 0
         End If
         'Room 2 Selection Assignments (ß,ß, 2)
@@ -548,10 +534,7 @@
         chk2Rm0.Text = DisplayAssignments(2, 0, 0)
         cmbRm0Sck.Text = DisplayAssignments(4, 0, 0)
         cmbRm0Pnt.Text = DisplayAssignments(5, 0, 0)
-        chk0Rm1.Text = DisplayAssignments(0, 0, 1)
-        chk1Rm1.Text = DisplayAssignments(1, 0, 1)
-        chk2Rm1.Text = DisplayAssignments(2, 0, 1)
-        chk3Rm1.Text = DisplayAssignments(3, 0, 1)
+        chk0Rm1.Text = "Upgrade"
         cmbRm1Sck.Text = DisplayAssignments(4, 0, 1)
         cmbRm1Pnt.Text = DisplayAssignments(5, 0, 1)
         chk0Rm2.Text = DisplayAssignments(0, 0, 2)
@@ -573,27 +556,16 @@
     End Sub
 
     'Unique identification.
-
+    Private Sub GetId()
+        CurrentNumber = Settings.CustomerId + 1
+    End Sub
     Public Sub SubmitIDNum()
-        Dim Placeholder As String = objReader.ReadToEnd
-        objReader.Close()
-
-        If System.IO.File.Exists(FILE_NAME) = True Then
-            MessageBox.Show("Text written to file")
-            objWriter.Write(HexText, True)
-            objWriter.Close()
-        Else
-            MessageBox.Show("File Does Not Exist")
-        End If
-
-
-
+        Settings.CustomerId = CurrentNumber
     End Sub
     Private Sub HexId() 'Creates 6 Digit Hexadecimal System generating a number upto 1048576 only showing 6 Charcters.
         Randomize()
-        UniqueId = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
-        lblIdentification.Text = "Identification number: " & HexText
-        'PERHAPS USE Pg 212 within VB_NET_BOOK.pdf FOR READING EACH LINE TO CHECK FOR PRIOR INSTANCES WHEN SAVED TO TXT FILE.
-        'Alternately use Pg 305 linkning with DATABASE.
+        UniqueRndId = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
+
+        lblIdentification.Text = "Identification number: " & Hex(UniqueRndId) & "-" & Hex(CurrentNumber) 'Shows the randomised UniqueID as a Hex for displaying and a following number that counts up also in Hex.
     End Sub
 End Class
