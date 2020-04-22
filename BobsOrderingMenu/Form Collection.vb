@@ -2,9 +2,9 @@
 
 Public Class frmCollection
     'Defines variable as stored value in program.
-    Dim UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
-    Dim CurrentNumber As Integer
-    Dim BasePrice As Integer = 75000 'Sets defualt price for an invoice.
+    Public UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
+    Public CurrentNumber As Integer
+    Const BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
     Public DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
@@ -14,6 +14,8 @@ Public Class frmCollection
     Dim Loft As Boolean 'Prepars for the introduction of additional ntwrk pnts
     Public Firstname As String
     Public Surname As String
+    Public DelivAdd As String
+    Public CusAdd As String
     'Form checkbox interations.
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rdoRetail.CheckedChanged
         Call ChkValidation()
@@ -121,21 +123,25 @@ Public Class frmCollection
     Private Sub TextChecking()
         Surname = Trim(txtSurnameInput.Text) 'Takes the leading or following spaces away.
         Firstname = Trim(txtNameInput.Text)
+        DelivAdd = Trim(txtDeliveryAddress.Text)
+        CusAdd = Trim(txtCustomerAddress.Text)
+
         If Firstname.Length = 0 Then 'If there's nothing in the box.
-            FoundErrors = 2
+            FoundErrors = 1
         ElseIf IsNumeric(Firstname) Then 'Checks to see if numbers are involved.
-            FoundErrors = 2
+            FoundErrors = 1
         ElseIf Firstname.Contains(" ") Then 'Checks to see if spaces are entered if so due to trimming two names might be entered.
-            FoundErrors = 2
+            FoundErrors = 1
         End If
+
         If Surname.Length = 0 Then
             FoundErrors = 2
         ElseIf IsNumeric(Surname) Then
             FoundErrors = 2
         End If
-        If txtDeliveryAddress.Text.Length = 0 Then
-            FoundErrors = 3
 
+        If DelivAdd.Length = 0 Then
+            FoundErrors = 3
         End If
 
     End Sub

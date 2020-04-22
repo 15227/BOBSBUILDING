@@ -34,7 +34,7 @@ Partial Class frmRecipt
         'btnRestart
         '
         Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestart.Location = New System.Drawing.Point(177, 351)
+        Me.btnRestart.Location = New System.Drawing.Point(505, 382)
         Me.btnRestart.Name = "btnRestart"
         Me.btnRestart.Size = New System.Drawing.Size(141, 55)
         Me.btnRestart.TabIndex = 10003
@@ -44,7 +44,7 @@ Partial Class frmRecipt
         'btnProceed
         '
         Me.btnProceed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProceed.Location = New System.Drawing.Point(9, 351)
+        Me.btnProceed.Location = New System.Drawing.Point(337, 382)
         Me.btnProceed.Name = "btnProceed"
         Me.btnProceed.Size = New System.Drawing.Size(141, 55)
         Me.btnProceed.TabIndex = 10004
@@ -55,7 +55,7 @@ Partial Class frmRecipt
         '
         Me.lblFullName.AutoSize = True
         Me.lblFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblFullName.Location = New System.Drawing.Point(22, 9)
+        Me.lblFullName.Location = New System.Drawing.Point(12, 9)
         Me.lblFullName.Name = "lblFullName"
         Me.lblFullName.Size = New System.Drawing.Size(56, 15)
         Me.lblFullName.TabIndex = 10005
@@ -82,7 +82,7 @@ Partial Class frmRecipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(371, 450)
+        Me.ClientSize = New System.Drawing.Size(657, 449)
         Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnRestart)
