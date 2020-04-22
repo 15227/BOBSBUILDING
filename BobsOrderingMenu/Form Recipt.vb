@@ -11,7 +11,7 @@ Public Class frmRecipt
         Application.Restart()
     End Sub
     Private Sub btnProceed_Click(sender As Object, e As EventArgs) Handles btnProceed.Click
-
+        'Eventually will add Saving to a file and printing using this Recept Array.
 
         Application.Exit()
     End Sub
@@ -57,7 +57,6 @@ Public Class frmRecipt
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmCollection.Hide()
         Call ReceptAssignment()
-
         lblFullName.Text = Recept
     End Sub
 

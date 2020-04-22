@@ -29,13 +29,13 @@ Public Class frmCollection
     Private Sub cmbRm1Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm1Pnt.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm2Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm2Pnt.SelectedIndexChanged
+    Private Sub cmbRm2Pnt_SelectedIndexChanged(sender As Object, e As EventArgs)
         Call ChkValidation()
     End Sub
     Private Sub cmbRm3Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm3Pnt.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm4Pnt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm4Pnt.SelectedIndexChanged
+    Private Sub cmbRm4Pnt_SelectedIndexChanged(sender As Object, e As EventArgs)
         Call ChkValidation()
     End Sub
     Private Sub cmbRm0Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
@@ -66,18 +66,22 @@ Public Class frmCollection
         Call ChkValidation()
     End Sub
     Private Sub chk0Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm3.CheckedChanged
+        Call TVPoints()
         Call ChkValidation()
     End Sub
     Private Sub chk1Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm3.CheckedChanged
         Call ChkValidation()
+        Call TVPoints()
     End Sub
     Private Sub chk2Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm3.CheckedChanged
         Call ChkValidation()
     End Sub
     Private Sub chk0Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm4.CheckedChanged
+        Call TVPoints()
         Call ChkValidation()
     End Sub
     Private Sub chk1Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm4.CheckedChanged
+        Call TVPoints()
         Call ChkValidation()
     End Sub
     Private Sub chk2Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm4.CheckedChanged
@@ -120,7 +124,7 @@ Public Class frmCollection
         End If
     End Sub
     'Authentications
-    Private Sub TextChecking()
+    Private Sub TextChecking() 'NOT CURRENTLY WORKING
         Surname = Trim(txtSurnameInput.Text) 'Takes the leading or following spaces away.
         Firstname = Trim(txtNameInput.Text)
         DelivAdd = Trim(txtDeliveryAddress.Text)
@@ -162,26 +166,26 @@ Public Class frmCollection
         Else
             AdditionsCount(1, 0) = Val(cmbRm1Sck.Text.Chars(0))
         End If
-        If cmbRm2Sck.Text = "-" Then
+        If cmbRm2Sck0.Text = "-" Then
             AdditionsCount(2, 0) = 0
-        ElseIf cmbRm2Sck.Text = "" Then
+        ElseIf cmbRm2Sck0.Text = "" Then
             AdditionsCount(2, 0) = 0
         Else
-            AdditionsCount(2, 0) = Val(cmbRm2Sck.Text.Chars(0))
+            AdditionsCount(2, 0) = Val(cmbRm2Sck0.Text.Chars(0))
         End If
-        If cmbRm3Sck.Text = "-" Then
+        If cmbRm3Sck0.Text = "-" Then
             AdditionsCount(3, 0) = 0
-        ElseIf cmbRm3Sck.Text = "" Then
+        ElseIf cmbRm3Sck0.Text = "" Then
             AdditionsCount(3, 0) = 0
         Else
-            AdditionsCount(3, 0) = Val(cmbRm3Sck.Text.Chars(0))
+            AdditionsCount(3, 0) = Val(cmbRm3Sck0.Text.Chars(0))
         End If
-        If cmbRm4Sck.Text = "-" Then
+        If cmbRm4Sck0.Text = "-" Then
             AdditionsCount(4, 0) = 0
-        ElseIf cmbRm4Sck.Text = "" Then
+        ElseIf cmbRm4Sck0.Text = "" Then
             AdditionsCount(4, 0) = 0
         Else
-            AdditionsCount(4, 0) = Val(cmbRm4Sck.Text.Chars(0))
+            AdditionsCount(4, 0) = Val(cmbRm4Sck0.Text.Chars(0))
         End If
         'Counts total number of Sockets
         For i = 0 To 4
@@ -268,7 +272,7 @@ Public Class frmCollection
         End If
 
         'Additional electrical sockets (1G)# #2G sockets are an extra $10 Each.
-        If cmbRm0Sck.Text.Contains("2G") Then
+        If cmbRm0Sck0.Text.Length <> 0 Then
             DisplayAssignments(4, 1, 0) += 10
         End If
         If cmbRm1Sck.Text.Contains("2G") Then
@@ -277,7 +281,7 @@ Public Class frmCollection
         If cmbRm2Sck.Text.Contains("2G") Then
             DisplayAssignments(4, 1, 2) += 10
         End If
-        If cmbRm3Sck.Text.Contains("2G") Then
+        If cmbRm3Sck0.Text.Contains("2G") Then
             DisplayAssignments(4, 1, 3) += 10
         End If
         If cmbRm4Sck.Text.Contains("2G") Then
@@ -551,7 +555,7 @@ Public Class frmCollection
         chk0Rm3.Text = DisplayAssignments(0, 0, 3)
         chk1Rm3.Text = DisplayAssignments(1, 0, 3)
         chk2Rm3.Text = DisplayAssignments(2, 0, 3)
-        cmbRm3Sck.Text = DisplayAssignments(4, 0, 3)
+        cmbRm3Sck0.Text = DisplayAssignments(4, 0, 3)
         cmbRm3Pnt.Text = DisplayAssignments(5, 0, 3)
         chk0Rm4.Text = DisplayAssignments(0, 0, 4)
         chk1Rm4.Text = DisplayAssignments(1, 0, 4)
@@ -573,5 +577,13 @@ Public Class frmCollection
         UniqueRndId = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
 
         lblIdentification.Text = "Identification number: " & Hex(UniqueRndId) & "-" & Hex(CurrentNumber) 'Shows the randomised UniqueID as a Hex for displaying and a following number that counts up also in Hex.
+    End Sub
+
+    Private Sub chk0Rm2_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm2.CheckedChanged
+        Call TVPoints()
+    End Sub
+
+    Private Sub chk1Rm2_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm2.CheckedChanged
+        Call TVPoints()
     End Sub
 End Class
