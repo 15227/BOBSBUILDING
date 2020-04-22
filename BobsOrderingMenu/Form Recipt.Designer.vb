@@ -22,22 +22,14 @@ Partial Class frmRecipt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblPrice = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRecipt))
         Me.btnRestart = New System.Windows.Forms.Button()
         Me.btnProceed = New System.Windows.Forms.Button()
         Me.lblFullName = New System.Windows.Forms.Label()
+        Me.PrintDoc = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDia = New System.Windows.Forms.PrintDialog()
+        Me.PrintPrev = New System.Windows.Forms.PrintPreviewDialog()
         Me.SuspendLayout()
-        '
-        'lblPrice
-        '
-        Me.lblPrice.AutoSize = True
-        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 22.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblPrice.Location = New System.Drawing.Point(171, 293)
-        Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(84, 31)
-        Me.lblPrice.TabIndex = 10002
-        Me.lblPrice.Text = "Price"
         '
         'btnRestart
         '
@@ -69,6 +61,23 @@ Partial Class frmRecipt
         Me.lblFullName.TabIndex = 10005
         Me.lblFullName.Text = "Full Name"
         '
+        'PrintDoc
+        '
+        '
+        'PrintDia
+        '
+        Me.PrintDia.UseEXDialog = True
+        '
+        'PrintPrev
+        '
+        Me.PrintPrev.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPrev.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPrev.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPrev.Enabled = True
+        Me.PrintPrev.Icon = CType(resources.GetObject("PrintPrev.Icon"), System.Drawing.Icon)
+        Me.PrintPrev.Name = "PrintPrev"
+        Me.PrintPrev.Visible = False
+        '
         'frmRecipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -77,15 +86,15 @@ Partial Class frmRecipt
         Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnRestart)
-        Me.Controls.Add(Me.lblPrice)
         Me.Name = "frmRecipt"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblPrice As Label
     Friend WithEvents btnRestart As Button
     Friend WithEvents btnProceed As Button
     Friend WithEvents lblFullName As Label
+    Friend WithEvents PrintDoc As Printing.PrintDocument
+    Friend WithEvents PrintDia As PrintDialog
+    Friend WithEvents PrintPrev As PrintPreviewDialog
 End Class

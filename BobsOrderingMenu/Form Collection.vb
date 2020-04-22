@@ -568,17 +568,4 @@ Public Class frmCollection
 
         lblIdentification.Text = "Identification number: " & Hex(UniqueRndId) & "-" & Hex(CurrentNumber) 'Shows the randomised UniqueID as a Hex for displaying and a following number that counts up also in Hex.
     End Sub
-
-    Private Sub txtNameInput_TextChanged(sender As Object, e As EventArgs) Handles txtNameInput.TextChanged
-        txtNameInput.Text = ""
-    End Sub
-
-    Private Sub txtSurnameInput_TextChanged(sender As Object, e As EventArgs) Handles txtSurnameInput.TextChanged
-        txtSurnameInput.Text = ""
-    End Sub
-
-    Private Sub txtDeliveryAddress_TextChanged(sender As Object, e As EventArgs) Handles txtDeliveryAddress.TextChanged
-        txtDeliveryAddress.Text = ""
-    End Sub
-
 End Class
