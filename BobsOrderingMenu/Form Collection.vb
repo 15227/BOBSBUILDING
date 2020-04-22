@@ -5,7 +5,7 @@ Public Class frmCollection
     Public UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
     Public CurrentNumber As Integer
     Const BasePrice As Integer = 75000 'Sets defualt price for an invoice.
-    Dim TradeOrder As Boolean 'True is Trade, False is Retail
+    Public TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form
     Public DisplayAssignments(6, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Dim AdditionsCount(5, 2) As Integer 'Sets array for Sockets and Network Points
@@ -86,6 +86,12 @@ Public Class frmCollection
     End Sub
     Private Sub chk2Rm4_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm4.CheckedChanged
         Call ChkValidation()
+    End Sub
+    Private Sub chk0Rm2_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm2.CheckedChanged
+        Call TVPoints()
+    End Sub
+    Private Sub chk1Rm2_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm2.CheckedChanged
+        Call TVPoints()
     End Sub
 
     'Alternate form module interactions.
@@ -628,13 +634,5 @@ Public Class frmCollection
         UniqueRndId = CInt(Math.Floor(((16 ^ 6) - 0 + 1) * Rnd())) + 1 'Generates a Random number in Base 16. The Power is the number of letters for a Hexadecimal numeral.
 
         lblIdentification.Text = "Identification number: " & Hex(UniqueRndId) & "-" & Hex(CurrentNumber) 'Shows the randomised UniqueID as a Hex for displaying and a following number that counts up also in Hex.
-    End Sub
-
-    Private Sub chk0Rm2_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm2.CheckedChanged
-        Call TVPoints()
-    End Sub
-
-    Private Sub chk1Rm2_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm2.CheckedChanged
-        Call TVPoints()
     End Sub
 End Class

@@ -26,9 +26,13 @@ Partial Class frmRecipt
         Me.btnRestart = New System.Windows.Forms.Button()
         Me.btnProceed = New System.Windows.Forms.Button()
         Me.lblFullName = New System.Windows.Forms.Label()
-        Me.PrintDoc = New System.Drawing.Printing.PrintDocument()
-        Me.PrintDia = New System.Windows.Forms.PrintDialog()
-        Me.PrintPrev = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PageSetupDialog1 = New System.Windows.Forms.PageSetupDialog()
+        Me.dlgPrint = New System.Windows.Forms.PrintDialog()
+        Me.btnPrintPreview = New System.Windows.Forms.Button()
+        Me.dlgPrintPreview = New System.Windows.Forms.PrintPreviewDialog()
+        Me.btnPrintWithDialog = New System.Windows.Forms.Button()
+        Me.btnPrintNow = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnRestart
@@ -61,28 +65,55 @@ Partial Class frmRecipt
         Me.lblFullName.TabIndex = 10005
         Me.lblFullName.Text = "Full Name"
         '
-        'PrintDoc
+        'dlgPrint
         '
+        Me.dlgPrint.UseEXDialog = True
         '
-        'PrintDia
+        'btnPrintPreview
         '
-        Me.PrintDia.UseEXDialog = True
+        Me.btnPrintPreview.Location = New System.Drawing.Point(526, 103)
+        Me.btnPrintPreview.Name = "btnPrintPreview"
+        Me.btnPrintPreview.Size = New System.Drawing.Size(119, 23)
+        Me.btnPrintPreview.TabIndex = 10006
+        Me.btnPrintPreview.Text = "btnPrintPreview"
+        Me.btnPrintPreview.UseVisualStyleBackColor = True
         '
-        'PrintPrev
+        'dlgPrintPreview
         '
-        Me.PrintPrev.AutoScrollMargin = New System.Drawing.Size(0, 0)
-        Me.PrintPrev.AutoScrollMinSize = New System.Drawing.Size(0, 0)
-        Me.PrintPrev.ClientSize = New System.Drawing.Size(400, 300)
-        Me.PrintPrev.Enabled = True
-        Me.PrintPrev.Icon = CType(resources.GetObject("PrintPrev.Icon"), System.Drawing.Icon)
-        Me.PrintPrev.Name = "PrintPrev"
-        Me.PrintPrev.Visible = False
+        Me.dlgPrintPreview.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.dlgPrintPreview.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.dlgPrintPreview.ClientSize = New System.Drawing.Size(400, 300)
+        Me.dlgPrintPreview.Enabled = True
+        Me.dlgPrintPreview.Icon = CType(resources.GetObject("dlgPrintPreview.Icon"), System.Drawing.Icon)
+        Me.dlgPrintPreview.Name = "dlgPrintPreview"
+        Me.dlgPrintPreview.Visible = False
+        '
+        'btnPrintWithDialog
+        '
+        Me.btnPrintWithDialog.Location = New System.Drawing.Point(526, 132)
+        Me.btnPrintWithDialog.Name = "btnPrintWithDialog"
+        Me.btnPrintWithDialog.Size = New System.Drawing.Size(119, 23)
+        Me.btnPrintWithDialog.TabIndex = 10007
+        Me.btnPrintWithDialog.Text = "btnPrintWithDialog"
+        Me.btnPrintWithDialog.UseVisualStyleBackColor = True
+        '
+        'btnPrintNow
+        '
+        Me.btnPrintNow.Location = New System.Drawing.Point(526, 161)
+        Me.btnPrintNow.Name = "btnPrintNow"
+        Me.btnPrintNow.Size = New System.Drawing.Size(119, 23)
+        Me.btnPrintNow.TabIndex = 10008
+        Me.btnPrintNow.Text = "btnPrintNow"
+        Me.btnPrintNow.UseVisualStyleBackColor = True
         '
         'frmRecipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(657, 449)
+        Me.Controls.Add(Me.btnPrintNow)
+        Me.Controls.Add(Me.btnPrintWithDialog)
+        Me.Controls.Add(Me.btnPrintPreview)
         Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnRestart)
@@ -94,7 +125,11 @@ Partial Class frmRecipt
     Friend WithEvents btnRestart As Button
     Friend WithEvents btnProceed As Button
     Friend WithEvents lblFullName As Label
-    Friend WithEvents PrintDoc As Printing.PrintDocument
-    Friend WithEvents PrintDia As PrintDialog
-    Friend WithEvents PrintPrev As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PageSetupDialog1 As PageSetupDialog
+    Friend WithEvents dlgPrint As PrintDialog
+    Friend WithEvents btnPrintPreview As Button
+    Friend WithEvents dlgPrintPreview As PrintPreviewDialog
+    Friend WithEvents btnPrintWithDialog As Button
+    Friend WithEvents btnPrintNow As Button
 End Class
