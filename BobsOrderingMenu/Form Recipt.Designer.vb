@@ -31,11 +31,11 @@ Partial Class frmRecipt
         'lblPrice
         '
         Me.lblPrice.AutoSize = True
-        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 22.0!, System.Drawing.FontStyle.Bold)
         Me.lblPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.lblPrice.Location = New System.Drawing.Point(3, 269)
+        Me.lblPrice.Location = New System.Drawing.Point(171, 293)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(96, 36)
+        Me.lblPrice.Size = New System.Drawing.Size(84, 31)
         Me.lblPrice.TabIndex = 10002
         Me.lblPrice.Text = "Price"
         '

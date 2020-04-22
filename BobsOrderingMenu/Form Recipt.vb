@@ -22,10 +22,6 @@
         lblPrice.Text = Val(frmCollection.FinalPrice).ToString("C")
         Call ReceptAssignment()
 
-
-
         lblFullName.Text = "Name: " & FullName & vbCrLf & Recept
-
-
     End Sub
 End Class

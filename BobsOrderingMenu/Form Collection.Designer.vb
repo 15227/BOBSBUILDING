@@ -81,7 +81,6 @@ Partial Class frmCollection
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblRm2Pnt = New System.Windows.Forms.Label()
         Me.lblRm2Sck = New System.Windows.Forms.Label()
-        Me.lblPrice = New System.Windows.Forms.Label()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox0.SuspendLayout()
@@ -718,17 +717,6 @@ Partial Class frmCollection
         Me.lblRm2Sck.TabIndex = 1702
         Me.lblRm2Sck.Text = "Additional Sockets"
         '
-        'lblPrice
-        '
-        Me.lblPrice.AutoSize = True
-        Me.lblPrice.Font = New System.Drawing.Font("Modern No. 20", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrice.ForeColor = System.Drawing.SystemColors.Menu
-        Me.lblPrice.Location = New System.Drawing.Point(112, 539)
-        Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(125, 36)
-        Me.lblPrice.TabIndex = 10001
-        Me.lblPrice.Text = "PRICE"
-        '
         'frmCollection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -740,7 +728,6 @@ Partial Class frmCollection
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.rdoTrade)
         Me.Controls.Add(Me.rdoRetail)
-        Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtSurnameInput)
         Me.Controls.Add(Me.lblCustomerAddress)
@@ -834,5 +821,4 @@ Partial Class frmCollection
     Friend WithEvents lblRm4Sck As Label
     Friend WithEvents lblRm2Pnt As Label
     Friend WithEvents lblRm2Sck As Label
-    Friend WithEvents lblPrice As Label
 End Class

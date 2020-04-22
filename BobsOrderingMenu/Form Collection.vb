@@ -56,15 +56,12 @@ Public Class frmCollection
     End Sub
     Private Sub chk0Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm0.CheckedChanged
         Call ChkValidation()
-        Call FullPriceCaclulation()
     End Sub
     Private Sub chk1Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk1Rm0.CheckedChanged
         Call ChkValidation()
-        Call FullPriceCaclulation()
     End Sub
     Private Sub chk2Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk2Rm0.CheckedChanged
         Call ChkValidation()
-        Call FullPriceCaclulation()
     End Sub
     Private Sub chk0Rm3_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm3.CheckedChanged
         Call ChkValidation()
@@ -125,11 +122,11 @@ Public Class frmCollection
         Surname = Trim(txtSurnameInput.Text) 'Takes the leading or following spaces away.
         Firstname = Trim(txtNameInput.Text)
         If Firstname.Length = 0 Then 'If there's nothing in the box.
-            FoundErrors = 1
+            FoundErrors = 2
         ElseIf IsNumeric(Firstname) Then 'Checks to see if numbers are involved.
-            FoundErrors = 1
+            FoundErrors = 2
         ElseIf Firstname.Contains(" ") Then 'Checks to see if spaces are entered if so due to trimming two names might be entered.
-            FoundErrors = 1
+            FoundErrors = 2
         End If
         If Surname.Length = 0 Then
             FoundErrors = 2
@@ -303,19 +300,16 @@ Public Class frmCollection
         'Room 0 Selection Assignments (ß,ß,0)
         If chk0Rm0.Checked = True Then
             DisplayAssignments(0, 2, 0) = (DisplayAssignments(0, 1, 0))
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(0, 2, 0) = 0.ToString
         End If
         If chk1Rm0.Checked = True Then
             DisplayAssignments(1, 2, 0) = DisplayAssignments(1, 1, 0)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(1, 2, 0) = 0.ToString
         End If
         If chk2Rm0.Checked = True Then
             DisplayAssignments(2, 2, 0) = DisplayAssignments(2, 1, 0)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(2, 2, 0) = 0.ToString
         End If
@@ -325,7 +319,6 @@ Public Class frmCollection
             DisplayAssignments(1, 2, 1) = DisplayAssignments(1, 1, 1)
             DisplayAssignments(2, 2, 1) = DisplayAssignments(2, 1, 1)
             DisplayAssignments(3, 2, 1) = DisplayAssignments(3, 1, 1)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(0, 2, 1) = 0.ToString
             DisplayAssignments(1, 2, 1) = 0.ToString
@@ -335,57 +328,48 @@ Public Class frmCollection
         'Room 2 Selection Assignments (ß,ß, 2)
         If chk0Rm2.Checked = True Then
             DisplayAssignments(0, 2, 2) = (DisplayAssignments(0, 1, 2))
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(0, 2, 2) = 0.ToString
         End If
         If chk1Rm2.Checked = True Then
             DisplayAssignments(1, 2, 2) = DisplayAssignments(1, 1, 2)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(1, 2, 2) = 0.ToString
         End If
         If chk2Rm2.Checked = True Then
             DisplayAssignments(2, 2, 2) = DisplayAssignments(2, 1, 2)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(2, 2, 2) = 0.ToString
         End If
         'Room 3 Selection Assignments (ß,ß,3)
         If chk0Rm3.Checked = True Then
             DisplayAssignments(0, 2, 3) = (DisplayAssignments(0, 1, 3))
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(0, 2, 3) = 0.ToString
         End If
         If chk1Rm3.Checked = True Then
             DisplayAssignments(1, 2, 3) = DisplayAssignments(1, 1, 3)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(1, 2, 3) = 0.ToString
         End If
         If chk2Rm3.Checked = True Then
             DisplayAssignments(2, 2, 3) = DisplayAssignments(2, 1, 3)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(2, 2, 3) = 0.ToString
         End If
         'Room 4 Selection Assignments (ß,ß,4)
         If chk0Rm4.Checked = True Then
             DisplayAssignments(0, 2, 4) = (DisplayAssignments(0, 1, 4))
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(0, 2, 4) = 0.ToString
         End If
         If chk1Rm4.Checked = True Then
             DisplayAssignments(1, 2, 4) = DisplayAssignments(1, 1, 4)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(1, 2, 4) = 0.ToString
         End If
         If chk2Rm4.Checked = True Then
             DisplayAssignments(2, 2, 4) = DisplayAssignments(2, 1, 4)
-            Call FullPriceCaclulation()
         Else
             DisplayAssignments(2, 2, 4) = 0.ToString
         End If
@@ -458,7 +442,7 @@ Public Class frmCollection
         If TradeOrder = True Then 'Checks Boolean for the Order type
             FinalPrice *= Discount 'If the order is a TRADE order it assigns the Discount Integer
         End If
-        lblPrice.Text = FinalPrice.ToString("C") 'Sets the Lable on the form to the Final Price.
+        'lblPrice.Text = FinalPrice.ToString("C") 'Sets the Lable on the form to the Final Price.
     End Sub
 
     'Array and label assignments.
@@ -568,7 +552,7 @@ Public Class frmCollection
         chk2Rm4.Text = DisplayAssignments(2, 0, 4)
         cmbRm4Sck.Text = DisplayAssignments(4, 0, 4)
         cmbRm4Pnt.Text = DisplayAssignments(5, 0, 4)
-        lblPrice.Text = FinalPrice.ToString("C")
+        'lblPrice.Text = FinalPrice.ToString("C")
     End Sub
 
     'Unique identification.
