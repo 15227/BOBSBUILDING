@@ -151,7 +151,6 @@ Partial Class frmCollection
         Me.txtNameInput.Name = "txtNameInput"
         Me.txtNameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtNameInput.TabIndex = 1
-        Me.txtNameInput.Text = "Moana "
         '
         'txtDeliveryAddress
         '
@@ -161,7 +160,6 @@ Partial Class frmCollection
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 71)
         Me.txtDeliveryAddress.TabIndex = 3
-        Me.txtDeliveryAddress.Text = "210 Bromley Place, St Johns, Auckland 1072"
         '
         'txtCustomerAddress
         '
@@ -246,7 +244,6 @@ Partial Class frmCollection
         Me.txtSurnameInput.Name = "txtSurnameInput"
         Me.txtSurnameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtSurnameInput.TabIndex = 2
-        Me.txtSurnameInput.Text = "Patton"
         '
         'Label2
         '
@@ -414,7 +411,6 @@ Partial Class frmCollection
         'rdoRetail
         '
         Me.rdoRetail.AutoSize = True
-        Me.rdoRetail.Checked = True
         Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.rdoRetail.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.rdoRetail.Location = New System.Drawing.Point(69, 471)
@@ -422,7 +418,6 @@ Partial Class frmCollection
         Me.rdoRetail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoRetail.Size = New System.Drawing.Size(62, 21)
         Me.rdoRetail.TabIndex = 5
-        Me.rdoRetail.TabStop = True
         Me.rdoRetail.Text = "Retail"
         Me.rdoRetail.UseVisualStyleBackColor = True
         '
