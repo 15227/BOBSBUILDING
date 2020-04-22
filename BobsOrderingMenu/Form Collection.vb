@@ -6,9 +6,9 @@ Public Class frmCollection
     Public CurrentNumber As Integer
     Const BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim TradeOrder As Boolean 'True is Trade, False is Retail
-    Dim Subtotals(4, 2) As Integer 'Sets an Array for the Subtotals of the Form
-    Public DisplayAssignments(5, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
-    Dim AdditionsCount(5, 1) As Integer 'Sets array for Sockets and Network Points
+    Dim Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form
+    Public DisplayAssignments(6, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
+    Dim AdditionsCount(5, 2) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
     Dim FoundErrors As Integer = 0 'Sets up for the end of the form to stop it proceeding with errors   
     Dim Loft As Boolean 'Prepars for the introduction of additional ntwrk pnts
@@ -38,22 +38,22 @@ Public Class frmCollection
     Private Sub cmbRm4Pnt_SelectedIndexChanged(sender As Object, e As EventArgs)
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm0Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+    Private Sub cmbRm0Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck0.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm1Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+    Private Sub cmbRm1Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck0.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm2Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+    Private Sub cmbRm2Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck0.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm3Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+    Private Sub cmbRm3Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck0.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm4Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+    Private Sub cmbRm4Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck0.SelectedIndexChanged
         Call ChkValidation()
     End Sub
-    Private Sub cmbRm5Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck.SelectedIndexChanged
+    Private Sub cmbRm5Sck_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRm0Sck0.SelectedIndexChanged
         Call ChkValidation()
     End Sub
     Private Sub chk0Rm0_CheckedChanged(sender As Object, e As EventArgs) Handles chk0Rm0.CheckedChanged
@@ -152,19 +152,19 @@ Public Class frmCollection
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array
         'Checks for blank or selected null assigns quanity to Zero if blank or Null else first number so to exclude the Gang counter.
-        If cmbRm0Sck.Text = "-" Then
+        If cmbRm0Sck0.Text = "-" Then
             AdditionsCount(0, 0) = 0
-        ElseIf cmbRm0Sck.Text = "" Then
+        ElseIf cmbRm0Sck0.Text = "" Then
             AdditionsCount(0, 0) = 0
         Else
-            AdditionsCount(0, 0) = Val(cmbRm0Sck.Text.Chars(0))
+            AdditionsCount(0, 0) = Val(cmbRm0Sck0.Text.Chars(0))
         End If
-        If cmbRm1Sck.Text = "-" Then
+        If cmbRm1Sck0.Text = "-" Then
             AdditionsCount(1, 0) = 0
-        ElseIf cmbRm1Sck.Text = "" Then
+        ElseIf cmbRm1Sck0.Text = "" Then
             AdditionsCount(1, 0) = 0
         Else
-            AdditionsCount(1, 0) = Val(cmbRm1Sck.Text.Chars(0))
+            AdditionsCount(1, 0) = Val(cmbRm1Sck0.Text.Chars(0))
         End If
         If cmbRm2Sck0.Text = "-" Then
             AdditionsCount(2, 0) = 0
@@ -187,7 +187,9 @@ Public Class frmCollection
         Else
             AdditionsCount(4, 0) = Val(cmbRm4Sck0.Text.Chars(0))
         End If
-        'Counts total number of Sockets
+
+        'Counts total number of 2G Sockets
+
         For i = 0 To 4
             AdditionsCount(5, 0) += AdditionsCount(i, 0)
         Next
@@ -199,7 +201,54 @@ Public Class frmCollection
             FoundErrors = 0
         End If
 
+        'Checks for blank or selected null assigns quanity to Zero if blank or Null else first number so to exclude the Gang counter.
+        If cmbRm0Sck1.Text = "-" Then
+            AdditionsCount(0, 2) = 0
+        ElseIf cmbRm0Sck1.Text = "" Then
+            AdditionsCount(0, 2) = 0
+        Else
+            AdditionsCount(0, 2) = Val(cmbRm0Sck1.Text.Chars(0))
+        End If
+        If cmbRm1Sck1.Text = "-" Then
+            AdditionsCount(1, 2) = 0
+        ElseIf cmbRm1Sck1.Text = "" Then
+            AdditionsCount(1, 2) = 0
+        Else
+            AdditionsCount(1, 2) = Val(cmbRm1Sck1.Text.Chars(0))
+        End If
+        If cmbRm2Sck1.Text = "-" Then
+            AdditionsCount(2, 2) = 0
+        ElseIf cmbRm2Sck1.Text = "" Then
+            AdditionsCount(2, 2) = 0
+        Else
+            AdditionsCount(2, 2) = Val(cmbRm2Sck1.Text.Chars(0))
+        End If
+        If cmbRm3Sck1.Text = "-" Then
+            AdditionsCount(3, 2) = 0
+        ElseIf cmbRm3Sck1.Text = "" Then
+            AdditionsCount(3, 2) = 0
+        Else
+            AdditionsCount(3, 2) = Val(cmbRm3Sck1.Text.Chars(0))
+        End If
+        If cmbRm4Sck1.Text = "-" Then
+            AdditionsCount(4, 2) = 0
+        ElseIf cmbRm4Sck1.Text = "" Then
+            AdditionsCount(4, 2) = 0
+        Else
+            AdditionsCount(4, 2) = Val(cmbRm4Sck1.Text.Chars(0))
+        End If
 
+        'Counts total number of 1G Sockets
+        For i = 0 To 4
+            AdditionsCount(5, 2) += AdditionsCount(i, 2)
+        Next
+
+        If AdditionsCount(5, 2) > 12 Then 'Checks to see if the total of the sockets are greater than 12 if it is it pushes a messagebox and flags to the program an issue
+            FoundErrors = 4
+            AdditionsCount(5, 2) = 0
+        Else
+            FoundErrors = 0
+        End If
 
         'Assigns Selected Network Points (ß, 1) to array
         If cmbRm0Pnt.Text = "-" Then
@@ -271,22 +320,7 @@ Public Class frmCollection
             Loft = True
         End If
 
-        'Additional electrical sockets (1G)# #2G sockets are an extra $10 Each.
-        If cmbRm0Sck0.Text.Length <> 0 Then
-            DisplayAssignments(4, 1, 0) += 10
-        End If
-        If cmbRm1Sck.Text.Contains("2G") Then
-            DisplayAssignments(4, 1, 1) += 10
-        End If
-        If cmbRm2Sck.Text.Contains("2G") Then
-            DisplayAssignments(4, 1, 2) += 10
-        End If
-        If cmbRm3Sck0.Text.Contains("2G") Then
-            DisplayAssignments(4, 1, 3) += 10
-        End If
-        If cmbRm4Sck.Text.Contains("2G") Then
-            DisplayAssignments(4, 1, 4) += 10
-        End If
+
 
         'Checks for Conflicting Checked Boxes.
         If chk0Rm0.Checked = True Then
@@ -424,13 +458,18 @@ Public Class frmCollection
             Subtotals(2, 0) += Val(DisplayAssignments(i, 2, 2))
             Subtotals(3, 0) += Val(DisplayAssignments(i, 2, 3))
             Subtotals(4, 0) += Val(DisplayAssignments(i, 2, 4))
+
         Next
         Call AdditonalsCounter()
-        'Additional Socket Caclulation for every Room (ß, 1)
+        'Additional 2G Socket Caclulation for every Room (ß, 0)
         For i = 0 To 4
             Subtotals(i, 1) = AdditionsCount(i, 0) * Val(DisplayAssignments(4, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
         Next
-        'Additional Points Caclulation for every Room (ß, 2)
+        'Additional 1G Socket Caclulation for every Room (ß, 2)
+        For i = 0 To 4
+            Subtotals(i, 3) = AdditionsCount(i, 2) * Val(DisplayAssignments(6, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
+        Next
+        'Additional Points Caclulation for every Room (ß, 1)
         For i = 0 To 4
             Subtotals(i, 2) = AdditionsCount(i, 1) * Val(DisplayAssignments(5, 1, i))
         Next
@@ -439,7 +478,7 @@ Public Class frmCollection
         Call SubCacl()
         Dim SubFinal As Integer
         For i = 0 To 4
-            SubFinal += Subtotals(i, 0) + Subtotals(i, 1) + Subtotals(i, 2)
+            SubFinal += Subtotals(i, 0) + Subtotals(i, 1) + Subtotals(i, 2) + Subtotals(i, 3)
         Next
         If Loft = True Then
             FinalPrice += 100
@@ -462,16 +501,18 @@ Public Class frmCollection
         DisplayAssignments(0, 0, 0) = "Option A: Upgrades units and worktop"
         DisplayAssignments(1, 0, 0) = "Option B: As A plus induction hob "
         DisplayAssignments(2, 0, 0) = "Option C: A plus Deluxe appliance pack"
-        ' DisplayAssignments(3, 0, 0) = ""
-        DisplayAssignments(4, 0, 0) = "Additional electrical sockets"
+        DisplayAssignments(3, 0, 0) = ""
+        DisplayAssignments(4, 0, 0) = "Additional electrical sockets 2G"
         DisplayAssignments(5, 0, 0) = "Network points"
-        '   Room 0 Price Assignments (ß,1,0)
+        DisplayAssignments(6, 0, 0) = "Additional Electrical sockets 1G"
+        'Room 0 Price Assignments (ß,1,0)
         DisplayAssignments(0, 1, 0) = 2000.0
         DisplayAssignments(1, 1, 0) = 3500.0
         DisplayAssignments(2, 1, 0) = 6000.0
-        'DisplayAssignments(3, 1, 0) = 0
-        DisplayAssignments(4, 1, 0) = 40
+        DisplayAssignments(3, 1, 0) = 0
+        DisplayAssignments(4, 1, 0) = 50
         DisplayAssignments(5, 1, 0) = 50
+        DisplayAssignments(6, 1, 0) = 40
 
         '
         'Room 1 Name Assignments (ß,0,1)
@@ -479,15 +520,18 @@ Public Class frmCollection
         DisplayAssignments(1, 0, 1) = "Shower "
         DisplayAssignments(2, 0, 1) = "Tapware "
         DisplayAssignments(3, 0, 1) = "Tiles"
-        DisplayAssignments(4, 0, 1) = "Additional electrical sockets"
+        DisplayAssignments(4, 0, 1) = "Additional electrical sockets 2G"
         DisplayAssignments(5, 0, 1) = "Network points"
+        DisplayAssignments(6, 0, 1) = "Additional Electrical sockets 1G"
         'Room 1 Price Assignments (ß,1,1)
         DisplayAssignments(0, 1, 1) = 2500
         DisplayAssignments(1, 1, 1) = 2500
         DisplayAssignments(2, 1, 1) = 2500
         DisplayAssignments(3, 1, 1) = 2500
-        DisplayAssignments(4, 1, 1) = 40
+        DisplayAssignments(4, 1, 1) = 50
         DisplayAssignments(5, 1, 1) = 50
+        DisplayAssignments(6, 1, 1) = 40
+
 
         '
         'Room 2 Name Assignments
@@ -495,30 +539,34 @@ Public Class frmCollection
         DisplayAssignments(1, 0, 2) = "TV point plus satellite dish"
         DisplayAssignments(2, 0, 2) = "4.5 KW Heat pump   "
         DisplayAssignments(3, 0, 2) = ""
-        DisplayAssignments(4, 0, 2) = "Additional electrical sockets"
+        DisplayAssignments(4, 0, 2) = "Additional electrical sockets 2G"
         DisplayAssignments(5, 0, 2) = "Network points"
+        DisplayAssignments(6, 0, 2) = "Additional electrical sockets 1G"
         'Room 2 Price Assignments
         DisplayAssignments(0, 1, 2) = 250
         DisplayAssignments(1, 1, 2) = 250
         DisplayAssignments(2, 1, 2) = 2500
         DisplayAssignments(3, 1, 2) = 0
-        DisplayAssignments(4, 1, 2) = 40
+        DisplayAssignments(4, 1, 2) = 50
         DisplayAssignments(5, 1, 2) = 50
+        DisplayAssignments(6, 1, 2) = 40
 
         'Room 3 Name Assignments
         DisplayAssignments(0, 0, 3) = "TV point"
         DisplayAssignments(1, 0, 3) = "Satellite TV point"
         DisplayAssignments(2, 0, 3) = "2.5 KW Heat pump"
         DisplayAssignments(3, 0, 3) = ""
-        DisplayAssignments(4, 0, 3) = "Additional electrical sockets"
+        DisplayAssignments(4, 0, 3) = "Additional electrical sockets 2G"
         DisplayAssignments(5, 0, 3) = "Network points"
+        DisplayAssignments(6, 0, 3) = "Additional electrical sockets 1G"
         'Room 3 Price Assignments
         DisplayAssignments(0, 1, 3) = 50
         DisplayAssignments(1, 1, 3) = 50
         DisplayAssignments(2, 1, 3) = 1800
         DisplayAssignments(3, 1, 3) = 0
-        DisplayAssignments(4, 1, 3) = 40
+        DisplayAssignments(4, 1, 3) = 50
         DisplayAssignments(5, 1, 3) = 50
+        DisplayAssignments(6, 1, 3) = 40
 
         '
         'Room 4 Name Assignments
@@ -528,13 +576,15 @@ Public Class frmCollection
         DisplayAssignments(3, 0, 4) = ""
         DisplayAssignments(4, 0, 4) = "Additional electrical sockets"
         DisplayAssignments(5, 0, 4) = "Network points"
+        DisplayAssignments(6, 0, 4) = "Additional electrical sockets 1G"
         'Room 4 Price Assignments
         DisplayAssignments(0, 1, 4) = 50
         DisplayAssignments(1, 1, 4) = 50
         DisplayAssignments(2, 1, 4) = 1800
         DisplayAssignments(3, 1, 4) = 0
-        DisplayAssignments(4, 1, 4) = 40
+        DisplayAssignments(4, 1, 4) = 50
         DisplayAssignments(5, 1, 4) = 50
+        DisplayAssignments(6, 1, 4) = 40
 
     End Sub
     Public Sub FormAssignment() 'Sets the values and text for the Checkboxes and Dropdowns
@@ -542,15 +592,16 @@ Public Class frmCollection
         chk0Rm0.Text = DisplayAssignments(0, 0, 0)
         chk1Rm0.Text = DisplayAssignments(1, 0, 0)
         chk2Rm0.Text = DisplayAssignments(2, 0, 0)
-        cmbRm0Sck.Text = DisplayAssignments(4, 0, 0)
+        cmbRm0Sck1.Text = DisplayAssignments(3, 0, 0)
+        cmbRm0Sck0.Text = DisplayAssignments(4, 0, 0)
         cmbRm0Pnt.Text = DisplayAssignments(5, 0, 0)
         chk0Rm1.Text = "Upgrade"
-        cmbRm1Sck.Text = DisplayAssignments(4, 0, 1)
+        cmbRm1Sck0.Text = DisplayAssignments(4, 0, 1)
         cmbRm1Pnt.Text = DisplayAssignments(5, 0, 1)
         chk0Rm2.Text = DisplayAssignments(0, 0, 2)
         chk1Rm2.Text = DisplayAssignments(1, 0, 2)
         chk2Rm2.Text = DisplayAssignments(2, 0, 2)
-        cmbRm2Sck.Text = DisplayAssignments(4, 0, 2)
+        cmbRm2Sck0.Text = DisplayAssignments(4, 0, 2)
         cmbRm2Pnt.Text = DisplayAssignments(5, 0, 2)
         chk0Rm3.Text = DisplayAssignments(0, 0, 3)
         chk1Rm3.Text = DisplayAssignments(1, 0, 3)
@@ -560,7 +611,7 @@ Public Class frmCollection
         chk0Rm4.Text = DisplayAssignments(0, 0, 4)
         chk1Rm4.Text = DisplayAssignments(1, 0, 4)
         chk2Rm4.Text = DisplayAssignments(2, 0, 4)
-        cmbRm4Sck.Text = DisplayAssignments(4, 0, 4)
+        cmbRm4Sck0.Text = DisplayAssignments(4, 0, 4)
         cmbRm4Pnt.Text = DisplayAssignments(5, 0, 4)
         'lblPrice.Text = FinalPrice.ToString("C")
     End Sub

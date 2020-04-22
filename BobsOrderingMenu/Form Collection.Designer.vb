@@ -42,7 +42,7 @@ Partial Class frmCollection
         Me.chk0Rm0 = New System.Windows.Forms.CheckBox()
         Me.chk1Rm0 = New System.Windows.Forms.CheckBox()
         Me.chk2Rm0 = New System.Windows.Forms.CheckBox()
-        Me.cmbRm0Sck = New System.Windows.Forms.ComboBox()
+        Me.cmbRm0Sck0 = New System.Windows.Forms.ComboBox()
         Me.cmbRm0Pnt = New System.Windows.Forms.ComboBox()
         Me.cmbRm3Pnt = New System.Windows.Forms.ComboBox()
         Me.cmbRm3Sck0 = New System.Windows.Forms.ComboBox()
@@ -56,7 +56,7 @@ Partial Class frmCollection
         Me.rdoTrade = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbRm1Pnt = New System.Windows.Forms.ComboBox()
-        Me.cmbRm1Sck = New System.Windows.Forms.ComboBox()
+        Me.cmbRm1Sck0 = New System.Windows.Forms.ComboBox()
         Me.chk0Rm1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblRm1Pnt = New System.Windows.Forms.Label()
@@ -74,9 +74,9 @@ Partial Class frmCollection
         Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbRm0Sck1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cmbRm1Sck1 = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cmbRm3Sck1 = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -311,15 +311,15 @@ Partial Class frmCollection
         Me.chk2Rm0.Text = " "
         Me.chk2Rm0.UseVisualStyleBackColor = True
         '
-        'cmbRm0Sck
+        'cmbRm0Sck0
         '
-        Me.cmbRm0Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm0Sck.FormattingEnabled = True
-        Me.cmbRm0Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm0Sck.Location = New System.Drawing.Point(6, 105)
-        Me.cmbRm0Sck.Name = "cmbRm0Sck"
-        Me.cmbRm0Sck.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm0Sck.TabIndex = 10
+        Me.cmbRm0Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm0Sck0.FormattingEnabled = True
+        Me.cmbRm0Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
+        Me.cmbRm0Sck0.Location = New System.Drawing.Point(6, 105)
+        Me.cmbRm0Sck0.Name = "cmbRm0Sck0"
+        Me.cmbRm0Sck0.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm0Sck0.TabIndex = 10
         '
         'cmbRm0Pnt
         '
@@ -345,7 +345,7 @@ Partial Class frmCollection
         '
         Me.cmbRm3Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm3Sck0.FormattingEnabled = True
-        Me.cmbRm3Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm3Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
         Me.cmbRm3Sck0.Location = New System.Drawing.Point(4, 103)
         Me.cmbRm3Sck0.Name = "cmbRm3Sck0"
         Me.cmbRm3Sck0.Size = New System.Drawing.Size(83, 21)
@@ -414,6 +414,7 @@ Partial Class frmCollection
         'rdoRetail
         '
         Me.rdoRetail.AutoSize = True
+        Me.rdoRetail.Checked = True
         Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.rdoRetail.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.rdoRetail.Location = New System.Drawing.Point(69, 471)
@@ -421,6 +422,7 @@ Partial Class frmCollection
         Me.rdoRetail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.rdoRetail.Size = New System.Drawing.Size(62, 21)
         Me.rdoRetail.TabIndex = 5
+        Me.rdoRetail.TabStop = True
         Me.rdoRetail.Text = "Retail"
         Me.rdoRetail.UseVisualStyleBackColor = True
         '
@@ -458,15 +460,15 @@ Partial Class frmCollection
         Me.cmbRm1Pnt.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm1Pnt.TabIndex = 17
         '
-        'cmbRm1Sck
+        'cmbRm1Sck0
         '
-        Me.cmbRm1Sck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm1Sck.FormattingEnabled = True
-        Me.cmbRm1Sck.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm1Sck.Location = New System.Drawing.Point(6, 105)
-        Me.cmbRm1Sck.Name = "cmbRm1Sck"
-        Me.cmbRm1Sck.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm1Sck.TabIndex = 16
+        Me.cmbRm1Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm1Sck0.FormattingEnabled = True
+        Me.cmbRm1Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
+        Me.cmbRm1Sck0.Location = New System.Drawing.Point(6, 105)
+        Me.cmbRm1Sck0.Name = "cmbRm1Sck0"
+        Me.cmbRm1Sck0.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm1Sck0.TabIndex = 16
         '
         'chk0Rm1
         '
@@ -481,11 +483,11 @@ Partial Class frmCollection
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.cmbRm1Sck1)
         Me.GroupBox1.Controls.Add(Me.lblRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.lblRm1Sck)
         Me.GroupBox1.Controls.Add(Me.chk0Rm1)
-        Me.GroupBox1.Controls.Add(Me.cmbRm1Sck)
+        Me.GroupBox1.Controls.Add(Me.cmbRm1Sck0)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(652, 59)
@@ -515,10 +517,10 @@ Partial Class frmCollection
         'GroupBox0
         '
         Me.GroupBox0.Controls.Add(Me.Label7)
-        Me.GroupBox0.Controls.Add(Me.ComboBox1)
+        Me.GroupBox0.Controls.Add(Me.cmbRm0Sck1)
         Me.GroupBox0.Controls.Add(Me.lblRm0Pnt)
         Me.GroupBox0.Controls.Add(Me.lblRm0Sck)
-        Me.GroupBox0.Controls.Add(Me.cmbRm0Sck)
+        Me.GroupBox0.Controls.Add(Me.cmbRm0Sck0)
         Me.GroupBox0.Controls.Add(Me.chk2Rm0)
         Me.GroupBox0.Controls.Add(Me.chk1Rm0)
         Me.GroupBox0.Controls.Add(Me.chk0Rm0)
@@ -670,15 +672,15 @@ Partial Class frmCollection
         Me.Label7.TabIndex = 1604
         Me.Label7.Text = "Additional Sockets"
         '
-        'ComboBox1
+        'cmbRm0Sck1
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 132)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(83, 21)
-        Me.ComboBox1.TabIndex = 1603
+        Me.cmbRm0Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm0Sck1.FormattingEnabled = True
+        Me.cmbRm0Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm0Sck1.Location = New System.Drawing.Point(6, 132)
+        Me.cmbRm0Sck1.Name = "cmbRm0Sck1"
+        Me.cmbRm0Sck1.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm0Sck1.TabIndex = 1603
         '
         'Label8
         '
@@ -689,15 +691,15 @@ Partial Class frmCollection
         Me.Label8.TabIndex = 1703
         Me.Label8.Text = "Additional Sockets"
         '
-        'ComboBox2
+        'cmbRm1Sck1
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.ComboBox2.Location = New System.Drawing.Point(6, 132)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(83, 21)
-        Me.ComboBox2.TabIndex = 1702
+        Me.cmbRm1Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm1Sck1.FormattingEnabled = True
+        Me.cmbRm1Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm1Sck1.Location = New System.Drawing.Point(6, 132)
+        Me.cmbRm1Sck1.Name = "cmbRm1Sck1"
+        Me.cmbRm1Sck1.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm1Sck1.TabIndex = 1702
         '
         'Label9
         '
@@ -712,7 +714,7 @@ Partial Class frmCollection
         '
         Me.cmbRm3Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm3Sck1.FormattingEnabled = True
-        Me.cmbRm3Sck1.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm3Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm3Sck1.Location = New System.Drawing.Point(4, 130)
         Me.cmbRm3Sck1.Name = "cmbRm3Sck1"
         Me.cmbRm3Sck1.Size = New System.Drawing.Size(83, 21)
@@ -731,7 +733,7 @@ Partial Class frmCollection
         '
         Me.cmbRm2Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm2Sck1.FormattingEnabled = True
-        Me.cmbRm2Sck1.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm2Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm2Sck1.Location = New System.Drawing.Point(6, 131)
         Me.cmbRm2Sck1.Name = "cmbRm2Sck1"
         Me.cmbRm2Sck1.Size = New System.Drawing.Size(83, 21)
@@ -769,7 +771,7 @@ Partial Class frmCollection
         '
         Me.cmbRm2Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm2Sck0.FormattingEnabled = True
-        Me.cmbRm2Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm2Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
         Me.cmbRm2Sck0.Location = New System.Drawing.Point(6, 104)
         Me.cmbRm2Sck0.Name = "cmbRm2Sck0"
         Me.cmbRm2Sck0.Size = New System.Drawing.Size(83, 21)
@@ -788,7 +790,7 @@ Partial Class frmCollection
         '
         Me.cmbRm4Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm4Sck1.FormattingEnabled = True
-        Me.cmbRm4Sck1.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm4Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
         Me.cmbRm4Sck1.Location = New System.Drawing.Point(6, 132)
         Me.cmbRm4Sck1.Name = "cmbRm4Sck1"
         Me.cmbRm4Sck1.Size = New System.Drawing.Size(83, 21)
@@ -826,7 +828,7 @@ Partial Class frmCollection
         '
         Me.cmbRm4Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRm4Sck0.FormattingEnabled = True
-        Me.cmbRm4Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm4Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
         Me.cmbRm4Sck0.Location = New System.Drawing.Point(6, 105)
         Me.cmbRm4Sck0.Name = "cmbRm4Sck0"
         Me.cmbRm4Sck0.Size = New System.Drawing.Size(83, 21)
@@ -897,7 +899,7 @@ Partial Class frmCollection
     Friend WithEvents chk0Rm0 As CheckBox
     Friend WithEvents chk1Rm0 As CheckBox
     Friend WithEvents chk2Rm0 As CheckBox
-    Friend WithEvents cmbRm0Sck As ComboBox
+    Friend WithEvents cmbRm0Sck0 As ComboBox
     Friend WithEvents cmbRm0Pnt As ComboBox
     Friend WithEvents cmbRm3Pnt As ComboBox
     Friend WithEvents cmbRm3Sck0 As ComboBox
@@ -911,7 +913,7 @@ Partial Class frmCollection
     Friend WithEvents rdoTrade As RadioButton
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbRm1Pnt As ComboBox
-    Friend WithEvents cmbRm1Sck As ComboBox
+    Friend WithEvents cmbRm1Sck0 As ComboBox
     Friend WithEvents chk0Rm1 As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox0 As GroupBox
@@ -929,9 +931,9 @@ Partial Class frmCollection
     Friend WithEvents lblRm3Pnt As Label
     Friend WithEvents lblRm3Sck As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cmbRm1Sck1 As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cmbRm0Sck1 As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents cmbRm3Sck1 As ComboBox
     Friend WithEvents Label13 As Label
