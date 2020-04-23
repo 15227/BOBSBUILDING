@@ -8,7 +8,7 @@ Public Class frmCollection
     Public TradeOrder As Boolean 'True is Trade, False is Retail
     Dim Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form
     Public DisplayAssignments(6, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
-    Dim AdditionsCount(5, 2) As Integer 'Sets array for Sockets and Network Points
+    Public AdditionsCount(5, 2) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
     Dim FoundErrors As Integer = 0 'Sets up for the end of the form to stop it proceeding with errors   
     Dim Loft As Boolean 'Prepars for the introduction of additional ntwrk pnts
@@ -108,6 +108,7 @@ Public Class frmCollection
         Call TextChecking()
         Call AdditonalsCounter()
         Call ChkValidation()
+
         Call ErrorMessageShowing()
     End Sub
     Public Sub ErrorMessageShowing()
@@ -123,6 +124,8 @@ Public Class frmCollection
             MessageBox.Show("Too Many Additional Network Points Selected.")
         ElseIf FoundErrors = 6 Then
             MessageBox.Show("Falied to find Order Type.")
+        ElseIf FoundErrors = 10 Then
+            MessageBox.Show("Please Remove Line Breaks from Addresses.")
         Else
             Call FullPriceCaclulation()
             Call SubmitIDNum() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
@@ -130,7 +133,7 @@ Public Class frmCollection
         End If
     End Sub
     'Authentications
-    Private Sub TextChecking() 'NOT CURRENTLY WORKING
+    Private Sub TextChecking()
         Surname = Trim(txtSurnameInput.Text) 'Takes the leading or following spaces away.
         Firstname = Trim(txtNameInput.Text)
         DelivAdd = Trim(txtDeliveryAddress.Text)
@@ -152,8 +155,12 @@ Public Class frmCollection
 
         If DelivAdd.Length = 0 Then
             FoundErrors = 3
+        ElseIf DelivAdd.Contains(vbCrLf) Then
+            FoundErrors = 10
         End If
-
+        If CusAdd.Contains(vbCrLf) Then
+            FoundErrors = 10
+        End If
     End Sub
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array

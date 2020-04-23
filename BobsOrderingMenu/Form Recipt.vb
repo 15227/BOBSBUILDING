@@ -22,14 +22,15 @@ Public Class frmRecipt
         If frmCollection.CusAdd.Length <> 0 Then
             Recept += "Customer Address" & frmCollection.CusAdd & vbCrLf
         End If
-
         If frmCollection.TradeOrder = True Then
             Recept += "Order Type: Trade"
         ElseIf frmCollection.TradeOrder = False Then
             Recept += "Order Type: Retail"
         End If
         Recept += vbCrLf
-
+        '
+        ' BEGIN CHECKBOX FILLING
+        '
         For i = 0 To 3
             If Val(frmCollection.DisplayAssignments(i, 2, 0)) <> 0 Then
                 Recept += frmCollection.DisplayAssignments(i, 0, 0) & " " & Val(frmCollection.DisplayAssignments(i, 2, 0)).ToString("C") & vbCrLf
@@ -55,7 +56,15 @@ Public Class frmRecipt
                 Recept += frmCollection.DisplayAssignments(i, 0, 4) & " " & Val(frmCollection.DisplayAssignments(i, 2, 4)).ToString("C") & vbCrLf
             End If
         Next
-
+        '
+        ' BEGIN DROPDOWN FILLING
+        '
+        If frmCollection.AdditionsCount(5, 0) <> 0 Then
+            Recept += frmCollection.DisplayAssignments(4, 0, 0) & Val(frmCollection.AdditionsCount(5, 0)).ToString("C") & vbCrLf
+        End If
+        '
+        'BEGIN PRICE FILLING
+        '
         Recept += "PRICE EXCLUDING GST= " & Val(ExcludGST).ToString("C") & vbCrLf
         Recept += "GST = " & Val(GST).ToString("C") & vbCrLf
         Recept += "PRICE INCLUDING GST= " & Val(IncludGST).ToString("C") & vbCrLf
