@@ -3,8 +3,9 @@
 Public Class frmRecipt
     Dim FullName As String = frmCollection.Firstname & " " & frmCollection.Surname
     Dim Recept As String
+    Const BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Dim ExcludGST As String = Val(frmCollection.FinalPrice).ToString
-    Dim IncludGST As String = ExcludGST * 1.15 '15% ontop of a value.
+    Dim IncludGST As String = (ExcludGST * 1.15) + BasePrice '15% ontop of a value.
     Dim GST As String = ExcludGST * 0.15 '15% as Decimal.
     Dim FilePath As String = "D:\OrderHistory.txt"
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click

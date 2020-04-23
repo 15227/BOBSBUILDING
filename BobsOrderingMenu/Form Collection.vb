@@ -4,12 +4,11 @@ Public Class frmCollection
     'Defines variable as stored value in program.
     Public UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
     Public CurrentNumber As Integer
-    Const BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Public TradeOrder As Boolean 'True is Trade, False is Retail
     Public Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form
     Public DisplayAssignments(6, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Public AdditionsCount(5, 2) As Integer 'Sets array for Sockets and Network Points
-    Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
+    Public FinalPrice As Integer 'adds the basic price into the Final Price from the beginning.
     Dim FoundErrors As Integer = 0 'Sets up for the end of the form to stop it proceeding with errors   
     Dim Loft As Boolean 'Prepars for the introduction of additional ntwrk pnts
     Public Firstname As String
@@ -166,7 +165,6 @@ Public Class frmCollection
                 FoundErrors = 10
             End If
         End If
-
     End Sub
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array

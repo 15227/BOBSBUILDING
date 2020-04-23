@@ -468,7 +468,7 @@ Partial Class frmCollection
         'chk0Rm1
         '
         Me.chk0Rm1.AutoSize = True
-        Me.chk0Rm1.Location = New System.Drawing.Point(7, 60)
+        Me.chk0Rm1.Location = New System.Drawing.Point(6, 60)
         Me.chk0Rm1.Name = "chk0Rm1"
         Me.chk0Rm1.Size = New System.Drawing.Size(29, 17)
         Me.chk0Rm1.TabIndex = 13
