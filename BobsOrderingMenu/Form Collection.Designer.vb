@@ -59,38 +59,38 @@ Partial Class frmCollection
         Me.cmbRm1Sck0 = New System.Windows.Forms.ComboBox()
         Me.chk0Rm1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cmbRm1Sck1 = New System.Windows.Forms.ComboBox()
         Me.lblRm1Pnt = New System.Windows.Forms.Label()
         Me.lblRm1Sck = New System.Windows.Forms.Label()
         Me.GroupBox0 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmbRm0Sck1 = New System.Windows.Forms.ComboBox()
         Me.lblRm0Pnt = New System.Windows.Forms.Label()
         Me.lblRm0Sck = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.cmbRm3Sck1 = New System.Windows.Forms.ComboBox()
         Me.lblRm3Pnt = New System.Windows.Forms.Label()
         Me.lblRm3Sck = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.chk1Rm2 = New System.Windows.Forms.CheckBox()
-        Me.chk2Rm2 = New System.Windows.Forms.CheckBox()
-        Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.cmbRm0Sck1 = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.cmbRm1Sck1 = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.cmbRm3Sck1 = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.cmbRm2Sck1 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
-        Me.cmbRm2Sck0 = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cmbRm4Sck1 = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cmbRm4Pnt = New System.Windows.Forms.ComboBox()
         Me.cmbRm4Sck0 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.chk1Rm2 = New System.Windows.Forms.CheckBox()
+        Me.chk2Rm2 = New System.Windows.Forms.CheckBox()
+        Me.chk0Rm2 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.cmbRm2Sck1 = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
+        Me.cmbRm2Sck0 = New System.Windows.Forms.ComboBox()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox0.SuspendLayout()
@@ -190,7 +190,7 @@ Partial Class frmCollection
         Me.btnRestart.Name = "btnRestart"
         Me.btnRestart.Size = New System.Drawing.Size(98, 55)
         Me.btnRestart.TabIndex = 501
-        Me.btnRestart.Text = "Restart"
+        Me.btnRestart.Text = "Exit"
         Me.btnRestart.UseVisualStyleBackColor = False
         '
         'lblNameInput
@@ -326,7 +326,7 @@ Partial Class frmCollection
         Me.cmbRm0Pnt.Location = New System.Drawing.Point(6, 159)
         Me.cmbRm0Pnt.Name = "cmbRm0Pnt"
         Me.cmbRm0Pnt.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm0Pnt.TabIndex = 11
+        Me.cmbRm0Pnt.TabIndex = 12
         '
         'cmbRm3Pnt
         '
@@ -336,7 +336,7 @@ Partial Class frmCollection
         Me.cmbRm3Pnt.Location = New System.Drawing.Point(4, 157)
         Me.cmbRm3Pnt.Name = "cmbRm3Pnt"
         Me.cmbRm3Pnt.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm3Pnt.TabIndex = 27
+        Me.cmbRm3Pnt.TabIndex = 28
         '
         'cmbRm3Sck0
         '
@@ -384,7 +384,7 @@ Partial Class frmCollection
         Me.chk2Rm4.Location = New System.Drawing.Point(6, 85)
         Me.chk2Rm4.Name = "chk2Rm4"
         Me.chk2Rm4.Size = New System.Drawing.Size(29, 17)
-        Me.chk2Rm4.TabIndex = 30
+        Me.chk2Rm4.TabIndex = 31
         Me.chk2Rm4.Text = " "
         Me.chk2Rm4.UseVisualStyleBackColor = True
         '
@@ -394,7 +394,7 @@ Partial Class frmCollection
         Me.chk1Rm4.Location = New System.Drawing.Point(6, 64)
         Me.chk1Rm4.Name = "chk1Rm4"
         Me.chk1Rm4.Size = New System.Drawing.Size(29, 17)
-        Me.chk1Rm4.TabIndex = 29
+        Me.chk1Rm4.TabIndex = 30
         Me.chk1Rm4.Text = " "
         Me.chk1Rm4.UseVisualStyleBackColor = True
         '
@@ -404,7 +404,7 @@ Partial Class frmCollection
         Me.chk0Rm4.Location = New System.Drawing.Point(6, 41)
         Me.chk0Rm4.Name = "chk0Rm4"
         Me.chk0Rm4.Size = New System.Drawing.Size(29, 17)
-        Me.chk0Rm4.TabIndex = 28
+        Me.chk0Rm4.TabIndex = 29
         Me.chk0Rm4.Text = " "
         Me.chk0Rm4.UseVisualStyleBackColor = True
         '
@@ -453,7 +453,7 @@ Partial Class frmCollection
         Me.cmbRm1Pnt.Location = New System.Drawing.Point(6, 159)
         Me.cmbRm1Pnt.Name = "cmbRm1Pnt"
         Me.cmbRm1Pnt.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm1Pnt.TabIndex = 17
+        Me.cmbRm1Pnt.TabIndex = 16
         '
         'cmbRm1Sck0
         '
@@ -463,7 +463,7 @@ Partial Class frmCollection
         Me.cmbRm1Sck0.Location = New System.Drawing.Point(6, 105)
         Me.cmbRm1Sck0.Name = "cmbRm1Sck0"
         Me.cmbRm1Sck0.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm1Sck0.TabIndex = 16
+        Me.cmbRm1Sck0.TabIndex = 14
         '
         'chk0Rm1
         '
@@ -471,7 +471,7 @@ Partial Class frmCollection
         Me.chk0Rm1.Location = New System.Drawing.Point(7, 60)
         Me.chk0Rm1.Name = "chk0Rm1"
         Me.chk0Rm1.Size = New System.Drawing.Size(29, 17)
-        Me.chk0Rm1.TabIndex = 12
+        Me.chk0Rm1.TabIndex = 13
         Me.chk0Rm1.Text = " "
         Me.chk0Rm1.UseVisualStyleBackColor = True
         '
@@ -488,8 +488,27 @@ Partial Class frmCollection
         Me.GroupBox1.Location = New System.Drawing.Point(652, 59)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 188)
-        Me.GroupBox1.TabIndex = 10003
+        Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(95, 137)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(95, 13)
+        Me.Label8.TabIndex = 1703
+        Me.Label8.Text = "Additional Sockets"
+        '
+        'cmbRm1Sck1
+        '
+        Me.cmbRm1Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm1Sck1.FormattingEnabled = True
+        Me.cmbRm1Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm1Sck1.Location = New System.Drawing.Point(6, 132)
+        Me.cmbRm1Sck1.Name = "cmbRm1Sck1"
+        Me.cmbRm1Sck1.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm1Sck1.TabIndex = 15
         '
         'lblRm1Pnt
         '
@@ -524,8 +543,27 @@ Partial Class frmCollection
         Me.GroupBox0.Location = New System.Drawing.Point(417, 59)
         Me.GroupBox0.Name = "GroupBox0"
         Me.GroupBox0.Size = New System.Drawing.Size(226, 188)
-        Me.GroupBox0.TabIndex = 10004
+        Me.GroupBox0.TabIndex = 50
         Me.GroupBox0.TabStop = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(95, 135)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(95, 13)
+        Me.Label7.TabIndex = 1604
+        Me.Label7.Text = "Additional Sockets"
+        '
+        'cmbRm0Sck1
+        '
+        Me.cmbRm0Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm0Sck1.FormattingEnabled = True
+        Me.cmbRm0Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm0Sck1.Location = New System.Drawing.Point(6, 132)
+        Me.cmbRm0Sck1.Name = "cmbRm0Sck1"
+        Me.cmbRm0Sck1.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm0Sck1.TabIndex = 11
         '
         'lblRm0Pnt
         '
@@ -560,8 +598,27 @@ Partial Class frmCollection
         Me.GroupBox3.Location = New System.Drawing.Point(649, 267)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(226, 183)
-        Me.GroupBox3.TabIndex = 10006
+        Me.GroupBox3.TabIndex = 54
         Me.GroupBox3.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(93, 134)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(95, 13)
+        Me.Label9.TabIndex = 1903
+        Me.Label9.Text = "Additional Sockets"
+        '
+        'cmbRm3Sck1
+        '
+        Me.cmbRm3Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm3Sck1.FormattingEnabled = True
+        Me.cmbRm3Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm3Sck1.Location = New System.Drawing.Point(4, 130)
+        Me.cmbRm3Sck1.Name = "cmbRm3Sck1"
+        Me.cmbRm3Sck1.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm3Sck1.TabIndex = 27
         '
         'lblRm3Pnt
         '
@@ -593,184 +650,12 @@ Partial Class frmCollection
         Me.GroupBox4.Controls.Add(Me.cmbRm4Pnt)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.cmbRm4Sck0)
+        Me.GroupBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.GroupBox4.Location = New System.Drawing.Point(890, 267)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(226, 184)
-        Me.GroupBox4.TabIndex = 10007
+        Me.GroupBox4.TabIndex = 55
         Me.GroupBox4.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label4.Location = New System.Drawing.Point(7, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 18)
-        Me.Label4.TabIndex = 1800
-        Me.Label4.Text = " Living room"
-        '
-        'chk1Rm2
-        '
-        Me.chk1Rm2.AutoSize = True
-        Me.chk1Rm2.Location = New System.Drawing.Point(10, 63)
-        Me.chk1Rm2.Name = "chk1Rm2"
-        Me.chk1Rm2.Size = New System.Drawing.Size(29, 17)
-        Me.chk1Rm2.TabIndex = 19
-        Me.chk1Rm2.Text = " "
-        Me.chk1Rm2.UseVisualStyleBackColor = True
-        '
-        'chk2Rm2
-        '
-        Me.chk2Rm2.AutoSize = True
-        Me.chk2Rm2.Location = New System.Drawing.Point(10, 86)
-        Me.chk2Rm2.Name = "chk2Rm2"
-        Me.chk2Rm2.Size = New System.Drawing.Size(29, 17)
-        Me.chk2Rm2.TabIndex = 20
-        Me.chk2Rm2.Text = " "
-        Me.chk2Rm2.UseVisualStyleBackColor = True
-        '
-        'chk0Rm2
-        '
-        Me.chk0Rm2.AutoSize = True
-        Me.chk0Rm2.Location = New System.Drawing.Point(10, 41)
-        Me.chk0Rm2.Name = "chk0Rm2"
-        Me.chk0Rm2.Size = New System.Drawing.Size(29, 17)
-        Me.chk0Rm2.TabIndex = 18
-        Me.chk0Rm2.Text = " "
-        Me.chk0Rm2.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.chk0Rm2)
-        Me.GroupBox2.Controls.Add(Me.cmbRm2Sck1)
-        Me.GroupBox2.Controls.Add(Me.chk2Rm2)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.chk1Rm2)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.cmbRm2Pnt)
-        Me.GroupBox2.Controls.Add(Me.cmbRm2Sck0)
-        Me.GroupBox2.Location = New System.Drawing.Point(417, 267)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(226, 183)
-        Me.GroupBox2.TabIndex = 10005
-        Me.GroupBox2.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(95, 135)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(95, 13)
-        Me.Label7.TabIndex = 1604
-        Me.Label7.Text = "Additional Sockets"
-        '
-        'cmbRm0Sck1
-        '
-        Me.cmbRm0Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm0Sck1.FormattingEnabled = True
-        Me.cmbRm0Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm0Sck1.Location = New System.Drawing.Point(6, 132)
-        Me.cmbRm0Sck1.Name = "cmbRm0Sck1"
-        Me.cmbRm0Sck1.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm0Sck1.TabIndex = 1603
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(95, 137)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(95, 13)
-        Me.Label8.TabIndex = 1703
-        Me.Label8.Text = "Additional Sockets"
-        '
-        'cmbRm1Sck1
-        '
-        Me.cmbRm1Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm1Sck1.FormattingEnabled = True
-        Me.cmbRm1Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm1Sck1.Location = New System.Drawing.Point(6, 132)
-        Me.cmbRm1Sck1.Name = "cmbRm1Sck1"
-        Me.cmbRm1Sck1.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm1Sck1.TabIndex = 1702
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(93, 134)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(95, 13)
-        Me.Label9.TabIndex = 1903
-        Me.Label9.Text = "Additional Sockets"
-        '
-        'cmbRm3Sck1
-        '
-        Me.cmbRm3Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm3Sck1.FormattingEnabled = True
-        Me.cmbRm3Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm3Sck1.Location = New System.Drawing.Point(4, 130)
-        Me.cmbRm3Sck1.Name = "cmbRm3Sck1"
-        Me.cmbRm3Sck1.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm3Sck1.TabIndex = 1902
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(95, 135)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(95, 13)
-        Me.Label10.TabIndex = 1909
-        Me.Label10.Text = "Additional Sockets"
-        '
-        'cmbRm2Sck1
-        '
-        Me.cmbRm2Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm2Sck1.FormattingEnabled = True
-        Me.cmbRm2Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
-        Me.cmbRm2Sck1.Location = New System.Drawing.Point(6, 131)
-        Me.cmbRm2Sck1.Name = "cmbRm2Sck1"
-        Me.cmbRm2Sck1.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm2Sck1.TabIndex = 1908
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(95, 162)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(128, 13)
-        Me.Label11.TabIndex = 1907
-        Me.Label11.Text = "Additional Network Points"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(95, 108)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(95, 13)
-        Me.Label12.TabIndex = 1906
-        Me.Label12.Text = "Additional Sockets"
-        '
-        'cmbRm2Pnt
-        '
-        Me.cmbRm2Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm2Pnt.FormattingEnabled = True
-        Me.cmbRm2Pnt.Items.AddRange(New Object() {"-", "1", "2", "3", "4"})
-        Me.cmbRm2Pnt.Location = New System.Drawing.Point(6, 158)
-        Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
-        Me.cmbRm2Pnt.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm2Pnt.TabIndex = 1905
-        '
-        'cmbRm2Sck0
-        '
-        Me.cmbRm2Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRm2Sck0.FormattingEnabled = True
-        Me.cmbRm2Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
-        Me.cmbRm2Sck0.Location = New System.Drawing.Point(6, 104)
-        Me.cmbRm2Sck0.Name = "cmbRm2Sck0"
-        Me.cmbRm2Sck0.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm2Sck0.TabIndex = 1904
         '
         'Label13
         '
@@ -789,7 +674,7 @@ Partial Class frmCollection
         Me.cmbRm4Sck1.Location = New System.Drawing.Point(6, 132)
         Me.cmbRm4Sck1.Name = "cmbRm4Sck1"
         Me.cmbRm4Sck1.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm4Sck1.TabIndex = 1914
+        Me.cmbRm4Sck1.TabIndex = 33
         '
         'Label14
         '
@@ -817,7 +702,7 @@ Partial Class frmCollection
         Me.cmbRm4Pnt.Location = New System.Drawing.Point(6, 159)
         Me.cmbRm4Pnt.Name = "cmbRm4Pnt"
         Me.cmbRm4Pnt.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm4Pnt.TabIndex = 1911
+        Me.cmbRm4Pnt.TabIndex = 34
         '
         'cmbRm4Sck0
         '
@@ -827,7 +712,123 @@ Partial Class frmCollection
         Me.cmbRm4Sck0.Location = New System.Drawing.Point(6, 105)
         Me.cmbRm4Sck0.Name = "cmbRm4Sck0"
         Me.cmbRm4Sck0.Size = New System.Drawing.Size(83, 21)
-        Me.cmbRm4Sck0.TabIndex = 1910
+        Me.cmbRm4Sck0.TabIndex = 32
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label4.Location = New System.Drawing.Point(7, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(89, 18)
+        Me.Label4.TabIndex = 1800
+        Me.Label4.Text = " Living room"
+        '
+        'chk1Rm2
+        '
+        Me.chk1Rm2.AutoSize = True
+        Me.chk1Rm2.Location = New System.Drawing.Point(10, 63)
+        Me.chk1Rm2.Name = "chk1Rm2"
+        Me.chk1Rm2.Size = New System.Drawing.Size(29, 17)
+        Me.chk1Rm2.TabIndex = 18
+        Me.chk1Rm2.Text = " "
+        Me.chk1Rm2.UseVisualStyleBackColor = True
+        '
+        'chk2Rm2
+        '
+        Me.chk2Rm2.AutoSize = True
+        Me.chk2Rm2.Location = New System.Drawing.Point(10, 86)
+        Me.chk2Rm2.Name = "chk2Rm2"
+        Me.chk2Rm2.Size = New System.Drawing.Size(29, 17)
+        Me.chk2Rm2.TabIndex = 19
+        Me.chk2Rm2.Text = " "
+        Me.chk2Rm2.UseVisualStyleBackColor = True
+        '
+        'chk0Rm2
+        '
+        Me.chk0Rm2.AutoSize = True
+        Me.chk0Rm2.Location = New System.Drawing.Point(10, 41)
+        Me.chk0Rm2.Name = "chk0Rm2"
+        Me.chk0Rm2.Size = New System.Drawing.Size(29, 17)
+        Me.chk0Rm2.TabIndex = 17
+        Me.chk0Rm2.Text = " "
+        Me.chk0Rm2.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.chk0Rm2)
+        Me.GroupBox2.Controls.Add(Me.cmbRm2Sck1)
+        Me.GroupBox2.Controls.Add(Me.chk2Rm2)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.chk1Rm2)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.cmbRm2Pnt)
+        Me.GroupBox2.Controls.Add(Me.cmbRm2Sck0)
+        Me.GroupBox2.Location = New System.Drawing.Point(417, 267)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(226, 183)
+        Me.GroupBox2.TabIndex = 53
+        Me.GroupBox2.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(95, 135)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(95, 13)
+        Me.Label10.TabIndex = 1909
+        Me.Label10.Text = "Additional Sockets"
+        '
+        'cmbRm2Sck1
+        '
+        Me.cmbRm2Sck1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm2Sck1.FormattingEnabled = True
+        Me.cmbRm2Sck1.Items.AddRange(New Object() {"-", "1 (1G)", "2 (1G)", "3 (1G)", "4 (1G)"})
+        Me.cmbRm2Sck1.Location = New System.Drawing.Point(6, 131)
+        Me.cmbRm2Sck1.Name = "cmbRm2Sck1"
+        Me.cmbRm2Sck1.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm2Sck1.TabIndex = 21
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(95, 162)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(128, 13)
+        Me.Label11.TabIndex = 1907
+        Me.Label11.Text = "Additional Network Points"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(95, 108)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(95, 13)
+        Me.Label12.TabIndex = 1906
+        Me.Label12.Text = "Additional Sockets"
+        '
+        'cmbRm2Pnt
+        '
+        Me.cmbRm2Pnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm2Pnt.FormattingEnabled = True
+        Me.cmbRm2Pnt.Items.AddRange(New Object() {"-", "1", "2", "3", "4"})
+        Me.cmbRm2Pnt.Location = New System.Drawing.Point(6, 158)
+        Me.cmbRm2Pnt.Name = "cmbRm2Pnt"
+        Me.cmbRm2Pnt.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm2Pnt.TabIndex = 22
+        '
+        'cmbRm2Sck0
+        '
+        Me.cmbRm2Sck0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRm2Sck0.FormattingEnabled = True
+        Me.cmbRm2Sck0.Items.AddRange(New Object() {"-", "1 (2G)", "2 (2G)", "3 (2G)", "4 (2G)"})
+        Me.cmbRm2Sck0.Location = New System.Drawing.Point(6, 104)
+        Me.cmbRm2Sck0.Name = "cmbRm2Sck0"
+        Me.cmbRm2Sck0.Size = New System.Drawing.Size(83, 21)
+        Me.cmbRm2Sck0.TabIndex = 20
         '
         'frmCollection
         '

@@ -6,7 +6,7 @@ Public Class frmCollection
     Public CurrentNumber As Integer
     Const BasePrice As Integer = 75000 'Sets defualt price for an invoice.
     Public TradeOrder As Boolean 'True is Trade, False is Retail
-    Dim Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form
+    Public Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form
     Public DisplayAssignments(6, 2, 4) As String 'Creates array for any price, name and indicator for purchase.
     Public AdditionsCount(5, 2) As Integer 'Sets array for Sockets and Network Points
     Public FinalPrice As Integer = BasePrice 'adds the basic price into the Final Price from the beginning.
@@ -105,10 +105,9 @@ Public Class frmCollection
         Call FormAssignment()
     End Sub
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        Call TextChecking()
         Call AdditonalsCounter()
         Call ChkValidation()
-
+        Call TextChecking()
         Call ErrorMessageShowing()
     End Sub
     Public Sub ErrorMessageShowing()
@@ -124,8 +123,10 @@ Public Class frmCollection
             MessageBox.Show("Too Many Additional Network Points Selected.")
         ElseIf FoundErrors = 6 Then
             MessageBox.Show("Falied to find Order Type.")
+        ElseIf FoundErrors = 7 Then
+            MessageBox.Show("Enter a VALID customer address please")
         ElseIf FoundErrors = 10 Then
-            MessageBox.Show("Please Remove Line Breaks from Addresses.")
+            MessageBox.Show("Please remove Line Breaks from addresses.")
         Else
             Call FullPriceCaclulation()
             Call SubmitIDNum() 'Updates Customer Number so that if they proceed to the next page they're offically an order.
@@ -158,9 +159,14 @@ Public Class frmCollection
         ElseIf DelivAdd.Contains(vbCrLf) Then
             FoundErrors = 10
         End If
-        If CusAdd.Contains(vbCrLf) Then
-            FoundErrors = 10
+        If TradeOrder = True Then
+            If DelivAdd.Length = 0 Then
+                FoundErrors = 7
+            ElseIf CusAdd.Contains(vbCrLf) Then
+                FoundErrors = 10
+            End If
         End If
+
     End Sub
     Public Sub AdditonalsCounter() 'Counts all Sockets and Network Points.
         'Assigns Selected Sockets for each room (ß, 0) to array
@@ -474,17 +480,18 @@ Public Class frmCollection
 
         Next
         Call AdditonalsCounter()
+        'Dim SubtotalAdditionals(2) As Integer
         'Additional 2G Socket Caclulation for every Room (ß, 0)
         For i = 0 To 4
-            Subtotals(i, 1) = AdditionsCount(i, 0) * Val(DisplayAssignments(4, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
+            Subtotals(i, 1) = AdditionsCount(i, 0) * Val(DisplayAssignments(4, 1, i)) 'Number of Points multiplied by the price of corrisponding room's socket Price.
         Next
         'Additional 1G Socket Caclulation for every Room (ß, 2)
         For i = 0 To 4
-            Subtotals(i, 3) = AdditionsCount(i, 2) * Val(DisplayAssignments(6, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's sockets.
+            Subtotals(i, 3) = AdditionsCount(i, 2) * Val(DisplayAssignments(6, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's 2G sockets.
         Next
         'Additional Points Caclulation for every Room (ß, 1)
         For i = 0 To 4
-            Subtotals(i, 2) = AdditionsCount(i, 1) * Val(DisplayAssignments(5, 1, i))
+            Subtotals(i, 2) = AdditionsCount(i, 1) * Val(DisplayAssignments(5, 1, i)) 'Number of sockets multiplied by the price of corrisponding room's 1G sockets.
         Next
     End Sub
     Public Sub FullPriceCaclulation() 'Caclulates the sum of the subtotals and then Applies the potential Trade Discount
@@ -515,9 +522,9 @@ Public Class frmCollection
         DisplayAssignments(1, 0, 0) = "Option B: As A plus induction hob "
         DisplayAssignments(2, 0, 0) = "Option C: A plus Deluxe appliance pack"
         DisplayAssignments(3, 0, 0) = ""
-        DisplayAssignments(4, 0, 0) = "Additional electrical sockets 2G"
-        DisplayAssignments(5, 0, 0) = "Network points"
-        DisplayAssignments(6, 0, 0) = "Additional Electrical sockets 1G"
+        DisplayAssignments(4, 0, 0) = "Additional Electrical sockets 2G Room 0"
+        DisplayAssignments(5, 0, 0) = "Network points Room 0"
+        DisplayAssignments(6, 0, 0) = "Additional Electrical sockets 1G Room 0"
         'Room 0 Price Assignments (ß,1,0)
         DisplayAssignments(0, 1, 0) = 2000.0
         DisplayAssignments(1, 1, 0) = 3500.0
@@ -533,9 +540,9 @@ Public Class frmCollection
         DisplayAssignments(1, 0, 1) = "Shower "
         DisplayAssignments(2, 0, 1) = "Tapware "
         DisplayAssignments(3, 0, 1) = "Tiles"
-        DisplayAssignments(4, 0, 1) = "Additional electrical sockets 2G"
-        DisplayAssignments(5, 0, 1) = "Network points"
-        DisplayAssignments(6, 0, 1) = "Additional Electrical sockets 1G"
+        DisplayAssignments(4, 0, 1) = "Additional Electrical sockets 2G Room 1"
+        DisplayAssignments(5, 0, 1) = "Network points Room 1"
+        DisplayAssignments(6, 0, 1) = "Additional Electrical sockets 1G Room 1"
         'Room 1 Price Assignments (ß,1,1)
         DisplayAssignments(0, 1, 1) = 2500
         DisplayAssignments(1, 1, 1) = 2500
@@ -550,11 +557,11 @@ Public Class frmCollection
         'Room 2 Name Assignments
         DisplayAssignments(0, 0, 2) = "TV point plus roof mounted aerial"
         DisplayAssignments(1, 0, 2) = "TV point plus satellite dish"
-        DisplayAssignments(2, 0, 2) = "4.5 KW Heat pump   "
+        DisplayAssignments(2, 0, 2) = "4.5 KW Heat pump"
         DisplayAssignments(3, 0, 2) = ""
-        DisplayAssignments(4, 0, 2) = "Additional electrical sockets 2G"
-        DisplayAssignments(5, 0, 2) = "Network points"
-        DisplayAssignments(6, 0, 2) = "Additional electrical sockets 1G"
+        DisplayAssignments(4, 0, 2) = "Additional Electrical sockets 2G Room 2"
+        DisplayAssignments(5, 0, 2) = "Network points Room 2"
+        DisplayAssignments(6, 0, 2) = "Additional Electrical sockets 1G Room 2"
         'Room 2 Price Assignments
         DisplayAssignments(0, 1, 2) = 250
         DisplayAssignments(1, 1, 2) = 250
@@ -569,9 +576,9 @@ Public Class frmCollection
         DisplayAssignments(1, 0, 3) = "Satellite TV point"
         DisplayAssignments(2, 0, 3) = "2.5 KW Heat pump"
         DisplayAssignments(3, 0, 3) = ""
-        DisplayAssignments(4, 0, 3) = "Additional electrical sockets 2G"
-        DisplayAssignments(5, 0, 3) = "Network points"
-        DisplayAssignments(6, 0, 3) = "Additional electrical sockets 1G"
+        DisplayAssignments(4, 0, 3) = "Additional Electrical sockets 2G Room 3"
+        DisplayAssignments(5, 0, 3) = "Network points Room 3"
+        DisplayAssignments(6, 0, 3) = "Additional Electrical sockets 1G Room 3"
         'Room 3 Price Assignments
         DisplayAssignments(0, 1, 3) = 50
         DisplayAssignments(1, 1, 3) = 50
@@ -587,9 +594,9 @@ Public Class frmCollection
         DisplayAssignments(1, 0, 4) = "Satellite TV point"
         DisplayAssignments(2, 0, 4) = "2.5 KW Heat pump"
         DisplayAssignments(3, 0, 4) = ""
-        DisplayAssignments(4, 0, 4) = "Additional electrical sockets"
-        DisplayAssignments(5, 0, 4) = "Network points"
-        DisplayAssignments(6, 0, 4) = "Additional electrical sockets 1G"
+        DisplayAssignments(4, 0, 4) = "Additional Electrical sockets 2G Room 4"
+        DisplayAssignments(5, 0, 4) = "Network points Room 4"
+        DisplayAssignments(6, 0, 4) = "Additional Electrical sockets 1G Room 4"
         'Room 4 Price Assignments
         DisplayAssignments(0, 1, 4) = 50
         DisplayAssignments(1, 1, 4) = 50

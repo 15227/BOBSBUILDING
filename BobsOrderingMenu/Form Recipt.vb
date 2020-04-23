@@ -20,7 +20,7 @@ Public Class frmRecipt
         Recept += "Delivery Address: " & frmCollection.DelivAdd & vbCrLf
 
         If frmCollection.CusAdd.Length <> 0 Then
-            Recept += "Customer Address" & frmCollection.CusAdd & vbCrLf
+            Recept += "Customer Address: " & frmCollection.CusAdd & vbCrLf
         End If
         If frmCollection.TradeOrder = True Then
             Recept += "Order Type: Trade"
@@ -59,9 +59,18 @@ Public Class frmRecipt
         '
         ' BEGIN DROPDOWN FILLING
         '
-        If frmCollection.AdditionsCount(5, 0) <> 0 Then
-            Recept += frmCollection.DisplayAssignments(4, 0, 0) & Val(frmCollection.AdditionsCount(5, 0)).ToString("C") & vbCrLf
-        End If
+        For i = 0 To 4
+            If frmCollection.Subtotals(i, 1) <> 0 Then
+                Recept += frmCollection.DisplayAssignments(4, 0, i) & " " & Val(frmCollection.Subtotals(i, 1)).ToString("C") & vbCrLf
+            End If
+            If frmCollection.Subtotals(i, 3) <> 0 Then
+                Recept += frmCollection.DisplayAssignments(6, 0, i) & " " & Val(frmCollection.Subtotals(i, 3)).ToString("C") & vbCrLf
+            End If
+            If frmCollection.Subtotals(i, 2) <> 0 Then
+                Recept += frmCollection.DisplayAssignments(5, 0, i) & " " & Val(frmCollection.Subtotals(i, 2)).ToString("C") & vbCrLf
+            End If
+        Next
+
         '
         'BEGIN PRICE FILLING
         '
