@@ -485,7 +485,7 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck0)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(652, 59)
+        Me.GroupBox1.Location = New System.Drawing.Point(560, 74)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 188)
         Me.GroupBox1.TabIndex = 52
@@ -540,7 +540,7 @@ Partial Class frmCollection
         Me.GroupBox0.Controls.Add(Me.chk0Rm0)
         Me.GroupBox0.Controls.Add(Me.Label2)
         Me.GroupBox0.Controls.Add(Me.cmbRm0Pnt)
-        Me.GroupBox0.Location = New System.Drawing.Point(417, 59)
+        Me.GroupBox0.Location = New System.Drawing.Point(325, 74)
         Me.GroupBox0.Name = "GroupBox0"
         Me.GroupBox0.Size = New System.Drawing.Size(226, 188)
         Me.GroupBox0.TabIndex = 50
@@ -595,7 +595,7 @@ Partial Class frmCollection
         Me.GroupBox3.Controls.Add(Me.chk2Rm3)
         Me.GroupBox3.Controls.Add(Me.chk1Rm3)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(649, 267)
+        Me.GroupBox3.Location = New System.Drawing.Point(557, 282)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(226, 183)
         Me.GroupBox3.TabIndex = 54
@@ -651,7 +651,7 @@ Partial Class frmCollection
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.cmbRm4Sck0)
         Me.GroupBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GroupBox4.Location = New System.Drawing.Point(890, 267)
+        Me.GroupBox4.Location = New System.Drawing.Point(798, 282)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(226, 184)
         Me.GroupBox4.TabIndex = 55
@@ -767,7 +767,7 @@ Partial Class frmCollection
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.cmbRm2Pnt)
         Me.GroupBox2.Controls.Add(Me.cmbRm2Sck0)
-        Me.GroupBox2.Location = New System.Drawing.Point(417, 267)
+        Me.GroupBox2.Location = New System.Drawing.Point(325, 282)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(226, 183)
         Me.GroupBox2.TabIndex = 53
@@ -835,7 +835,7 @@ Partial Class frmCollection
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1131, 589)
+        Me.ClientSize = New System.Drawing.Size(1039, 589)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox0)
         Me.Controls.Add(Me.GroupBox1)
