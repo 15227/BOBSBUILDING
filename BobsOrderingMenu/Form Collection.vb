@@ -119,7 +119,7 @@ Public Class frmCollection
         ElseIf FoundErrors = 4 Then
             MessageBox.Show("Too Many Additional Sockets Selected.")
         ElseIf FoundErrors = 5 Then
-            MessageBox.Show("Too Many Additional Network Points Selected.")
+            MessageBox.Show("Select a VALID Network Points.")
         ElseIf FoundErrors = 6 Then
             MessageBox.Show("Falied to find Order Type.")
         ElseIf FoundErrors = 7 Then
@@ -310,6 +310,8 @@ Public Class frmCollection
         If AdditionsCount(5, 1) > 12 Then
             FoundErrors = 5
             AdditionsCount(5, 1) = 0
+        ElseIf AdditionsCount(5, 1) = 1 Then
+            FoundErrors = 5
         End If
     End Sub
     Private Sub ChkValidation() 'Validates elements nessicary to proceed with order according to Layed out Critera.
