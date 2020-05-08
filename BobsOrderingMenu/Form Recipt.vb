@@ -7,7 +7,7 @@ Public Class frmRecipt
     Dim ExcludGST As String = Val(frmCollection.FinalPrice).ToString + BasePrice
     Dim IncludGST As String = (ExcludGST * 1.15) '15% ontop of a value.
     Dim GST As String = IncludGST - ExcludGST '15% as Decimal.
-    Dim FilePath As String = "D:\OrderHistory.txt"
+    Dim FilePath As String = "\OrderHistory.txt"
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
         Application.Restart()
     End Sub
