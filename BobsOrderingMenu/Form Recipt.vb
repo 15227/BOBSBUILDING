@@ -3,7 +3,7 @@
 Public Class frmRecipt
     Dim FullName As String = frmCollection.Firstname & " " & frmCollection.Surname
     Dim Recept As String
-    Const BasePrice As Integer = 65217.3913043 'Sets defualt price for an invoice.
+    Const BasePrice As Single = 65217.3913043 'Sets defualt price for an invoice.
     Dim ExcludGST As String = Val(frmCollection.FinalPrice).ToString + BasePrice
     Dim IncludGST As String = (ExcludGST * 1.15) '15% ontop of a value.
     Dim GST As String = IncludGST - ExcludGST '15% as Decimal.
