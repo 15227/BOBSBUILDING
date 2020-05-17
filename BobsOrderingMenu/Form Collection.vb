@@ -2,7 +2,7 @@
 
 Public Class frmCollection
     'Defines variable as stored value in program.
-    Public UniqueRndId As Single  'Sets the Unique ID to be used by Reading and Writing to file.
+    Public UniqueRndId As Single 'Sets the Unique ID to be used by Reading and Writing to file.
     Public CurrentNumber As Integer
     Public TradeOrder As Boolean 'True is Trade, False is Retail
     Public Subtotals(4, 3) As Integer 'Sets an Array for the Subtotals of the Form

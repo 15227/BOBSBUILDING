@@ -22,9 +22,9 @@ Partial Class frmCollection
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCollection))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblIdentification = New System.Windows.Forms.Label()
-        Me.pbxLogo = New System.Windows.Forms.PictureBox()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.txtNameInput = New System.Windows.Forms.TextBox()
         Me.txtDeliveryAddress = New System.Windows.Forms.TextBox()
@@ -91,20 +91,24 @@ Partial Class frmCollection
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cmbRm2Pnt = New System.Windows.Forms.ComboBox()
         Me.cmbRm2Sck0 = New System.Windows.Forms.ComboBox()
-        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.imgBanner = New System.Windows.Forms.PictureBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox0.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.imgBanner, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
+        Me.lblTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
-        Me.lblTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblTitle.Location = New System.Drawing.Point(27, 244)
+        Me.lblTitle.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitle.Location = New System.Drawing.Point(20, 16)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(152, 18)
         Me.lblTitle.TabIndex = 0
@@ -113,31 +117,21 @@ Partial Class frmCollection
         'lblIdentification
         '
         Me.lblIdentification.AutoSize = True
-        Me.lblIdentification.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblIdentification.ForeColor = System.Drawing.Color.Snow
-        Me.lblIdentification.Location = New System.Drawing.Point(28, 23)
+        Me.lblIdentification.BackColor = System.Drawing.Color.Transparent
+        Me.lblIdentification.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIdentification.ForeColor = System.Drawing.Color.Black
+        Me.lblIdentification.Location = New System.Drawing.Point(26, 106)
         Me.lblIdentification.Name = "lblIdentification"
-        Me.lblIdentification.Size = New System.Drawing.Size(146, 18)
+        Me.lblIdentification.Size = New System.Drawing.Size(128, 13)
         Me.lblIdentification.TabIndex = 10000
         Me.lblIdentification.Text = "Identification Number"
         '
-        'pbxLogo
-        '
-        Me.pbxLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbxLogo.Image = Global.BobsOrderingMenu.My.Resources.Resources.logo_transparent
-        Me.pbxLogo.Location = New System.Drawing.Point(19, 57)
-        Me.pbxLogo.Name = "pbxLogo"
-        Me.pbxLogo.Size = New System.Drawing.Size(225, 168)
-        Me.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxLogo.TabIndex = 2
-        Me.pbxLogo.TabStop = False
-        '
         'btnNext
         '
-        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNext.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnNext.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.btnNext.Location = New System.Drawing.Point(325, 520)
+        Me.btnNext.Location = New System.Drawing.Point(798, 522)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(98, 55)
         Me.btnNext.TabIndex = 500
@@ -147,7 +141,7 @@ Partial Class frmCollection
         'txtNameInput
         '
         Me.txtNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txtNameInput.Location = New System.Drawing.Point(137, 276)
+        Me.txtNameInput.Location = New System.Drawing.Point(120, 58)
         Me.txtNameInput.Name = "txtNameInput"
         Me.txtNameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtNameInput.TabIndex = 1
@@ -155,7 +149,7 @@ Partial Class frmCollection
         'txtDeliveryAddress
         '
         Me.txtDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txtDeliveryAddress.Location = New System.Drawing.Point(137, 336)
+        Me.txtDeliveryAddress.Location = New System.Drawing.Point(120, 118)
         Me.txtDeliveryAddress.Multiline = True
         Me.txtDeliveryAddress.Name = "txtDeliveryAddress"
         Me.txtDeliveryAddress.Size = New System.Drawing.Size(107, 71)
@@ -164,7 +158,7 @@ Partial Class frmCollection
         'txtCustomerAddress
         '
         Me.txtCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txtCustomerAddress.Location = New System.Drawing.Point(137, 413)
+        Me.txtCustomerAddress.Location = New System.Drawing.Point(120, 195)
         Me.txtCustomerAddress.Multiline = True
         Me.txtCustomerAddress.Name = "txtCustomerAddress"
         Me.txtCustomerAddress.Size = New System.Drawing.Size(107, 73)
@@ -175,7 +169,7 @@ Partial Class frmCollection
         Me.lblDiscount.AutoSize = True
         Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
         Me.lblDiscount.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblDiscount.Location = New System.Drawing.Point(137, 497)
+        Me.lblDiscount.Location = New System.Drawing.Point(120, 271)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.Size = New System.Drawing.Size(107, 17)
         Me.lblDiscount.TabIndex = 900
@@ -183,10 +177,10 @@ Partial Class frmCollection
         '
         'btnRestart
         '
-        Me.btnRestart.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnRestart.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestart.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.btnRestart.Location = New System.Drawing.Point(453, 520)
+        Me.btnRestart.Location = New System.Drawing.Point(926, 522)
         Me.btnRestart.Name = "btnRestart"
         Me.btnRestart.Size = New System.Drawing.Size(98, 55)
         Me.btnRestart.TabIndex = 501
@@ -196,51 +190,55 @@ Partial Class frmCollection
         'lblNameInput
         '
         Me.lblNameInput.AutoSize = True
-        Me.lblNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lblNameInput.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblNameInput.Location = New System.Drawing.Point(45, 281)
+        Me.lblNameInput.BackColor = System.Drawing.Color.Transparent
+        Me.lblNameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNameInput.ForeColor = System.Drawing.Color.Black
+        Me.lblNameInput.Location = New System.Drawing.Point(31, 58)
         Me.lblNameInput.Name = "lblNameInput"
-        Me.lblNameInput.Size = New System.Drawing.Size(86, 17)
+        Me.lblNameInput.Size = New System.Drawing.Size(66, 13)
         Me.lblNameInput.TabIndex = 1100
         Me.lblNameInput.Text = "Given Name"
         '
         'lblDeliveryAddress
         '
         Me.lblDeliveryAddress.AutoSize = True
-        Me.lblDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lblDeliveryAddress.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblDeliveryAddress.Location = New System.Drawing.Point(16, 358)
+        Me.lblDeliveryAddress.BackColor = System.Drawing.Color.Transparent
+        Me.lblDeliveryAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDeliveryAddress.ForeColor = System.Drawing.Color.Black
+        Me.lblDeliveryAddress.Location = New System.Drawing.Point(11, 121)
         Me.lblDeliveryAddress.Name = "lblDeliveryAddress"
-        Me.lblDeliveryAddress.Size = New System.Drawing.Size(115, 17)
+        Me.lblDeliveryAddress.Size = New System.Drawing.Size(86, 13)
         Me.lblDeliveryAddress.TabIndex = 1200
         Me.lblDeliveryAddress.Text = "Delivery Address"
         '
         'lblCustomerAddress
         '
         Me.lblCustomerAddress.AutoSize = True
-        Me.lblCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lblCustomerAddress.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.lblCustomerAddress.Location = New System.Drawing.Point(7, 418)
+        Me.lblCustomerAddress.BackColor = System.Drawing.Color.Transparent
+        Me.lblCustomerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCustomerAddress.ForeColor = System.Drawing.Color.Black
+        Me.lblCustomerAddress.Location = New System.Drawing.Point(5, 197)
         Me.lblCustomerAddress.Name = "lblCustomerAddress"
-        Me.lblCustomerAddress.Size = New System.Drawing.Size(124, 17)
+        Me.lblCustomerAddress.Size = New System.Drawing.Size(92, 13)
         Me.lblCustomerAddress.TabIndex = 1300
         Me.lblCustomerAddress.Text = "Customer Address"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label1.Location = New System.Drawing.Point(66, 311)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(39, 88)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 17)
+        Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 1500
         Me.Label1.Text = "Surname"
         '
         'txtSurnameInput
         '
         Me.txtSurnameInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.txtSurnameInput.Location = New System.Drawing.Point(137, 306)
+        Me.txtSurnameInput.Location = New System.Drawing.Point(120, 88)
         Me.txtSurnameInput.Name = "txtSurnameInput"
         Me.txtSurnameInput.Size = New System.Drawing.Size(107, 20)
         Me.txtSurnameInput.TabIndex = 2
@@ -411,28 +409,30 @@ Partial Class frmCollection
         'rdoRetail
         '
         Me.rdoRetail.AutoSize = True
-        Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.rdoRetail.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.rdoRetail.Location = New System.Drawing.Point(69, 471)
+        Me.rdoRetail.BackColor = System.Drawing.Color.Transparent
+        Me.rdoRetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoRetail.ForeColor = System.Drawing.Color.Black
+        Me.rdoRetail.Location = New System.Drawing.Point(46, 248)
         Me.rdoRetail.Name = "rdoRetail"
         Me.rdoRetail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.rdoRetail.Size = New System.Drawing.Size(62, 21)
+        Me.rdoRetail.Size = New System.Drawing.Size(52, 17)
         Me.rdoRetail.TabIndex = 5
         Me.rdoRetail.Text = "Retail"
-        Me.rdoRetail.UseVisualStyleBackColor = True
+        Me.rdoRetail.UseVisualStyleBackColor = False
         '
         'rdoTrade
         '
         Me.rdoTrade.AutoSize = True
-        Me.rdoTrade.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.rdoTrade.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.rdoTrade.Location = New System.Drawing.Point(67, 495)
+        Me.rdoTrade.BackColor = System.Drawing.Color.Transparent
+        Me.rdoTrade.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoTrade.ForeColor = System.Drawing.Color.Black
+        Me.rdoTrade.Location = New System.Drawing.Point(45, 271)
         Me.rdoTrade.Name = "rdoTrade"
         Me.rdoTrade.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.rdoTrade.Size = New System.Drawing.Size(64, 21)
+        Me.rdoTrade.Size = New System.Drawing.Size(53, 17)
         Me.rdoTrade.TabIndex = 6
         Me.rdoTrade.Text = "Trade"
-        Me.rdoTrade.UseVisualStyleBackColor = True
+        Me.rdoTrade.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -477,6 +477,7 @@ Partial Class frmCollection
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck1)
         Me.GroupBox1.Controls.Add(Me.lblRm1Pnt)
@@ -485,7 +486,7 @@ Partial Class frmCollection
         Me.GroupBox1.Controls.Add(Me.cmbRm1Sck0)
         Me.GroupBox1.Controls.Add(Me.cmbRm1Pnt)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(560, 74)
+        Me.GroupBox1.Location = New System.Drawing.Point(553, 120)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(226, 188)
         Me.GroupBox1.TabIndex = 52
@@ -530,6 +531,7 @@ Partial Class frmCollection
         '
         'GroupBox0
         '
+        Me.GroupBox0.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox0.Controls.Add(Me.Label7)
         Me.GroupBox0.Controls.Add(Me.cmbRm0Sck1)
         Me.GroupBox0.Controls.Add(Me.lblRm0Pnt)
@@ -540,7 +542,7 @@ Partial Class frmCollection
         Me.GroupBox0.Controls.Add(Me.chk0Rm0)
         Me.GroupBox0.Controls.Add(Me.Label2)
         Me.GroupBox0.Controls.Add(Me.cmbRm0Pnt)
-        Me.GroupBox0.Location = New System.Drawing.Point(325, 74)
+        Me.GroupBox0.Location = New System.Drawing.Point(321, 120)
         Me.GroupBox0.Name = "GroupBox0"
         Me.GroupBox0.Size = New System.Drawing.Size(226, 188)
         Me.GroupBox0.TabIndex = 50
@@ -585,6 +587,7 @@ Partial Class frmCollection
         '
         'GroupBox3
         '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.cmbRm3Sck1)
         Me.GroupBox3.Controls.Add(Me.lblRm3Pnt)
@@ -595,7 +598,7 @@ Partial Class frmCollection
         Me.GroupBox3.Controls.Add(Me.chk2Rm3)
         Me.GroupBox3.Controls.Add(Me.chk1Rm3)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(557, 282)
+        Me.GroupBox3.Location = New System.Drawing.Point(550, 314)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(226, 183)
         Me.GroupBox3.TabIndex = 54
@@ -640,6 +643,7 @@ Partial Class frmCollection
         '
         'GroupBox4
         '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.chk0Rm4)
         Me.GroupBox4.Controls.Add(Me.cmbRm4Sck1)
@@ -651,7 +655,7 @@ Partial Class frmCollection
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.cmbRm4Sck0)
         Me.GroupBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GroupBox4.Location = New System.Drawing.Point(798, 282)
+        Me.GroupBox4.Location = New System.Drawing.Point(782, 314)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(226, 184)
         Me.GroupBox4.TabIndex = 55
@@ -757,6 +761,7 @@ Partial Class frmCollection
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.chk0Rm2)
         Me.GroupBox2.Controls.Add(Me.cmbRm2Sck1)
@@ -767,7 +772,7 @@ Partial Class frmCollection
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.cmbRm2Pnt)
         Me.GroupBox2.Controls.Add(Me.cmbRm2Sck0)
-        Me.GroupBox2.Location = New System.Drawing.Point(325, 282)
+        Me.GroupBox2.Location = New System.Drawing.Point(318, 314)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(226, 183)
         Me.GroupBox2.TabIndex = 53
@@ -830,36 +835,55 @@ Partial Class frmCollection
         Me.cmbRm2Sck0.Size = New System.Drawing.Size(83, 21)
         Me.cmbRm2Sck0.TabIndex = 20
         '
+        'imgBanner
+        '
+        Me.imgBanner.Image = CType(resources.GetObject("imgBanner.Image"), System.Drawing.Image)
+        Me.imgBanner.Location = New System.Drawing.Point(6, 12)
+        Me.imgBanner.Name = "imgBanner"
+        Me.imgBanner.Size = New System.Drawing.Size(1026, 91)
+        Me.imgBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgBanner.TabIndex = 10001
+        Me.imgBanner.TabStop = False
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.lblTitle)
+        Me.GroupBox5.Controls.Add(Me.txtDeliveryAddress)
+        Me.GroupBox5.Controls.Add(Me.txtCustomerAddress)
+        Me.GroupBox5.Controls.Add(Me.txtNameInput)
+        Me.GroupBox5.Controls.Add(Me.rdoTrade)
+        Me.GroupBox5.Controls.Add(Me.lblDiscount)
+        Me.GroupBox5.Controls.Add(Me.rdoRetail)
+        Me.GroupBox5.Controls.Add(Me.lblNameInput)
+        Me.GroupBox5.Controls.Add(Me.Label1)
+        Me.GroupBox5.Controls.Add(Me.lblDeliveryAddress)
+        Me.GroupBox5.Controls.Add(Me.txtSurnameInput)
+        Me.GroupBox5.Controls.Add(Me.lblCustomerAddress)
+        Me.GroupBox5.Location = New System.Drawing.Point(12, 120)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(262, 341)
+        Me.GroupBox5.TabIndex = 10002
+        Me.GroupBox5.TabStop = False
+        '
         'frmCollection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1039, 589)
+        Me.Controls.Add(Me.imgBanner)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox0)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.rdoTrade)
-        Me.Controls.Add(Me.rdoRetail)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtSurnameInput)
-        Me.Controls.Add(Me.lblCustomerAddress)
-        Me.Controls.Add(Me.lblDeliveryAddress)
-        Me.Controls.Add(Me.lblNameInput)
         Me.Controls.Add(Me.btnRestart)
-        Me.Controls.Add(Me.lblDiscount)
-        Me.Controls.Add(Me.txtDeliveryAddress)
-        Me.Controls.Add(Me.txtNameInput)
         Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.pbxLogo)
         Me.Controls.Add(Me.lblIdentification)
-        Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.txtCustomerAddress)
+        Me.Controls.Add(Me.GroupBox5)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmCollection"
         Me.Text = " "
-        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox0.ResumeLayout(False)
@@ -870,6 +894,9 @@ Partial Class frmCollection
         Me.GroupBox4.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.imgBanner, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -877,8 +904,6 @@ Partial Class frmCollection
 
     Friend WithEvents lblTitle As Label
     Friend WithEvents lblIdentification As Label
-    Friend WithEvents pbxLogo As PictureBox
-    Friend WithEvents btnNext As Button
     Friend WithEvents txtNameInput As TextBox
     Friend WithEvents txtDeliveryAddress As TextBox
     Friend WithEvents txtCustomerAddress As TextBox
@@ -944,4 +969,7 @@ Partial Class frmCollection
     Friend WithEvents Label12 As Label
     Friend WithEvents cmbRm2Pnt As ComboBox
     Friend WithEvents cmbRm2Sck0 As ComboBox
+    Friend WithEvents btnNext As Button
+    Friend WithEvents imgBanner As PictureBox
+    Friend WithEvents GroupBox5 As GroupBox
 End Class

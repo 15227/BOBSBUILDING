@@ -33,35 +33,41 @@ Partial Class frmRecipt
         Me.dlgPrintPreview = New System.Windows.Forms.PrintPreviewDialog()
         Me.btnPrintWithDialog = New System.Windows.Forms.Button()
         Me.btnPrintNow = New System.Windows.Forms.Button()
+        Me.imgBanner = New System.Windows.Forms.PictureBox()
+        CType(Me.imgBanner, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnRestart
         '
         Me.btnRestart.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestart.Location = New System.Drawing.Point(505, 382)
+        Me.btnRestart.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnRestart.Location = New System.Drawing.Point(905, 467)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(141, 55)
+        Me.btnRestart.Size = New System.Drawing.Size(125, 55)
         Me.btnRestart.TabIndex = 10003
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = True
         '
         'btnProceed
         '
+        Me.btnProceed.BackColor = System.Drawing.Color.Transparent
         Me.btnProceed.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProceed.Location = New System.Drawing.Point(337, 382)
+        Me.btnProceed.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnProceed.Location = New System.Drawing.Point(774, 467)
         Me.btnProceed.Name = "btnProceed"
-        Me.btnProceed.Size = New System.Drawing.Size(141, 55)
+        Me.btnProceed.Size = New System.Drawing.Size(125, 55)
         Me.btnProceed.TabIndex = 10004
         Me.btnProceed.Text = "Done"
-        Me.btnProceed.UseVisualStyleBackColor = True
+        Me.btnProceed.UseVisualStyleBackColor = False
         '
         'lblFullName
         '
         Me.lblFullName.AutoSize = True
         Me.lblFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblFullName.Location = New System.Drawing.Point(12, 9)
+        Me.lblFullName.Font = New System.Drawing.Font("Microsoft Sans Serif", 3.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter)
+        Me.lblFullName.Location = New System.Drawing.Point(300, 121)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(56, 15)
+        Me.lblFullName.Size = New System.Drawing.Size(71, 18)
         Me.lblFullName.TabIndex = 10005
         Me.lblFullName.Text = "Full Name"
         '
@@ -71,11 +77,12 @@ Partial Class frmRecipt
         '
         'btnPrintPreview
         '
-        Me.btnPrintPreview.Location = New System.Drawing.Point(526, 103)
+        Me.btnPrintPreview.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnPrintPreview.Location = New System.Drawing.Point(893, 156)
         Me.btnPrintPreview.Name = "btnPrintPreview"
-        Me.btnPrintPreview.Size = New System.Drawing.Size(119, 23)
+        Me.btnPrintPreview.Size = New System.Drawing.Size(119, 49)
         Me.btnPrintPreview.TabIndex = 10006
-        Me.btnPrintPreview.Text = "btnPrintPreview"
+        Me.btnPrintPreview.Text = "Print Preview"
         Me.btnPrintPreview.UseVisualStyleBackColor = True
         '
         'dlgPrintPreview
@@ -90,34 +97,50 @@ Partial Class frmRecipt
         '
         'btnPrintWithDialog
         '
-        Me.btnPrintWithDialog.Location = New System.Drawing.Point(526, 132)
+        Me.btnPrintWithDialog.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnPrintWithDialog.Location = New System.Drawing.Point(893, 238)
         Me.btnPrintWithDialog.Name = "btnPrintWithDialog"
-        Me.btnPrintWithDialog.Size = New System.Drawing.Size(119, 23)
+        Me.btnPrintWithDialog.Size = New System.Drawing.Size(119, 49)
         Me.btnPrintWithDialog.TabIndex = 10007
-        Me.btnPrintWithDialog.Text = "btnPrintWithDialog"
+        Me.btnPrintWithDialog.Text = "Printer Preferance"
         Me.btnPrintWithDialog.UseVisualStyleBackColor = True
         '
         'btnPrintNow
         '
-        Me.btnPrintNow.Location = New System.Drawing.Point(526, 161)
+        Me.btnPrintNow.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btnPrintNow.Location = New System.Drawing.Point(893, 320)
         Me.btnPrintNow.Name = "btnPrintNow"
-        Me.btnPrintNow.Size = New System.Drawing.Size(119, 23)
+        Me.btnPrintNow.Size = New System.Drawing.Size(119, 49)
         Me.btnPrintNow.TabIndex = 10008
-        Me.btnPrintNow.Text = "btnPrintNow"
+        Me.btnPrintNow.Text = "Print"
         Me.btnPrintNow.UseVisualStyleBackColor = True
+        '
+        'imgBanner
+        '
+        Me.imgBanner.Image = CType(resources.GetObject("imgBanner.Image"), System.Drawing.Image)
+        Me.imgBanner.Location = New System.Drawing.Point(6, 12)
+        Me.imgBanner.Name = "imgBanner"
+        Me.imgBanner.Size = New System.Drawing.Size(1026, 91)
+        Me.imgBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgBanner.TabIndex = 10009
+        Me.imgBanner.TabStop = False
         '
         'frmRecipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(657, 449)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(1039, 534)
+        Me.Controls.Add(Me.imgBanner)
         Me.Controls.Add(Me.btnPrintNow)
         Me.Controls.Add(Me.btnPrintWithDialog)
         Me.Controls.Add(Me.btnPrintPreview)
         Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnRestart)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmRecipt"
+        CType(Me.imgBanner, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -132,4 +155,5 @@ Partial Class frmRecipt
     Friend WithEvents dlgPrintPreview As PrintPreviewDialog
     Friend WithEvents btnPrintWithDialog As Button
     Friend WithEvents btnPrintNow As Button
+    Friend WithEvents imgBanner As PictureBox
 End Class

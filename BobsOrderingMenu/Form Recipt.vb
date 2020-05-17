@@ -7,7 +7,7 @@ Public Class frmRecipt
     Dim ExcludGST As String = Val(frmCollection.FinalPrice).ToString + BasePrice
     Dim IncludGST As String = (ExcludGST * 1.15) '15% ontop of a value.
     Dim GST As String = IncludGST - ExcludGST '15% as Decimal.
-    Dim FilePath As String = "\OrderHistory.txt"
+    Dim FilePath As String = "\QuoteHistory.txt"
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
         Application.Restart()
     End Sub
@@ -107,9 +107,8 @@ Public Class frmRecipt
         Return print_document        ' Return the object.
     End Function
     Private Sub Print_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs)     ' Sets up page
-        ' Draw a rectangle at the margins.
-        'e.Graphics.DrawRectangle(Pens.Black, e.MarginBounds)
-        e.Graphics.DrawString(Recept, Font, Brushes.Black, e.MarginBounds.Left, 12)
+        e.Graphics.DrawRectangle(Pens.Black, e.MarginBounds) ' Draw a rectangle at the margins.
+        e.Graphics.DrawString(Recept, Font, Brushes.Black, e.MarginBounds.Left, 12) 'Writes the Recept variable.
         e.HasMorePages = False        ' There are no more pages.
     End Sub
     Private Sub btnPrintPreview_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPrintPreview.Click    ' Display a print preview.
